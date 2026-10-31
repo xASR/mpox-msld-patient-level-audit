@@ -1,0 +1,12 @@
+audit_category,actual_count,note
+Published MCVSLD images (Mendeley record),"9,060",Mendeley description
+Images present in the Mendeley archive v1 (author's unchanged upload to Kaggle),"11,325","train 9,060; val 1,131; test 1,134"
+Unreadable or corrupted images,0,"all 11,325 JPEG, RGB, fully decoded"
+Exact internal duplicates,"1,870 images in 929 groups",941 redundant copies
+"Internal near-duplicates across different photograph names, visually confirmed",3 photograph pairs,"CHP_26_01/CHP_62_01 (byte-identical), HFMD_130_01/HFMD_96_01, HEALTHY_21_01/HEALTHY_77_01; all inherited from MSLD v2.0; pairs at 8-12 bits pending Stage 2b"
+Cross-dataset exact duplicates with MSLD v2.0,"11,325 of 11,325","755 un-suffixed files = MSLD originals of the same name; 10,570 _ORIGINAL/numbered files = MSLD released augmented files of the same name"
+Cross-dataset near-duplicates (not exact),0,none needed: every file is byte-identical
+Uncertain cross-dataset matches,0,
+Final eligible external images,0,no image is independent of MSLD v2.0
+Distinct source photographs / patient IDs,755 / 524,identical to MSLD v2.0 per class
+Patients in more than one of the copy's train/val/test folders,511 of 524,731 of 755 photographs

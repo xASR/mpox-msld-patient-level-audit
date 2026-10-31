@@ -1,0 +1,1687 @@
+6.6s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s 3 0.00s - to python to disable frozen modules.
+6.6s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.2s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.2s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.2s 7 0.00s - to python to disable frozen modules.
+7.2s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+24.5s 9 Checking path: /kaggle/input/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20
+24.5s 10 Loading dataset...
+105.3s 11 Loaded 756 unique images.
+105.3s 12 
+105.3s 13 ============================================================
+105.3s 14 Training: efficientnetv2_s  (tf_efficientnetv2_s.in21k_ft_in1k)
+105.3s 15 ============================================================
+131.4s 16 Fold 1/5 ...
+131.4s 17 Epoch 1/25
+131.4s 18 ↳ [Metrics] Acc: 0.1238 | Prec: 0.2283 | Rec: 0.0957 | F1: 0.0929 | AUC: 0.4678 | ECE: 0.6951
+147.3s 19 
+147.3s 20 Epoch 2/25
+147.3s 21 ↳ [Metrics] Acc: 0.1333 | Prec: 0.0727 | Rec: 0.0895 | F1: 0.0663 | AUC: 0.4669 | ECE: 0.7177
+163.9s 22 
+163.9s 23 Epoch 3/25
+163.9s 24 ↳ [Metrics] Acc: 0.3619 | Prec: 0.3284 | Rec: 0.3000 | F1: 0.2850 | AUC: 0.7197 | ECE: 0.4278
+163.9s 25 
+163.9s 26 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+185.3s 27 
+185.3s 28 Epoch 4/25
+185.3s 29 ↳ [Metrics] Acc: 0.3333 | Prec: 0.2512 | Rec: 0.2665 | F1: 0.2428 | AUC: 0.7173 | ECE: 0.4690
+204.4s 30 
+204.4s 31 Epoch 5/25
+204.4s 32 ↳ [Metrics] Acc: 0.3524 | Prec: 0.2993 | Rec: 0.2938 | F1: 0.2778 | AUC: 0.7243 | ECE: 0.4549
+222.4s 33 
+222.4s 34 Epoch 6/25
+222.4s 35 ↳ [Metrics] Acc: 0.4286 | Prec: 0.3736 | Rec: 0.3556 | F1: 0.3368 | AUC: 0.7789 | ECE: 0.3256
+240.5s 36 
+240.5s 37 Epoch 7/25
+240.5s 38 ↳ [Metrics] Acc: 0.4952 | Prec: 0.5112 | Rec: 0.4496 | F1: 0.4445 | AUC: 0.8553 | ECE: 0.2771
+259.3s 39 
+259.3s 40 Epoch 8/25
+259.3s 41 ↳ [Metrics] Acc: 0.5238 | Prec: 0.5862 | Rec: 0.4836 | F1: 0.4863 | AUC: 0.8696 | ECE: 0.2345
+277.3s 42 
+277.3s 43 Epoch 9/25
+277.3s 44 ↳ [Metrics] Acc: 0.5524 | Prec: 0.6191 | Rec: 0.5047 | F1: 0.5077 | AUC: 0.8887 | ECE: 0.1592
+296.6s 45 
+296.6s 46 Epoch 10/25
+296.6s 47 ↳ [Metrics] Acc: 0.6095 | Prec: 0.6148 | Rec: 0.5582 | F1: 0.5730 | AUC: 0.9091 | ECE: 0.0917
+296.6s 48 
+296.6s 49 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+316.4s 50 
+316.4s 51 Epoch 11/25
+316.4s 52 ↳ [Metrics] Acc: 0.6476 | Prec: 0.6885 | Rec: 0.6984 | F1: 0.6376 | AUC: 0.9318 | ECE: 0.1120
+335.1s 53 
+335.1s 54 Epoch 12/25
+335.1s 55 ↳ [Metrics] Acc: 0.6762 | Prec: 0.7603 | Rec: 0.7239 | F1: 0.6743 | AUC: 0.9390 | ECE: 0.0745
+354.5s 56 
+354.5s 57 Epoch 13/25
+354.5s 58 ↳ [Metrics] Acc: 0.7333 | Prec: 0.7535 | Rec: 0.7732 | F1: 0.7240 | AUC: 0.9399 | ECE: 0.1164
+372.0s 59 
+372.0s 60 Epoch 14/25
+372.0s 61 ↳ [Metrics] Acc: 0.6571 | Prec: 0.7133 | Rec: 0.6966 | F1: 0.6513 | AUC: 0.9479 | ECE: 0.0522
+390.0s 62 
+390.0s 63 Epoch 15/25
+390.0s 64 ↳ [Metrics] Acc: 0.6952 | Prec: 0.7132 | Rec: 0.7115 | F1: 0.6757 | AUC: 0.9482 | ECE: 0.0524
+408.4s 65 
+408.4s 66 Epoch 16/25
+408.4s 67 ↳ [Metrics] Acc: 0.6952 | Prec: 0.7298 | Rec: 0.7214 | F1: 0.6916 | AUC: 0.9524 | ECE: 0.1151
+426.2s 68 
+426.2s 69 Epoch 17/25
+426.2s 70 ↳ [Metrics] Acc: 0.7143 | Prec: 0.7180 | Rec: 0.7264 | F1: 0.6983 | AUC: 0.9589 | ECE: 0.0765
+443.9s 71 
+443.9s 72 Epoch 18/25
+443.9s 73 ↳ [Metrics] Acc: 0.7143 | Prec: 0.7255 | Rec: 0.7261 | F1: 0.6978 | AUC: 0.9500 | ECE: 0.0657
+461.5s 74 
+461.5s 75 Epoch 19/25
+461.5s 76 ↳ [Metrics] Acc: 0.7333 | Prec: 0.7487 | Rec: 0.7718 | F1: 0.7320 | AUC: 0.9539 | ECE: 0.1030
+479.6s 77 
+479.6s 78 Epoch 20/25
+479.6s 79 ↳ [Metrics] Acc: 0.7238 | Prec: 0.7364 | Rec: 0.7426 | F1: 0.7179 | AUC: 0.9543 | ECE: 0.0603
+499.0s 80 
+499.0s 81 Epoch 21/25
+499.0s 82 ↳ [Metrics] Acc: 0.7238 | Prec: 0.7320 | Rec: 0.7389 | F1: 0.7101 | AUC: 0.9595 | ECE: 0.1276
+517.1s 83 
+517.1s 84 Epoch 22/25
+517.1s 85 ↳ [Metrics] Acc: 0.7333 | Prec: 0.7421 | Rec: 0.7661 | F1: 0.7297 | AUC: 0.9595 | ECE: 0.0595
+535.7s 86 
+535.7s 87 Epoch 23/25
+535.7s 88 ↳ [Metrics] Acc: 0.7238 | Prec: 0.7330 | Rec: 0.7449 | F1: 0.7128 | AUC: 0.9538 | ECE: 0.0901
+554.4s 89 
+554.4s 90 Epoch 24/25
+554.4s 91 ↳ [Metrics] Acc: 0.7429 | Prec: 0.7576 | Rec: 0.7646 | F1: 0.7371 | AUC: 0.9572 | ECE: 0.0850
+573.4s 92 
+573.4s 93 Epoch 25/25
+573.4s 94 ↳ [Metrics] Acc: 0.7429 | Prec: 0.7564 | Rec: 0.7725 | F1: 0.7416 | AUC: 0.9601 | ECE: 0.0767
+573.4s 95 
+573.4s 96 🎯 Best Fold Patient-F1 = 0.7416
+573.9s 97 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+573.9s 98 
+573.9s 99 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+590.7s 100 Fold 2/5 ...
+590.7s 101 Epoch 1/25
+590.7s 102 ↳ [Metrics] Acc: 0.1346 | Prec: 0.1667 | Rec: 0.1329 | F1: 0.0929 | AUC: 0.4674 | ECE: 0.6543
+607.4s 103 
+607.4s 104 Epoch 2/25
+607.4s 105 ↳ [Metrics] Acc: 0.1250 | Prec: 0.1281 | Rec: 0.1350 | F1: 0.0891 | AUC: 0.4596 | ECE: 0.6667
+623.8s 106 
+623.8s 107 Epoch 3/25
+623.8s 108 ↳ [Metrics] Acc: 0.3269 | Prec: 0.3088 | Rec: 0.3284 | F1: 0.2812 | AUC: 0.7057 | ECE: 0.4014
+623.8s 109 
+623.8s 110 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+641.6s 111 
+641.6s 112 Epoch 4/25
+641.6s 113 ↳ [Metrics] Acc: 0.3269 | Prec: 0.2862 | Rec: 0.3096 | F1: 0.2608 | AUC: 0.7082 | ECE: 0.3987
+659.1s 114 
+659.1s 115 Epoch 5/25
+659.1s 116 ↳ [Metrics] Acc: 0.3269 | Prec: 0.2681 | Rec: 0.2950 | F1: 0.2456 | AUC: 0.6937 | ECE: 0.4080
+676.5s 117 
+676.5s 118 Epoch 6/25
+676.5s 119 ↳ [Metrics] Acc: 0.3750 | Prec: 0.3316 | Rec: 0.3694 | F1: 0.3258 | AUC: 0.7473 | ECE: 0.3573
+694.2s 120 
+694.2s 121 Epoch 7/25
+694.2s 122 ↳ [Metrics] Acc: 0.5288 | Prec: 0.5054 | Rec: 0.5012 | F1: 0.5022 | AUC: 0.8072 | ECE: 0.2029
+711.9s 123 
+711.9s 124 Epoch 8/25
+711.9s 125 ↳ [Metrics] Acc: 0.5192 | Prec: 0.4963 | Rec: 0.4717 | F1: 0.4746 | AUC: 0.8286 | ECE: 0.2204
+729.3s 126 
+729.3s 127 Epoch 9/25
+729.3s 128 ↳ [Metrics] Acc: 0.6154 | Prec: 0.6685 | Rec: 0.5386 | F1: 0.5612 | AUC: 0.8524 | ECE: 0.1786
+746.5s 129 
+746.5s 130 Epoch 10/25
+746.5s 131 ↳ [Metrics] Acc: 0.5673 | Prec: 0.5587 | Rec: 0.4700 | F1: 0.4793 | AUC: 0.8579 | ECE: 0.1155
+746.5s 132 
+746.5s 133 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+764.0s 134 
+764.0s 135 Epoch 11/25
+764.0s 136 ↳ [Metrics] Acc: 0.6250 | Prec: 0.6858 | Rec: 0.5961 | F1: 0.5877 | AUC: 0.9049 | ECE: 0.0483
+781.8s 137 
+781.8s 138 Epoch 12/25
+781.8s 139 ↳ [Metrics] Acc: 0.6346 | Prec: 0.6232 | Rec: 0.6576 | F1: 0.6120 | AUC: 0.9135 | ECE: 0.0888
+799.6s 140 
+799.6s 141 Epoch 13/25
+799.6s 142 ↳ [Metrics] Acc: 0.6442 | Prec: 0.6334 | Rec: 0.6530 | F1: 0.6210 | AUC: 0.9240 | ECE: 0.1165
+817.1s 143 
+817.1s 144 Epoch 14/25
+817.1s 145 ↳ [Metrics] Acc: 0.6442 | Prec: 0.6471 | Rec: 0.6456 | F1: 0.6197 | AUC: 0.9245 | ECE: 0.0795
+835.0s 146 
+835.0s 147 Epoch 15/25
+835.0s 148 ↳ [Metrics] Acc: 0.6827 | Prec: 0.6653 | Rec: 0.6802 | F1: 0.6489 | AUC: 0.9317 | ECE: 0.0626
+852.8s 149 
+852.8s 150 Epoch 16/25
+852.8s 151 ↳ [Metrics] Acc: 0.6923 | Prec: 0.7064 | Rec: 0.7021 | F1: 0.6661 | AUC: 0.9344 | ECE: 0.0715
+870.8s 152 
+870.8s 153 Epoch 17/25
+870.8s 154 ↳ [Metrics] Acc: 0.6923 | Prec: 0.7083 | Rec: 0.7021 | F1: 0.6672 | AUC: 0.9387 | ECE: 0.0597
+888.6s 155 
+888.6s 156 Epoch 18/25
+888.6s 157 ↳ [Metrics] Acc: 0.7019 | Prec: 0.7186 | Rec: 0.7105 | F1: 0.6710 | AUC: 0.9400 | ECE: 0.1018
+906.3s 158 
+906.3s 159 Epoch 19/25
+906.3s 160 ↳ [Metrics] Acc: 0.7212 | Prec: 0.7390 | Rec: 0.7521 | F1: 0.7070 | AUC: 0.9411 | ECE: 0.0886
+923.8s 161 
+923.8s 162 Epoch 20/25
+923.8s 163 ↳ [Metrics] Acc: 0.7115 | Prec: 0.7295 | Rec: 0.7313 | F1: 0.6863 | AUC: 0.9409 | ECE: 0.1208
+941.9s 164 
+941.9s 165 Epoch 21/25
+941.9s 166 ↳ [Metrics] Acc: 0.7019 | Prec: 0.7097 | Rec: 0.7230 | F1: 0.6789 | AUC: 0.9423 | ECE: 0.0609
+959.7s 167 
+959.7s 168 Epoch 22/25
+959.7s 169 ↳ [Metrics] Acc: 0.7115 | Prec: 0.7296 | Rec: 0.7364 | F1: 0.6905 | AUC: 0.9418 | ECE: 0.1120
+977.2s 170 
+977.2s 171 Epoch 23/25
+977.2s 172 ↳ [Metrics] Acc: 0.7212 | Prec: 0.7198 | Rec: 0.7279 | F1: 0.6924 | AUC: 0.9441 | ECE: 0.1436
+994.7s 173 
+994.7s 174 Epoch 24/25
+994.7s 175 ↳ [Metrics] Acc: 0.6923 | Prec: 0.7013 | Rec: 0.7078 | F1: 0.6681 | AUC: 0.9405 | ECE: 0.0859
+1012.8s 176 
+1012.8s 177 Epoch 25/25
+1012.8s 178 ↳ [Metrics] Acc: 0.7212 | Prec: 0.7264 | Rec: 0.7369 | F1: 0.6967 | AUC: 0.9502 | ECE: 0.0839
+1012.8s 179 
+1012.8s 180 🎯 Best Fold Patient-F1 = 0.7070
+1029.2s 181 Fold 3/5 ...
+1029.2s 182 Epoch 1/25
+1029.2s 183 ↳ [Metrics] Acc: 0.1827 | Prec: 0.1922 | Rec: 0.2133 | F1: 0.1659 | AUC: 0.5660 | ECE: 0.6371
+1045.1s 184 
+1045.1s 185 Epoch 2/25
+1045.1s 186 ↳ [Metrics] Acc: 0.1923 | Prec: 0.1988 | Rec: 0.2189 | F1: 0.1739 | AUC: 0.5684 | ECE: 0.6085
+1061.0s 187 
+1061.0s 188 Epoch 3/25
+1061.0s 189 ↳ [Metrics] Acc: 0.4519 | Prec: 0.5022 | Rec: 0.3944 | F1: 0.3867 | AUC: 0.7444 | ECE: 0.3511
+1061.0s 190 
+1061.0s 191 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+1078.6s 192 
+1078.6s 193 Epoch 4/25
+1078.6s 194 ↳ [Metrics] Acc: 0.4519 | Prec: 0.5358 | Rec: 0.3884 | F1: 0.3864 | AUC: 0.7464 | ECE: 0.3396
+1096.2s 195 
+1096.2s 196 Epoch 5/25
+1096.2s 197 ↳ [Metrics] Acc: 0.4327 | Prec: 0.4798 | Rec: 0.3707 | F1: 0.3645 | AUC: 0.7420 | ECE: 0.3563
+1113.6s 198 
+1113.6s 199 Epoch 6/25
+1113.6s 200 ↳ [Metrics] Acc: 0.4904 | Prec: 0.4700 | Rec: 0.4355 | F1: 0.4448 | AUC: 0.7607 | ECE: 0.2906
+1130.6s 201 
+1130.6s 202 Epoch 7/25
+1130.6s 203 ↳ [Metrics] Acc: 0.5288 | Prec: 0.4533 | Rec: 0.4493 | F1: 0.4485 | AUC: 0.8028 | ECE: 0.2449
+1148.1s 204 
+1148.1s 205 Epoch 8/25
+1148.1s 206 ↳ [Metrics] Acc: 0.5385 | Prec: 0.5187 | Rec: 0.4937 | F1: 0.4921 | AUC: 0.8251 | ECE: 0.1890
+1165.3s 207 
+1165.3s 208 Epoch 9/25
+1165.3s 209 ↳ [Metrics] Acc: 0.6058 | Prec: 0.5931 | Rec: 0.5508 | F1: 0.5574 | AUC: 0.8494 | ECE: 0.1093
+1182.4s 210 
+1182.4s 211 Epoch 10/25
+1182.4s 212 ↳ [Metrics] Acc: 0.6346 | Prec: 0.6216 | Rec: 0.5702 | F1: 0.5800 | AUC: 0.8615 | ECE: 0.0888
+1182.4s 213 
+1182.4s 214 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+1200.0s 215 
+1200.0s 216 Epoch 11/25
+1200.0s 217 ↳ [Metrics] Acc: 0.6346 | Prec: 0.6768 | Rec: 0.6018 | F1: 0.6214 | AUC: 0.8644 | ECE: 0.1215
+1217.0s 218 
+1217.0s 219 Epoch 12/25
+1217.0s 220 ↳ [Metrics] Acc: 0.6538 | Prec: 0.7082 | Rec: 0.6003 | F1: 0.6187 | AUC: 0.8748 | ECE: 0.0945
+1234.4s 221 
+1234.4s 222 Epoch 13/25
+1234.4s 223 ↳ [Metrics] Acc: 0.6442 | Prec: 0.6619 | Rec: 0.6137 | F1: 0.6235 | AUC: 0.8933 | ECE: 0.0772
+1251.8s 224 
+1251.8s 225 Epoch 14/25
+1251.8s 226 ↳ [Metrics] Acc: 0.6250 | Prec: 0.6265 | Rec: 0.6147 | F1: 0.6072 | AUC: 0.8963 | ECE: 0.1055
+1269.1s 227 
+1269.1s 228 Epoch 15/25
+1269.1s 229 ↳ [Metrics] Acc: 0.7115 | Prec: 0.7376 | Rec: 0.7044 | F1: 0.7137 | AUC: 0.9081 | ECE: 0.0886
+1286.5s 230 
+1286.5s 231 Epoch 16/25
+1286.5s 232 ↳ [Metrics] Acc: 0.7019 | Prec: 0.6972 | Rec: 0.6520 | F1: 0.6534 | AUC: 0.9186 | ECE: 0.0736
+1304.3s 233 
+1304.3s 234 Epoch 17/25
+1304.3s 235 ↳ [Metrics] Acc: 0.6923 | Prec: 0.6856 | Rec: 0.6528 | F1: 0.6567 | AUC: 0.9151 | ECE: 0.1085
+1322.7s 236 
+1322.7s 237 Epoch 18/25
+1322.7s 238 ↳ [Metrics] Acc: 0.7019 | Prec: 0.6936 | Rec: 0.6713 | F1: 0.6702 | AUC: 0.9170 | ECE: 0.0869
+1340.4s 239 
+1340.4s 240 Epoch 19/25
+1340.4s 241 ↳ [Metrics] Acc: 0.7212 | Prec: 0.7227 | Rec: 0.6643 | F1: 0.6767 | AUC: 0.9215 | ECE: 0.0636
+1358.2s 242 
+1358.2s 243 Epoch 20/25
+1358.2s 244 ↳ [Metrics] Acc: 0.7115 | Prec: 0.7074 | Rec: 0.6803 | F1: 0.6739 | AUC: 0.9151 | ECE: 0.0979
+1375.7s 245 
+1375.7s 246 Epoch 21/25
+1375.7s 247 ↳ [Metrics] Acc: 0.7308 | Prec: 0.7314 | Rec: 0.7099 | F1: 0.7086 | AUC: 0.9199 | ECE: 0.0863
+1393.3s 248 
+1393.3s 249 Epoch 22/25
+1393.3s 250 ↳ [Metrics] Acc: 0.7019 | Prec: 0.6970 | Rec: 0.6589 | F1: 0.6634 | AUC: 0.9168 | ECE: 0.0794
+1410.5s 251 
+1410.5s 252 Epoch 23/25
+1410.5s 253 ↳ [Metrics] Acc: 0.7019 | Prec: 0.7104 | Rec: 0.6648 | F1: 0.6675 | AUC: 0.9197 | ECE: 0.0815
+1427.9s 254 
+1427.9s 255 Epoch 24/25
+1427.9s 256 ↳ [Metrics] Acc: 0.7019 | Prec: 0.6888 | Rec: 0.6892 | F1: 0.6786 | AUC: 0.9206 | ECE: 0.0901
+1445.4s 257 
+1445.4s 258 Epoch 25/25
+1445.4s 259 ↳ [Metrics] Acc: 0.7019 | Prec: 0.7168 | Rec: 0.6739 | F1: 0.6682 | AUC: 0.9189 | ECE: 0.0919
+1445.4s 260 
+1445.4s 261 🎯 Best Fold Patient-F1 = 0.7137
+1461.9s 262 Fold 4/5 ...
+1461.9s 263 Epoch 1/25
+1461.9s 264 ↳ [Metrics] Acc: 0.2170 | Prec: 0.1964 | Rec: 0.2606 | F1: 0.1826 | AUC: 0.5469 | ECE: 0.5948
+1477.8s 265 
+1477.8s 266 Epoch 2/25
+1477.8s 267 ↳ [Metrics] Acc: 0.1887 | Prec: 0.2044 | Rec: 0.2406 | F1: 0.1670 | AUC: 0.5583 | ECE: 0.6241
+1493.7s 268 
+1493.7s 269 Epoch 3/25
+1493.7s 270 ↳ [Metrics] Acc: 0.5094 | Prec: 0.5320 | Rec: 0.4440 | F1: 0.4624 | AUC: 0.7727 | ECE: 0.3023
+1493.7s 271 
+1493.7s 272 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+1511.0s 273 
+1511.0s 274 Epoch 4/25
+1511.0s 275 ↳ [Metrics] Acc: 0.4811 | Prec: 0.4441 | Rec: 0.4055 | F1: 0.4075 | AUC: 0.7704 | ECE: 0.3184
+1528.7s 276 
+1528.7s 277 Epoch 5/25
+1528.7s 278 ↳ [Metrics] Acc: 0.5094 | Prec: 0.5219 | Rec: 0.4438 | F1: 0.4585 | AUC: 0.7779 | ECE: 0.3206
+1546.3s 279 
+1546.3s 280 Epoch 6/25
+1546.3s 281 ↳ [Metrics] Acc: 0.5377 | Prec: 0.6105 | Rec: 0.4638 | F1: 0.4834 | AUC: 0.8315 | ECE: 0.2627
+1564.0s 282 
+1564.0s 283 Epoch 7/25
+1564.0s 284 ↳ [Metrics] Acc: 0.5377 | Prec: 0.6238 | Rec: 0.4452 | F1: 0.4504 | AUC: 0.8049 | ECE: 0.2148
+1581.3s 285 
+1581.3s 286 Epoch 8/25
+1581.3s 287 ↳ [Metrics] Acc: 0.5472 | Prec: 0.5525 | Rec: 0.4778 | F1: 0.4773 | AUC: 0.8649 | ECE: 0.1669
+1599.3s 288 
+1599.3s 289 Epoch 9/25
+1599.3s 290 ↳ [Metrics] Acc: 0.5377 | Prec: 0.4659 | Rec: 0.4636 | F1: 0.4512 | AUC: 0.8541 | ECE: 0.1470
+1616.9s 291 
+1616.9s 292 Epoch 10/25
+1616.9s 293 ↳ [Metrics] Acc: 0.5566 | Prec: 0.5742 | Rec: 0.4927 | F1: 0.5031 | AUC: 0.8739 | ECE: 0.1098
+1616.9s 294 
+1616.9s 295 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+1634.6s 296 
+1634.6s 297 Epoch 11/25
+1634.6s 298 ↳ [Metrics] Acc: 0.5472 | Prec: 0.5796 | Rec: 0.5086 | F1: 0.5017 | AUC: 0.9110 | ECE: 0.0901
+1652.2s 299 
+1652.2s 300 Epoch 12/25
+1652.2s 301 ↳ [Metrics] Acc: 0.6321 | Prec: 0.6317 | Rec: 0.5852 | F1: 0.5850 | AUC: 0.9160 | ECE: 0.0860
+1669.8s 302 
+1669.8s 303 Epoch 13/25
+1669.8s 304 ↳ [Metrics] Acc: 0.6698 | Prec: 0.6579 | Rec: 0.6342 | F1: 0.6258 | AUC: 0.9307 | ECE: 0.0874
+1687.5s 305 
+1687.5s 306 Epoch 14/25
+1687.5s 307 ↳ [Metrics] Acc: 0.7075 | Prec: 0.7432 | Rec: 0.6448 | F1: 0.6651 | AUC: 0.9360 | ECE: 0.1039
+1704.8s 308 
+1704.8s 309 Epoch 15/25
+1704.8s 310 ↳ [Metrics] Acc: 0.7170 | Prec: 0.7354 | Rec: 0.6643 | F1: 0.6528 | AUC: 0.9423 | ECE: 0.1179
+1722.8s 311 
+1722.8s 312 Epoch 16/25
+1722.8s 313 ↳ [Metrics] Acc: 0.7075 | Prec: 0.6968 | Rec: 0.6782 | F1: 0.6687 | AUC: 0.9358 | ECE: 0.1000
+1740.7s 314 
+1740.7s 315 Epoch 17/25
+1740.7s 316 ↳ [Metrics] Acc: 0.7453 | Prec: 0.7298 | Rec: 0.7031 | F1: 0.6965 | AUC: 0.9453 | ECE: 0.1165
+1758.1s 317 
+1758.1s 318 Epoch 18/25
+1758.1s 319 ↳ [Metrics] Acc: 0.7358 | Prec: 0.7075 | Rec: 0.7067 | F1: 0.6940 | AUC: 0.9429 | ECE: 0.1078
+1775.6s 320 
+1775.6s 321 Epoch 19/25
+1775.6s 322 ↳ [Metrics] Acc: 0.7453 | Prec: 0.7583 | Rec: 0.7119 | F1: 0.7031 | AUC: 0.9482 | ECE: 0.1058
+1793.0s 323 
+1793.0s 324 Epoch 20/25
+1793.0s 325 ↳ [Metrics] Acc: 0.7547 | Prec: 0.7718 | Rec: 0.7380 | F1: 0.7282 | AUC: 0.9478 | ECE: 0.1390
+1810.1s 326 
+1810.1s 327 Epoch 21/25
+1810.1s 328 ↳ [Metrics] Acc: 0.7453 | Prec: 0.7320 | Rec: 0.7082 | F1: 0.6965 | AUC: 0.9477 | ECE: 0.1023
+1827.4s 329 
+1827.4s 330 Epoch 22/25
+1827.4s 331 ↳ [Metrics] Acc: 0.7830 | Prec: 0.7749 | Rec: 0.7662 | F1: 0.7563 | AUC: 0.9537 | ECE: 0.1265
+1845.0s 332 
+1845.0s 333 Epoch 23/25
+1845.0s 334 ↳ [Metrics] Acc: 0.7547 | Prec: 0.7576 | Rec: 0.7200 | F1: 0.7197 | AUC: 0.9527 | ECE: 0.1291
+1862.2s 335 
+1862.2s 336 Epoch 24/25
+1862.2s 337 ↳ [Metrics] Acc: 0.7642 | Prec: 0.7826 | Rec: 0.7247 | F1: 0.7271 | AUC: 0.9533 | ECE: 0.1222
+1880.0s 338 
+1880.0s 339 Epoch 25/25
+1880.0s 340 ↳ [Metrics] Acc: 0.7547 | Prec: 0.7417 | Rec: 0.7214 | F1: 0.7071 | AUC: 0.9530 | ECE: 0.1350
+1880.0s 341 
+1880.0s 342 🎯 Best Fold Patient-F1 = 0.7563
+1896.9s 343 Fold 5/5 ...
+1896.9s 344 Epoch 1/25
+1896.9s 345 ↳ [Metrics] Acc: 0.2358 | Prec: 0.0860 | Rec: 0.1447 | F1: 0.1021 | AUC: 0.4014 | ECE: 0.5620
+1913.2s 346 
+1913.2s 347 Epoch 2/25
+1913.2s 348 ↳ [Metrics] Acc: 0.2547 | Prec: 0.1211 | Rec: 0.1745 | F1: 0.1363 | AUC: 0.4068 | ECE: 0.5428
+1929.6s 349 
+1929.6s 350 Epoch 3/25
+1929.6s 351 ↳ [Metrics] Acc: 0.4057 | Prec: 0.3586 | Rec: 0.3166 | F1: 0.3040 | AUC: 0.6340 | ECE: 0.3732
+1929.6s 352 
+1929.6s 353 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+1947.7s 354 
+1947.7s 355 Epoch 4/25
+1947.7s 356 ↳ [Metrics] Acc: 0.4057 | Prec: 0.3684 | Rec: 0.3370 | F1: 0.3226 | AUC: 0.6674 | ECE: 0.3744
+1965.9s 357 
+1965.9s 358 Epoch 5/25
+1965.9s 359 ↳ [Metrics] Acc: 0.4151 | Prec: 0.3655 | Rec: 0.3404 | F1: 0.3287 | AUC: 0.6618 | ECE: 0.3785
+1983.5s 360 
+1983.5s 361 Epoch 6/25
+1983.5s 362 ↳ [Metrics] Acc: 0.4057 | Prec: 0.4200 | Rec: 0.3680 | F1: 0.3542 | AUC: 0.7178 | ECE: 0.3699
+2001.1s 363 
+2001.1s 364 Epoch 7/25
+2001.1s 365 ↳ [Metrics] Acc: 0.4623 | Prec: 0.5083 | Rec: 0.4416 | F1: 0.4304 | AUC: 0.8109 | ECE: 0.3104
+2018.7s 366 
+2018.7s 367 Epoch 8/25
+2018.7s 368 ↳ [Metrics] Acc: 0.5472 | Prec: 0.5757 | Rec: 0.4783 | F1: 0.4873 | AUC: 0.8325 | ECE: 0.2092
+2036.5s 369 
+2036.5s 370 Epoch 9/25
+2036.5s 371 ↳ [Metrics] Acc: 0.5660 | Prec: 0.6298 | Rec: 0.5102 | F1: 0.5241 | AUC: 0.8554 | ECE: 0.2268
+2054.1s 372 
+2054.1s 373 Epoch 10/25
+2054.1s 374 ↳ [Metrics] Acc: 0.5472 | Prec: 0.5843 | Rec: 0.4958 | F1: 0.4990 | AUC: 0.8692 | ECE: 0.1625
+2054.1s 375 
+2054.1s 376 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+2071.7s 377 
+2071.7s 378 Epoch 11/25
+2071.7s 379 ↳ [Metrics] Acc: 0.4906 | Prec: 0.5282 | Rec: 0.5081 | F1: 0.4645 | AUC: 0.8892 | ECE: 0.1971
+2089.3s 380 
+2089.3s 381 Epoch 12/25
+2089.3s 382 ↳ [Metrics] Acc: 0.6226 | Prec: 0.6635 | Rec: 0.6446 | F1: 0.6058 | AUC: 0.9035 | ECE: 0.1356
+2107.0s 383 
+2107.0s 384 Epoch 13/25
+2107.0s 385 ↳ [Metrics] Acc: 0.5943 | Prec: 0.6361 | Rec: 0.6609 | F1: 0.5950 | AUC: 0.9117 | ECE: 0.1339
+2124.7s 386 
+2124.7s 387 Epoch 14/25
+2124.7s 388 ↳ [Metrics] Acc: 0.6321 | Prec: 0.6598 | Rec: 0.6811 | F1: 0.6238 | AUC: 0.9146 | ECE: 0.1041
+2142.4s 389 
+2142.4s 390 Epoch 15/25
+2142.4s 391 ↳ [Metrics] Acc: 0.6604 | Prec: 0.6975 | Rec: 0.7220 | F1: 0.6673 | AUC: 0.9172 | ECE: 0.0818
+2160.3s 392 
+2160.3s 393 Epoch 16/25
+2160.3s 394 ↳ [Metrics] Acc: 0.6698 | Prec: 0.6854 | Rec: 0.7067 | F1: 0.6598 | AUC: 0.9217 | ECE: 0.0755
+2178.0s 395 
+2178.0s 396 Epoch 17/25
+2178.0s 397 ↳ [Metrics] Acc: 0.6792 | Prec: 0.6872 | Rec: 0.7217 | F1: 0.6801 | AUC: 0.9288 | ECE: 0.0823
+2195.7s 398 
+2195.7s 399 Epoch 18/25
+2195.7s 400 ↳ [Metrics] Acc: 0.6509 | Prec: 0.6780 | Rec: 0.6979 | F1: 0.6519 | AUC: 0.9279 | ECE: 0.0837
+2213.2s 401 
+2213.2s 402 Epoch 19/25
+2213.2s 403 ↳ [Metrics] Acc: 0.6604 | Prec: 0.6803 | Rec: 0.7128 | F1: 0.6619 | AUC: 0.9302 | ECE: 0.0735
+2230.5s 404 
+2230.5s 405 Epoch 20/25
+2230.5s 406 ↳ [Metrics] Acc: 0.6698 | Prec: 0.6969 | Rec: 0.7247 | F1: 0.6699 | AUC: 0.9348 | ECE: 0.0796
+2248.0s 407 
+2248.0s 408 Epoch 21/25
+2248.0s 409 ↳ [Metrics] Acc: 0.6604 | Prec: 0.6697 | Rec: 0.6979 | F1: 0.6498 | AUC: 0.9360 | ECE: 0.0539
+2265.6s 410 
+2265.6s 411 Epoch 22/25
+2265.6s 412 ↳ [Metrics] Acc: 0.6981 | Prec: 0.7265 | Rec: 0.7398 | F1: 0.7077 | AUC: 0.9386 | ECE: 0.0792
+2283.2s 413 
+2283.2s 414 Epoch 23/25
+2283.2s 415 ↳ [Metrics] Acc: 0.6981 | Prec: 0.7126 | Rec: 0.7396 | F1: 0.7021 | AUC: 0.9385 | ECE: 0.0701
+2300.7s 416 
+2300.7s 417 Epoch 24/25
+2300.7s 418 ↳ [Metrics] Acc: 0.6698 | Prec: 0.6855 | Rec: 0.7224 | F1: 0.6710 | AUC: 0.9383 | ECE: 0.0448
+2318.4s 419 
+2318.4s 420 Epoch 25/25
+2318.4s 421 ↳ [Metrics] Acc: 0.6887 | Prec: 0.7094 | Rec: 0.7362 | F1: 0.6942 | AUC: 0.9374 | ECE: 0.0894
+2318.4s 422 
+2318.4s 423 🎯 Best Fold Patient-F1 = 0.7077
+2318.6s 424 
+2318.6s 425 ✅ efficientnetv2_s FINAL OOF EVALUATION:
+2318.6s 426 ↳ [Metrics] Acc: 0.7276 | Prec: 0.7255 | Rec: 0.7385 | F1: 0.7141 | AUC: 0.9411 | ECE: 0.0610
+2318.6s 427 ↳ [Metrics] Acc: 0.7276 | Prec: 0.7255 | Rec: 0.7385 | F1: 0.7141 | AUC: 0.9411 | ECE: 0.0610
+2318.6s 428 
+2318.6s 429 ============================================================
+2318.6s 430 Training: convnext_tiny  (convnext_tiny.in12k_ft_in1k_384)
+2318.6s 431 ============================================================
+2348.6s 432 Fold 1/5 ...
+2348.6s 433 Epoch 1/25
+2348.6s 434 ↳ [Metrics] Acc: 0.1524 | Prec: 0.1340 | Rec: 0.1467 | F1: 0.1233 | AUC: 0.4715 | ECE: 0.1917
+2367.1s 435 
+2367.1s 436 Epoch 2/25
+2367.1s 437 ↳ [Metrics] Acc: 0.1619 | Prec: 0.1382 | Rec: 0.1528 | F1: 0.1291 | AUC: 0.4727 | ECE: 0.1811
+2385.0s 438 
+2385.0s 439 Epoch 3/25
+2385.0s 440 ↳ [Metrics] Acc: 0.5810 | Prec: 0.5758 | Rec: 0.4778 | F1: 0.4835 | AUC: 0.8404 | ECE: 0.1138
+2385.0s 441 
+2385.0s 442 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+2409.7s 443 
+2409.7s 444 Epoch 4/25
+2409.7s 445 ↳ [Metrics] Acc: 0.5905 | Prec: 0.6262 | Rec: 0.4940 | F1: 0.5113 | AUC: 0.8611 | ECE: 0.1161
+2428.9s 446 
+2428.9s 447 Epoch 5/25
+2428.9s 448 ↳ [Metrics] Acc: 0.6571 | Prec: 0.7309 | Rec: 0.5782 | F1: 0.5957 | AUC: 0.8795 | ECE: 0.1744
+2448.0s 449 
+2448.0s 450 Epoch 6/25
+2448.0s 451 ↳ [Metrics] Acc: 0.6762 | Prec: 0.7334 | Rec: 0.6178 | F1: 0.6418 | AUC: 0.9504 | ECE: 0.0605
+2466.9s 452 
+2466.9s 453 Epoch 7/25
+2466.9s 454 ↳ [Metrics] Acc: 0.8095 | Prec: 0.8113 | Rec: 0.7825 | F1: 0.7910 | AUC: 0.9541 | ECE: 0.1881
+2486.0s 455 
+2486.0s 456 Epoch 8/25
+2486.0s 457 ↳ [Metrics] Acc: 0.7429 | Prec: 0.8439 | Rec: 0.6908 | F1: 0.7295 | AUC: 0.9612 | ECE: 0.1366
+2505.3s 458 
+2505.3s 459 Epoch 9/25
+2505.3s 460 ↳ [Metrics] Acc: 0.7524 | Prec: 0.8373 | Rec: 0.7079 | F1: 0.7361 | AUC: 0.9596 | ECE: 0.0534
+2524.7s 461 
+2524.7s 462 Epoch 10/25
+2524.7s 463 ↳ [Metrics] Acc: 0.8286 | Prec: 0.8679 | Rec: 0.7876 | F1: 0.8171 | AUC: 0.9761 | ECE: 0.1266
+2524.7s 464 
+2524.7s 465 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+2544.1s 466 
+2544.1s 467 Epoch 11/25
+2544.1s 468 ↳ [Metrics] Acc: 0.7238 | Prec: 0.7700 | Rec: 0.7174 | F1: 0.6769 | AUC: 0.9567 | ECE: 0.0799
+2563.2s 469 
+2563.2s 470 Epoch 12/25
+2563.2s 471 ↳ [Metrics] Acc: 0.7524 | Prec: 0.7482 | Rec: 0.7823 | F1: 0.7285 | AUC: 0.9631 | ECE: 0.0640
+2581.9s 472 
+2581.9s 473 Epoch 13/25
+2581.9s 474 ↳ [Metrics] Acc: 0.7619 | Prec: 0.7350 | Rec: 0.7574 | F1: 0.7244 | AUC: 0.9605 | ECE: 0.1100
+2600.8s 475 
+2600.8s 476 Epoch 14/25
+2600.8s 477 ↳ [Metrics] Acc: 0.8000 | Prec: 0.7644 | Rec: 0.7807 | F1: 0.7683 | AUC: 0.9623 | ECE: 0.1038
+2620.2s 478 
+2620.2s 479 Epoch 15/25
+2620.2s 480 ↳ [Metrics] Acc: 0.8667 | Prec: 0.8411 | Rec: 0.8461 | F1: 0.8382 | AUC: 0.9636 | ECE: 0.1272
+2639.4s 481 
+2639.4s 482 Epoch 16/25
+2639.4s 483 ↳ [Metrics] Acc: 0.8476 | Prec: 0.8169 | Rec: 0.8383 | F1: 0.8226 | AUC: 0.9690 | ECE: 0.0879
+2658.3s 484 
+2658.3s 485 Epoch 17/25
+2658.3s 486 ↳ [Metrics] Acc: 0.8286 | Prec: 0.8000 | Rec: 0.8149 | F1: 0.7988 | AUC: 0.9747 | ECE: 0.1263
+2677.6s 487 
+2677.6s 488 Epoch 18/25
+2677.6s 489 ↳ [Metrics] Acc: 0.8095 | Prec: 0.7667 | Rec: 0.7879 | F1: 0.7719 | AUC: 0.9673 | ECE: 0.0885
+2697.1s 490 
+2697.1s 491 Epoch 19/25
+2697.1s 492 ↳ [Metrics] Acc: 0.8476 | Prec: 0.8152 | Rec: 0.8278 | F1: 0.8182 | AUC: 0.9709 | ECE: 0.0954
+2716.4s 493 
+2716.4s 494 Epoch 20/25
+2716.4s 495 ↳ [Metrics] Acc: 0.8571 | Prec: 0.8243 | Rec: 0.8342 | F1: 0.8254 | AUC: 0.9701 | ECE: 0.1014
+2735.5s 496 
+2735.5s 497 Epoch 21/25
+2735.5s 498 ↳ [Metrics] Acc: 0.8095 | Prec: 0.7776 | Rec: 0.7900 | F1: 0.7716 | AUC: 0.9695 | ECE: 0.0996
+2754.5s 499 
+2754.5s 500 Epoch 22/25
+2754.5s 501 ↳ [Metrics] Acc: 0.8476 | Prec: 0.8158 | Rec: 0.8278 | F1: 0.8170 | AUC: 0.9740 | ECE: 0.1273
+2773.4s 502 
+2773.4s 503 Epoch 23/25
+2773.4s 504 ↳ [Metrics] Acc: 0.8476 | Prec: 0.8190 | Rec: 0.8278 | F1: 0.8188 | AUC: 0.9735 | ECE: 0.0840
+2792.3s 505 
+2792.3s 506 Epoch 24/25
+2792.3s 507 ↳ [Metrics] Acc: 0.8571 | Prec: 0.8250 | Rec: 0.8342 | F1: 0.8261 | AUC: 0.9734 | ECE: 0.0942
+2812.2s 508 
+2812.2s 509 Epoch 25/25
+2812.2s 510 ↳ [Metrics] Acc: 0.8381 | Prec: 0.8075 | Rec: 0.8213 | F1: 0.8080 | AUC: 0.9735 | ECE: 0.1062
+2812.2s 511 
+2812.2s 512 🎯 Best Fold Patient-F1 = 0.8382
+2831.1s 513 Fold 2/5 ...
+2831.1s 514 Epoch 1/25
+2831.1s 515 ↳ [Metrics] Acc: 0.1154 | Prec: 0.2403 | Rec: 0.1555 | F1: 0.1347 | AUC: 0.5066 | ECE: 0.2432
+2849.7s 516 
+2849.7s 517 Epoch 2/25
+2849.7s 518 ↳ [Metrics] Acc: 0.1154 | Prec: 0.2393 | Rec: 0.1555 | F1: 0.1344 | AUC: 0.5083 | ECE: 0.2422
+2868.2s 519 
+2868.2s 520 Epoch 3/25
+2868.2s 521 ↳ [Metrics] Acc: 0.6346 | Prec: 0.6296 | Rec: 0.5408 | F1: 0.5555 | AUC: 0.8706 | ECE: 0.1751
+2868.2s 522 
+2868.2s 523 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+2888.2s 524 
+2888.2s 525 Epoch 4/25
+2888.2s 526 ↳ [Metrics] Acc: 0.6538 | Prec: 0.6611 | Rec: 0.5351 | F1: 0.5616 | AUC: 0.8807 | ECE: 0.1713
+2907.4s 527 
+2907.4s 528 Epoch 5/25
+2907.4s 529 ↳ [Metrics] Acc: 0.6827 | Prec: 0.6885 | Rec: 0.5626 | F1: 0.5921 | AUC: 0.8925 | ECE: 0.1738
+2926.6s 530 
+2926.6s 531 Epoch 6/25
+2926.6s 532 ↳ [Metrics] Acc: 0.6635 | Prec: 0.6582 | Rec: 0.5044 | F1: 0.5015 | AUC: 0.9365 | ECE: 0.0804
+2946.4s 533 
+2946.4s 534 Epoch 7/25
+2946.4s 535 ↳ [Metrics] Acc: 0.7981 | Prec: 0.8486 | Rec: 0.7039 | F1: 0.7138 | AUC: 0.9560 | ECE: 0.1259
+2965.8s 536 
+2965.8s 537 Epoch 8/25
+2965.8s 538 ↳ [Metrics] Acc: 0.7788 | Prec: 0.8399 | Rec: 0.6806 | F1: 0.7151 | AUC: 0.9553 | ECE: 0.0622
+2985.6s 539 
+2985.6s 540 Epoch 9/25
+2985.6s 541 ↳ [Metrics] Acc: 0.8077 | Prec: 0.8010 | Rec: 0.7546 | F1: 0.7731 | AUC: 0.9512 | ECE: 0.1296
+3005.0s 542 
+3005.0s 543 Epoch 10/25
+3005.0s 544 ↳ [Metrics] Acc: 0.8269 | Prec: 0.8513 | Rec: 0.7871 | F1: 0.8055 | AUC: 0.9756 | ECE: 0.1048
+3005.0s 545 
+3005.0s 546 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+3024.4s 547 
+3024.4s 548 Epoch 11/25
+3024.4s 549 ↳ [Metrics] Acc: 0.7885 | Prec: 0.7742 | Rec: 0.8141 | F1: 0.7599 | AUC: 0.9642 | ECE: 0.0945
+3043.9s 550 
+3043.9s 551 Epoch 12/25
+3043.9s 552 ↳ [Metrics] Acc: 0.8558 | Prec: 0.8455 | Rec: 0.8406 | F1: 0.8374 | AUC: 0.9631 | ECE: 0.1500
+3063.7s 553 
+3063.7s 554 Epoch 13/25
+3063.7s 555 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8139 | Rec: 0.8368 | F1: 0.8107 | AUC: 0.9676 | ECE: 0.1415
+3083.6s 556 
+3083.6s 557 Epoch 14/25
+3083.6s 558 ↳ [Metrics] Acc: 0.7885 | Prec: 0.7829 | Rec: 0.7890 | F1: 0.7686 | AUC: 0.9529 | ECE: 0.0997
+3103.7s 559 
+3103.7s 560 Epoch 15/25
+3103.7s 561 ↳ [Metrics] Acc: 0.7788 | Prec: 0.7707 | Rec: 0.8037 | F1: 0.7681 | AUC: 0.9635 | ECE: 0.1246
+3123.4s 562 
+3123.4s 563 Epoch 16/25
+3123.4s 564 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8120 | Rec: 0.8234 | F1: 0.8032 | AUC: 0.9540 | ECE: 0.1351
+3143.0s 565 
+3143.0s 566 Epoch 17/25
+3143.0s 567 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8211 | Rec: 0.8318 | F1: 0.8231 | AUC: 0.9617 | ECE: 0.1404
+3162.4s 568 
+3162.4s 569 Epoch 18/25
+3162.4s 570 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8007 | Rec: 0.8375 | F1: 0.8131 | AUC: 0.9569 | ECE: 0.1240
+3181.9s 571 
+3181.9s 572 Epoch 19/25
+3181.9s 573 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8033 | Rec: 0.8369 | F1: 0.8131 | AUC: 0.9615 | ECE: 0.1033
+3201.3s 574 
+3201.3s 575 Epoch 20/25
+3201.3s 576 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8106 | Rec: 0.8369 | F1: 0.8151 | AUC: 0.9629 | ECE: 0.1231
+3220.8s 577 
+3220.8s 578 Epoch 21/25
+3220.8s 579 ↳ [Metrics] Acc: 0.8077 | Prec: 0.7914 | Rec: 0.8216 | F1: 0.7921 | AUC: 0.9728 | ECE: 0.1316
+3240.7s 580 
+3240.7s 581 Epoch 22/25
+3240.7s 582 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8116 | Rec: 0.8312 | F1: 0.8149 | AUC: 0.9708 | ECE: 0.1096
+3260.7s 583 
+3260.7s 584 Epoch 23/25
+3260.7s 585 ↳ [Metrics] Acc: 0.8462 | Prec: 0.8328 | Rec: 0.8374 | F1: 0.8261 | AUC: 0.9710 | ECE: 0.1474
+3280.9s 586 
+3280.9s 587 Epoch 24/25
+3280.9s 588 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8139 | Rec: 0.8312 | F1: 0.8150 | AUC: 0.9698 | ECE: 0.1136
+3300.6s 589 
+3300.6s 590 Epoch 25/25
+3300.6s 591 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8139 | Rec: 0.8312 | F1: 0.8150 | AUC: 0.9702 | ECE: 0.1124
+3300.6s 592 
+3300.6s 593 🎯 Best Fold Patient-F1 = 0.8374
+3321.3s 594 Fold 3/5 ...
+3321.3s 595 Epoch 1/25
+3321.3s 596 ↳ [Metrics] Acc: 0.2308 | Prec: 0.2921 | Rec: 0.2863 | F1: 0.2329 | AUC: 0.6760 | ECE: 0.1063
+3339.7s 597 
+3339.7s 598 Epoch 2/25
+3339.7s 599 ↳ [Metrics] Acc: 0.2308 | Prec: 0.2931 | Rec: 0.2863 | F1: 0.2345 | AUC: 0.6769 | ECE: 0.1066
+3358.0s 600 
+3358.0s 601 Epoch 3/25
+3358.0s 602 ↳ [Metrics] Acc: 0.6250 | Prec: 0.6841 | Rec: 0.5089 | F1: 0.5216 | AUC: 0.9054 | ECE: 0.1129
+3358.0s 603 
+3358.0s 604 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+3377.1s 605 
+3377.1s 606 Epoch 4/25
+3377.1s 607 ↳ [Metrics] Acc: 0.6346 | Prec: 0.6736 | Rec: 0.5332 | F1: 0.5470 | AUC: 0.9174 | ECE: 0.1103
+3396.7s 608 
+3396.7s 609 Epoch 5/25
+3396.7s 610 ↳ [Metrics] Acc: 0.6635 | Prec: 0.7034 | Rec: 0.5507 | F1: 0.5694 | AUC: 0.9230 | ECE: 0.1087
+3416.0s 611 
+3416.0s 612 Epoch 6/25
+3416.0s 613 ↳ [Metrics] Acc: 0.6827 | Prec: 0.8350 | Rec: 0.5580 | F1: 0.5856 | AUC: 0.9292 | ECE: 0.0958
+3435.7s 614 
+3435.7s 615 Epoch 7/25
+3435.7s 616 ↳ [Metrics] Acc: 0.7596 | Prec: 0.8067 | Rec: 0.6729 | F1: 0.7089 | AUC: 0.9353 | ECE: 0.0891
+3455.0s 617 
+3455.0s 618 Epoch 8/25
+3455.0s 619 ↳ [Metrics] Acc: 0.7692 | Prec: 0.7659 | Rec: 0.7376 | F1: 0.7404 | AUC: 0.9525 | ECE: 0.1690
+3474.4s 620 
+3474.4s 621 Epoch 9/25
+3474.4s 622 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8220 | Rec: 0.7475 | F1: 0.7672 | AUC: 0.9464 | ECE: 0.0987
+3493.8s 623 
+3493.8s 624 Epoch 10/25
+3493.8s 625 ↳ [Metrics] Acc: 0.8269 | Prec: 0.8348 | Rec: 0.7478 | F1: 0.7735 | AUC: 0.9546 | ECE: 0.0905
+3493.8s 626 
+3493.8s 627 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+3513.0s 628 
+3513.0s 629 Epoch 11/25
+3513.0s 630 ↳ [Metrics] Acc: 0.8173 | Prec: 0.7963 | Rec: 0.8335 | F1: 0.8068 | AUC: 0.9765 | ECE: 0.1300
+3532.7s 631 
+3532.7s 632 Epoch 12/25
+3532.7s 633 ↳ [Metrics] Acc: 0.8750 | Prec: 0.8642 | Rec: 0.8413 | F1: 0.8515 | AUC: 0.9663 | ECE: 0.1554
+3552.3s 634 
+3552.3s 635 Epoch 13/25
+3552.3s 636 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8452 | Rec: 0.8275 | F1: 0.8154 | AUC: 0.9682 | ECE: 0.0792
+3572.0s 637 
+3572.0s 638 Epoch 14/25
+3572.0s 639 ↳ [Metrics] Acc: 0.8173 | Prec: 0.7862 | Rec: 0.8060 | F1: 0.7885 | AUC: 0.9619 | ECE: 0.1439
+3591.4s 640 
+3591.4s 641 Epoch 15/25
+3591.4s 642 ↳ [Metrics] Acc: 0.7981 | Prec: 0.7843 | Rec: 0.8154 | F1: 0.7794 | AUC: 0.9368 | ECE: 0.0747
+3611.1s 643 
+3611.1s 644 Epoch 16/25
+3611.1s 645 ↳ [Metrics] Acc: 0.8654 | Prec: 0.8598 | Rec: 0.8261 | F1: 0.8404 | AUC: 0.9600 | ECE: 0.1486
+3630.5s 646 
+3630.5s 647 Epoch 17/25
+3630.5s 648 ↳ [Metrics] Acc: 0.8462 | Prec: 0.8254 | Rec: 0.8418 | F1: 0.8275 | AUC: 0.9636 | ECE: 0.1275
+3650.2s 649 
+3650.2s 650 Epoch 18/25
+3650.2s 651 ↳ [Metrics] Acc: 0.8077 | Prec: 0.8185 | Rec: 0.8180 | F1: 0.8026 | AUC: 0.9543 | ECE: 0.0972
+3669.9s 652 
+3669.9s 653 Epoch 19/25
+3669.9s 654 ↳ [Metrics] Acc: 0.8654 | Prec: 0.8442 | Rec: 0.8323 | F1: 0.8368 | AUC: 0.9577 | ECE: 0.1480
+3689.4s 655 
+3689.4s 656 Epoch 20/25
+3689.4s 657 ↳ [Metrics] Acc: 0.8558 | Prec: 0.8456 | Rec: 0.8294 | F1: 0.8366 | AUC: 0.9589 | ECE: 0.1612
+3709.0s 658 
+3709.0s 659 Epoch 21/25
+3709.0s 660 ↳ [Metrics] Acc: 0.8558 | Prec: 0.8449 | Rec: 0.8110 | F1: 0.8218 | AUC: 0.9576 | ECE: 0.1459
+3728.5s 661 
+3728.5s 662 Epoch 22/25
+3728.5s 663 ↳ [Metrics] Acc: 0.8654 | Prec: 0.8541 | Rec: 0.8620 | F1: 0.8532 | AUC: 0.9565 | ECE: 0.1355
+3748.4s 664 
+3748.4s 665 Epoch 23/25
+3748.4s 666 ↳ [Metrics] Acc: 0.8846 | Prec: 0.8825 | Rec: 0.8713 | F1: 0.8762 | AUC: 0.9585 | ECE: 0.1535
+3768.1s 667 
+3768.1s 668 Epoch 24/25
+3768.1s 669 ↳ [Metrics] Acc: 0.8846 | Prec: 0.8713 | Rec: 0.8713 | F1: 0.8701 | AUC: 0.9584 | ECE: 0.1592
+3787.8s 670 
+3787.8s 671 Epoch 25/25
+3787.8s 672 ↳ [Metrics] Acc: 0.8750 | Prec: 0.8607 | Rec: 0.8654 | F1: 0.8615 | AUC: 0.9584 | ECE: 0.1630
+3787.8s 673 
+3787.8s 674 🎯 Best Fold Patient-F1 = 0.8762
+3808.1s 675 Fold 4/5 ...
+3808.1s 676 Epoch 1/25
+3808.1s 677 ↳ [Metrics] Acc: 0.0660 | Prec: 0.1140 | Rec: 0.0804 | F1: 0.0674 | AUC: 0.4769 | ECE: 0.2621
+3825.9s 678 
+3825.9s 679 Epoch 2/25
+3825.9s 680 ↳ [Metrics] Acc: 0.0660 | Prec: 0.1140 | Rec: 0.0804 | F1: 0.0674 | AUC: 0.4776 | ECE: 0.2612
+3844.2s 681 
+3844.2s 682 Epoch 3/25
+3844.2s 683 ↳ [Metrics] Acc: 0.6038 | Prec: 0.4991 | Rec: 0.5203 | F1: 0.5040 | AUC: 0.8424 | ECE: 0.1428
+3844.2s 684 
+3844.2s 685 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+3863.6s 686 
+3863.6s 687 Epoch 4/25
+3863.6s 688 ↳ [Metrics] Acc: 0.6698 | Prec: 0.6702 | Rec: 0.5568 | F1: 0.5687 | AUC: 0.8624 | ECE: 0.1769
+3883.1s 689 
+3883.1s 690 Epoch 5/25
+3883.1s 691 ↳ [Metrics] Acc: 0.6887 | Prec: 0.7102 | Rec: 0.6076 | F1: 0.6307 | AUC: 0.8787 | ECE: 0.1717
+3902.0s 692 
+3902.0s 693 Epoch 6/25
+3902.0s 694 ↳ [Metrics] Acc: 0.7358 | Prec: 0.8204 | Rec: 0.6847 | F1: 0.6964 | AUC: 0.9607 | ECE: 0.1781
+3921.7s 695 
+3921.7s 696 Epoch 7/25
+3921.7s 697 ↳ [Metrics] Acc: 0.8302 | Prec: 0.8707 | Rec: 0.7716 | F1: 0.7819 | AUC: 0.9779 | ECE: 0.1909
+3941.2s 698 
+3941.2s 699 Epoch 8/25
+3941.2s 700 ↳ [Metrics] Acc: 0.8113 | Prec: 0.8583 | Rec: 0.7546 | F1: 0.7699 | AUC: 0.9794 | ECE: 0.2418
+3960.6s 701 
+3960.6s 702 Epoch 9/25
+3960.6s 703 ↳ [Metrics] Acc: 0.8491 | Prec: 0.8637 | Rec: 0.8153 | F1: 0.8301 | AUC: 0.9858 | ECE: 0.1487
+3979.8s 704 
+3979.8s 705 Epoch 10/25
+3979.8s 706 ↳ [Metrics] Acc: 0.8868 | Prec: 0.9086 | Rec: 0.8397 | F1: 0.8656 | AUC: 0.9867 | ECE: 0.1442
+3979.8s 707 
+3979.8s 708 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+3998.9s 709 
+3998.9s 710 Epoch 11/25
+3998.9s 711 ↳ [Metrics] Acc: 0.8113 | Prec: 0.8070 | Rec: 0.8414 | F1: 0.7941 | AUC: 0.9844 | ECE: 0.1570
+4017.9s 712 
+4017.9s 713 Epoch 12/25
+4017.9s 714 ↳ [Metrics] Acc: 0.8491 | Prec: 0.8528 | Rec: 0.8466 | F1: 0.8400 | AUC: 0.9866 | ECE: 0.0804
+4037.4s 715 
+4037.4s 716 Epoch 13/25
+4037.4s 717 ↳ [Metrics] Acc: 0.8113 | Prec: 0.8313 | Rec: 0.7938 | F1: 0.7524 | AUC: 0.9850 | ECE: 0.0974
+4057.1s 718 
+4057.1s 719 Epoch 14/25
+4057.1s 720 ↳ [Metrics] Acc: 0.8774 | Prec: 0.8820 | Rec: 0.8607 | F1: 0.8683 | AUC: 0.9896 | ECE: 0.1375
+4077.5s 721 
+4077.5s 722 Epoch 15/25
+4077.5s 723 ↳ [Metrics] Acc: 0.8396 | Prec: 0.8556 | Rec: 0.8271 | F1: 0.8350 | AUC: 0.9863 | ECE: 0.1187
+4097.1s 724 
+4097.1s 725 Epoch 16/25
+4097.1s 726 ↳ [Metrics] Acc: 0.8491 | Prec: 0.8461 | Rec: 0.8441 | F1: 0.8333 | AUC: 0.9738 | ECE: 0.1252
+4116.4s 727 
+4116.4s 728 Epoch 17/25
+4116.4s 729 ↳ [Metrics] Acc: 0.8208 | Prec: 0.8626 | Rec: 0.7622 | F1: 0.7857 | AUC: 0.9887 | ECE: 0.1376
+4135.9s 730 
+4135.9s 731 Epoch 18/25
+4135.9s 732 ↳ [Metrics] Acc: 0.8585 | Prec: 0.9011 | Rec: 0.8213 | F1: 0.8467 | AUC: 0.9915 | ECE: 0.1134
+4155.2s 733 
+4155.2s 734 Epoch 19/25
+4155.2s 735 ↳ [Metrics] Acc: 0.8962 | Prec: 0.9110 | Rec: 0.8865 | F1: 0.8893 | AUC: 0.9921 | ECE: 0.1461
+4174.6s 736 
+4174.6s 737 Epoch 20/25
+4174.6s 738 ↳ [Metrics] Acc: 0.8868 | Prec: 0.9153 | Rec: 0.8732 | F1: 0.8869 | AUC: 0.9921 | ECE: 0.1407
+4193.9s 739 
+4193.9s 740 Epoch 21/25
+4193.9s 741 ↳ [Metrics] Acc: 0.8962 | Prec: 0.9222 | Rec: 0.8883 | F1: 0.8997 | AUC: 0.9916 | ECE: 0.1515
+4213.5s 742 
+4213.5s 743 Epoch 22/25
+4213.5s 744 ↳ [Metrics] Acc: 0.8962 | Prec: 0.9207 | Rec: 0.8801 | F1: 0.8938 | AUC: 0.9923 | ECE: 0.1515
+4233.3s 745 
+4233.3s 746 Epoch 23/25
+4233.3s 747 ↳ [Metrics] Acc: 0.8962 | Prec: 0.9222 | Rec: 0.8883 | F1: 0.8997 | AUC: 0.9920 | ECE: 0.1796
+4253.2s 748 
+4253.2s 749 Epoch 24/25
+4253.2s 750 ↳ [Metrics] Acc: 0.8962 | Prec: 0.9222 | Rec: 0.8883 | F1: 0.8997 | AUC: 0.9918 | ECE: 0.1495
+4273.1s 751 
+4273.1s 752 Epoch 25/25
+4273.1s 753 ↳ [Metrics] Acc: 0.8962 | Prec: 0.9222 | Rec: 0.8883 | F1: 0.8997 | AUC: 0.9920 | ECE: 0.1621
+4273.1s 754 
+4273.1s 755 🎯 Best Fold Patient-F1 = 0.8997
+4294.4s 756 Fold 5/5 ...
+4294.4s 757 Epoch 1/25
+4294.4s 758 ↳ [Metrics] Acc: 0.0943 | Prec: 0.0952 | Rec: 0.1149 | F1: 0.1007 | AUC: 0.3855 | ECE: 0.2288
+4313.6s 759 
+4313.6s 760 Epoch 2/25
+4313.6s 761 ↳ [Metrics] Acc: 0.0943 | Prec: 0.0952 | Rec: 0.1149 | F1: 0.1007 | AUC: 0.3862 | ECE: 0.2286
+4332.5s 762 
+4332.5s 763 Epoch 3/25
+4332.5s 764 ↳ [Metrics] Acc: 0.6509 | Prec: 0.6165 | Rec: 0.5995 | F1: 0.5994 | AUC: 0.8928 | ECE: 0.2088
+4332.5s 765 
+4332.5s 766 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+4353.2s 767 
+4353.2s 768 Epoch 4/25
+4353.2s 769 ↳ [Metrics] Acc: 0.6226 | Prec: 0.5956 | Rec: 0.5231 | F1: 0.5361 | AUC: 0.9104 | ECE: 0.1516
+4373.5s 770 
+4373.5s 771 Epoch 5/25
+4373.5s 772 ↳ [Metrics] Acc: 0.6604 | Prec: 0.6519 | Rec: 0.5916 | F1: 0.6059 | AUC: 0.9271 | ECE: 0.1641
+4393.4s 773 
+4393.4s 774 Epoch 6/25
+4393.4s 775 ↳ [Metrics] Acc: 0.7358 | Prec: 0.7734 | Rec: 0.7046 | F1: 0.7090 | AUC: 0.9483 | ECE: 0.1651
+4413.5s 776 
+4413.5s 777 Epoch 7/25
+4413.5s 778 ↳ [Metrics] Acc: 0.8019 | Prec: 0.8326 | Rec: 0.7082 | F1: 0.7428 | AUC: 0.9781 | ECE: 0.1568
+4434.0s 779 
+4434.0s 780 Epoch 8/25
+4434.0s 781 ↳ [Metrics] Acc: 0.7925 | Prec: 0.8194 | Rec: 0.7699 | F1: 0.7776 | AUC: 0.9619 | ECE: 0.1539
+4454.0s 782 
+4454.0s 783 Epoch 9/25
+4454.0s 784 ↳ [Metrics] Acc: 0.8302 | Prec: 0.7979 | Rec: 0.8370 | F1: 0.8120 | AUC: 0.9737 | ECE: 0.1281
+4474.3s 785 
+4474.3s 786 Epoch 10/25
+4474.3s 787 ↳ [Metrics] Acc: 0.7547 | Prec: 0.8447 | Rec: 0.6867 | F1: 0.7227 | AUC: 0.9760 | ECE: 0.0777
+4474.3s 788 
+4474.3s 789 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+4495.0s 790 
+4495.0s 791 Epoch 11/25
+4495.0s 792 ↳ [Metrics] Acc: 0.7925 | Prec: 0.7936 | Rec: 0.8406 | F1: 0.7865 | AUC: 0.9810 | ECE: 0.1067
+4515.0s 793 
+4515.0s 794 Epoch 12/25
+4515.0s 795 ↳ [Metrics] Acc: 0.8396 | Prec: 0.8187 | Rec: 0.8787 | F1: 0.8345 | AUC: 0.9746 | ECE: 0.0994
+4535.4s 796 
+4535.4s 797 Epoch 13/25
+4535.4s 798 ↳ [Metrics] Acc: 0.8396 | Prec: 0.8185 | Rec: 0.8521 | F1: 0.8256 | AUC: 0.9744 | ECE: 0.0821
+4555.7s 799 
+4555.7s 800 Epoch 14/25
+4555.7s 801 ↳ [Metrics] Acc: 0.8585 | Prec: 0.8306 | Rec: 0.8923 | F1: 0.8508 | AUC: 0.9781 | ECE: 0.1250
+4576.1s 802 
+4576.1s 803 Epoch 15/25
+4576.1s 804 ↳ [Metrics] Acc: 0.8585 | Prec: 0.8427 | Rec: 0.8659 | F1: 0.8422 | AUC: 0.9744 | ECE: 0.0932
+4596.4s 805 
+4596.4s 806 Epoch 16/25
+4596.4s 807 ↳ [Metrics] Acc: 0.8491 | Prec: 0.8303 | Rec: 0.8904 | F1: 0.8423 | AUC: 0.9748 | ECE: 0.1228
+4617.1s 808 
+4617.1s 809 Epoch 17/25
+4617.1s 810 ↳ [Metrics] Acc: 0.8302 | Prec: 0.8297 | Rec: 0.8298 | F1: 0.8184 | AUC: 0.9699 | ECE: 0.0540
+4637.5s 811 
+4637.5s 812 Epoch 18/25
+4637.5s 813 ↳ [Metrics] Acc: 0.8396 | Prec: 0.8161 | Rec: 0.8542 | F1: 0.8212 | AUC: 0.9694 | ECE: 0.0748
+4657.8s 814 
+4657.8s 815 Epoch 19/25
+4657.8s 816 ↳ [Metrics] Acc: 0.8491 | Prec: 0.8356 | Rec: 0.8564 | F1: 0.8377 | AUC: 0.9774 | ECE: 0.1061
+4678.1s 817 
+4678.1s 818 Epoch 20/25
+4678.1s 819 ↳ [Metrics] Acc: 0.8585 | Prec: 0.8466 | Rec: 0.8657 | F1: 0.8474 | AUC: 0.9736 | ECE: 0.0945
+4697.9s 820 
+4697.9s 821 Epoch 21/25
+4697.9s 822 ↳ [Metrics] Acc: 0.8302 | Prec: 0.8218 | Rec: 0.8548 | F1: 0.8208 | AUC: 0.9716 | ECE: 0.1066
+4718.6s 823 
+4718.6s 824 Epoch 22/25
+4718.6s 825 ↳ [Metrics] Acc: 0.8302 | Prec: 0.8167 | Rec: 0.8459 | F1: 0.8156 | AUC: 0.9728 | ECE: 0.0916
+4738.9s 826 
+4738.9s 827 Epoch 23/25
+4738.9s 828 ↳ [Metrics] Acc: 0.8491 | Prec: 0.8291 | Rec: 0.8574 | F1: 0.8322 | AUC: 0.9738 | ECE: 0.0891
+4759.2s 829 
+4759.2s 830 Epoch 24/25
+4759.2s 831 ↳ [Metrics] Acc: 0.8208 | Prec: 0.8114 | Rec: 0.8402 | F1: 0.8074 | AUC: 0.9722 | ECE: 0.0827
+4779.9s 832 
+4779.9s 833 Epoch 25/25
+4779.9s 834 ↳ [Metrics] Acc: 0.8208 | Prec: 0.8114 | Rec: 0.8402 | F1: 0.8074 | AUC: 0.9719 | ECE: 0.0736
+4779.9s 835 
+4779.9s 836 🎯 Best Fold Patient-F1 = 0.8508
+4780.1s 837 
+4780.1s 838 ✅ convnext_tiny FINAL OOF EVALUATION:
+4780.1s 839 ↳ [Metrics] Acc: 0.8743 | Prec: 0.8543 | Rec: 0.8707 | F1: 0.8599 | AUC: 0.9733 | ECE: 0.1323
+4780.1s 840 ↳ [Metrics] Acc: 0.8743 | Prec: 0.8543 | Rec: 0.8707 | F1: 0.8599 | AUC: 0.9733 | ECE: 0.1323
+4780.1s 841 
+4780.1s 842 ============================================================
+4780.1s 843 Training: swin_small  (swin_small_patch4_window7_224)
+4780.1s 844 ============================================================
+4815.9s 845 Fold 1/5 ...
+4815.9s 846 Epoch 1/25
+4815.9s 847 ↳ [Metrics] Acc: 0.2476 | Prec: 0.0610 | Rec: 0.1710 | F1: 0.0855 | AUC: 0.5069 | ECE: 0.0106
+4844.3s 848 
+4844.3s 849 Epoch 2/25
+4844.3s 850 ↳ [Metrics] Acc: 0.2476 | Prec: 0.0610 | Rec: 0.1710 | F1: 0.0855 | AUC: 0.5085 | ECE: 0.0104
+4872.1s 851 
+4872.1s 852 Epoch 3/25
+4872.1s 853 ↳ [Metrics] Acc: 0.4571 | Prec: 0.4621 | Rec: 0.3283 | F1: 0.2948 | AUC: 0.8512 | ECE: 0.1609
+4872.1s 854 
+4872.1s 855 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+4910.0s 856 
+4910.0s 857 Epoch 4/25
+4910.0s 858 ↳ [Metrics] Acc: 0.4857 | Prec: 0.3125 | Rec: 0.3420 | F1: 0.2948 | AUC: 0.8570 | ECE: 0.2404
+4947.4s 859 
+4947.4s 860 Epoch 5/25
+4947.4s 861 ↳ [Metrics] Acc: 0.5048 | Prec: 0.4891 | Rec: 0.3606 | F1: 0.3261 | AUC: 0.8621 | ECE: 0.2265
+4984.8s 862 
+4984.8s 863 Epoch 6/25
+4984.8s 864 ↳ [Metrics] Acc: 0.7333 | Prec: 0.7860 | Rec: 0.6694 | F1: 0.6915 | AUC: 0.9580 | ECE: 0.1511
+5022.5s 865 
+5022.5s 866 Epoch 7/25
+5022.5s 867 ↳ [Metrics] Acc: 0.7429 | Prec: 0.7708 | Rec: 0.7005 | F1: 0.7205 | AUC: 0.9660 | ECE: 0.1201
+5059.9s 868 
+5059.9s 869 Epoch 8/25
+5059.9s 870 ↳ [Metrics] Acc: 0.8000 | Prec: 0.8028 | Rec: 0.7772 | F1: 0.7781 | AUC: 0.9623 | ECE: 0.1730
+5097.3s 871 
+5097.3s 872 Epoch 9/25
+5097.3s 873 ↳ [Metrics] Acc: 0.8190 | Prec: 0.8120 | Rec: 0.7854 | F1: 0.7909 | AUC: 0.9754 | ECE: 0.0662
+5135.1s 874 
+5135.1s 875 Epoch 10/25
+5135.1s 876 ↳ [Metrics] Acc: 0.8762 | Prec: 0.8621 | Rec: 0.8670 | F1: 0.8636 | AUC: 0.9801 | ECE: 0.1079
+5135.1s 877 
+5135.1s 878 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+5172.7s 879 
+5172.7s 880 Epoch 11/25
+5172.7s 881 ↳ [Metrics] Acc: 0.8476 | Prec: 0.8202 | Rec: 0.8486 | F1: 0.8276 | AUC: 0.9656 | ECE: 0.1130
+5210.2s 882 
+5210.2s 883 Epoch 12/25
+5210.2s 884 ↳ [Metrics] Acc: 0.8571 | Prec: 0.8413 | Rec: 0.8620 | F1: 0.8433 | AUC: 0.9637 | ECE: 0.0865
+5247.7s 885 
+5247.7s 886 Epoch 13/25
+5247.7s 887 ↳ [Metrics] Acc: 0.8476 | Prec: 0.8350 | Rec: 0.8501 | F1: 0.8364 | AUC: 0.9816 | ECE: 0.0875
+5285.5s 888 
+5285.5s 889 Epoch 14/25
+5285.5s 890 ↳ [Metrics] Acc: 0.8571 | Prec: 0.8314 | Rec: 0.8565 | F1: 0.8389 | AUC: 0.9799 | ECE: 0.0982
+5322.8s 891 
+5322.8s 892 Epoch 15/25
+5322.8s 893 ↳ [Metrics] Acc: 0.8762 | Prec: 0.8690 | Rec: 0.8936 | F1: 0.8713 | AUC: 0.9804 | ECE: 0.1265
+5360.1s 894 
+5360.1s 895 Epoch 16/25
+5360.1s 896 ↳ [Metrics] Acc: 0.8381 | Prec: 0.8295 | Rec: 0.8327 | F1: 0.8279 | AUC: 0.9786 | ECE: 0.0799
+5397.7s 897 
+5397.7s 898 Epoch 17/25
+5397.7s 899 ↳ [Metrics] Acc: 0.8095 | Prec: 0.7817 | Rec: 0.8071 | F1: 0.7859 | AUC: 0.9781 | ECE: 0.1210
+5435.5s 900 
+5435.5s 901 Epoch 18/25
+5435.5s 902 ↳ [Metrics] Acc: 0.8381 | Prec: 0.8274 | Rec: 0.8382 | F1: 0.8270 | AUC: 0.9786 | ECE: 0.1213
+5472.9s 903 
+5472.9s 904 Epoch 19/25
+5472.9s 905 ↳ [Metrics] Acc: 0.8476 | Prec: 0.8244 | Rec: 0.8504 | F1: 0.8318 | AUC: 0.9802 | ECE: 0.1016
+5510.2s 906 
+5510.2s 907 Epoch 20/25
+5510.2s 908 ↳ [Metrics] Acc: 0.8381 | Prec: 0.8161 | Rec: 0.8385 | F1: 0.8224 | AUC: 0.9801 | ECE: 0.1182
+5547.6s 909 
+5547.6s 910 Epoch 21/25
+5547.6s 911 ↳ [Metrics] Acc: 0.8667 | Prec: 0.8523 | Rec: 0.8574 | F1: 0.8524 | AUC: 0.9805 | ECE: 0.0924
+5584.9s 912 
+5584.9s 913 Epoch 22/25
+5584.9s 914 ↳ [Metrics] Acc: 0.8381 | Prec: 0.8229 | Rec: 0.8382 | F1: 0.8244 | AUC: 0.9795 | ECE: 0.1041
+5622.5s 915 
+5622.5s 916 Epoch 23/25
+5622.5s 917 ↳ [Metrics] Acc: 0.8381 | Prec: 0.8176 | Rec: 0.8385 | F1: 0.8234 | AUC: 0.9768 | ECE: 0.1129
+5660.0s 918 
+5660.0s 919 Epoch 24/25
+5660.0s 920 ↳ [Metrics] Acc: 0.8381 | Prec: 0.8158 | Rec: 0.8385 | F1: 0.8222 | AUC: 0.9775 | ECE: 0.1070
+5697.8s 921 
+5697.8s 922 Epoch 25/25
+5697.8s 923 ↳ [Metrics] Acc: 0.8476 | Prec: 0.8334 | Rec: 0.8446 | F1: 0.8345 | AUC: 0.9778 | ECE: 0.0761
+5697.8s 924 
+5697.8s 925 🎯 Best Fold Patient-F1 = 0.8713
+5728.2s 926 Fold 2/5 ...
+5728.2s 927 Epoch 1/25
+5728.2s 928 ↳ [Metrics] Acc: 0.0769 | Prec: 0.0633 | Rec: 0.0917 | F1: 0.0607 | AUC: 0.4368 | ECE: 0.1544
+5757.3s 929 
+5757.3s 930 Epoch 2/25
+5757.3s 931 ↳ [Metrics] Acc: 0.0769 | Prec: 0.0633 | Rec: 0.0917 | F1: 0.0607 | AUC: 0.4390 | ECE: 0.1539
+5786.5s 932 
+5786.5s 933 Epoch 3/25
+5786.5s 934 ↳ [Metrics] Acc: 0.5673 | Prec: 0.3496 | Rec: 0.3627 | F1: 0.3130 | AUC: 0.8502 | ECE: 0.2349
+5786.5s 935 
+5786.5s 936 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+5825.5s 937 
+5825.5s 938 Epoch 4/25
+5825.5s 939 ↳ [Metrics] Acc: 0.5769 | Prec: 0.3495 | Rec: 0.3676 | F1: 0.3159 | AUC: 0.8561 | ECE: 0.2399
+5864.3s 940 
+5864.3s 941 Epoch 5/25
+5864.3s 942 ↳ [Metrics] Acc: 0.5962 | Prec: 0.3541 | Rec: 0.3843 | F1: 0.3362 | AUC: 0.8602 | ECE: 0.2555
+5902.9s 943 
+5902.9s 944 Epoch 6/25
+5902.9s 945 ↳ [Metrics] Acc: 0.7404 | Prec: 0.7802 | Rec: 0.6631 | F1: 0.6932 | AUC: 0.9510 | ECE: 0.1641
+5941.6s 946 
+5941.6s 947 Epoch 7/25
+5941.6s 948 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8361 | Rec: 0.7801 | F1: 0.7977 | AUC: 0.9654 | ECE: 0.1126
+5980.2s 949 
+5980.2s 950 Epoch 8/25
+5980.2s 951 ↳ [Metrics] Acc: 0.8462 | Prec: 0.8686 | Rec: 0.8260 | F1: 0.8414 | AUC: 0.9779 | ECE: 0.1323
+6018.9s 952 
+6018.9s 953 Epoch 9/25
+6018.9s 954 ↳ [Metrics] Acc: 0.8558 | Prec: 0.8870 | Rec: 0.8113 | F1: 0.8414 | AUC: 0.9807 | ECE: 0.1331
+6057.7s 955 
+6057.7s 956 Epoch 10/25
+6057.7s 957 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8660 | Rec: 0.8399 | F1: 0.8331 | AUC: 0.9844 | ECE: 0.0892
+6057.7s 958 
+6057.7s 959 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+6096.7s 960 
+6096.7s 961 Epoch 11/25
+6096.7s 962 ↳ [Metrics] Acc: 0.8462 | Prec: 0.8152 | Rec: 0.8666 | F1: 0.8287 | AUC: 0.9778 | ECE: 0.1229
+6135.5s 963 
+6135.5s 964 Epoch 12/25
+6135.5s 965 ↳ [Metrics] Acc: 0.8558 | Prec: 0.8387 | Rec: 0.8604 | F1: 0.8332 | AUC: 0.9806 | ECE: 0.1137
+6174.4s 966 
+6174.4s 967 Epoch 13/25
+6174.4s 968 ↳ [Metrics] Acc: 0.8654 | Prec: 0.8356 | Rec: 0.8755 | F1: 0.8469 | AUC: 0.9722 | ECE: 0.1081
+6213.4s 969 
+6213.4s 970 Epoch 14/25
+6213.4s 971 ↳ [Metrics] Acc: 0.8269 | Prec: 0.8175 | Rec: 0.8589 | F1: 0.8255 | AUC: 0.9812 | ECE: 0.0893
+6252.1s 972 
+6252.1s 973 Epoch 15/25
+6252.1s 974 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8232 | Rec: 0.8402 | F1: 0.8247 | AUC: 0.9819 | ECE: 0.1069
+6290.6s 975 
+6290.6s 976 Epoch 16/25
+6290.6s 977 ↳ [Metrics] Acc: 0.8462 | Prec: 0.8190 | Rec: 0.8374 | F1: 0.8242 | AUC: 0.9830 | ECE: 0.1346
+6329.3s 978 
+6329.3s 979 Epoch 17/25
+6329.3s 980 ↳ [Metrics] Acc: 0.8462 | Prec: 0.8116 | Rec: 0.8485 | F1: 0.8232 | AUC: 0.9809 | ECE: 0.0889
+6368.0s 981 
+6368.0s 982 Epoch 18/25
+6368.0s 983 ↳ [Metrics] Acc: 0.8462 | Prec: 0.8203 | Rec: 0.8485 | F1: 0.8276 | AUC: 0.9808 | ECE: 0.1111
+6406.8s 984 
+6406.8s 985 Epoch 19/25
+6406.8s 986 ↳ [Metrics] Acc: 0.8462 | Prec: 0.8165 | Rec: 0.8463 | F1: 0.8231 | AUC: 0.9837 | ECE: 0.0729
+6445.7s 987 
+6445.7s 988 Epoch 20/25
+6445.7s 989 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8127 | Rec: 0.8187 | F1: 0.8100 | AUC: 0.9840 | ECE: 0.1289
+6484.6s 990 
+6484.6s 991 Epoch 21/25
+6484.6s 992 ↳ [Metrics] Acc: 0.8558 | Prec: 0.8453 | Rec: 0.8457 | F1: 0.8383 | AUC: 0.9860 | ECE: 0.1152
+6523.2s 993 
+6523.2s 994 Epoch 22/25
+6523.2s 995 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8058 | Rec: 0.8333 | F1: 0.8134 | AUC: 0.9842 | ECE: 0.1117
+6561.8s 996 
+6561.8s 997 Epoch 23/25
+6561.8s 998 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8149 | Rec: 0.8402 | F1: 0.8200 | AUC: 0.9842 | ECE: 0.1049
+6600.3s 999 
+6600.3s 1000 Epoch 24/25
+6600.3s 1001 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8188 | Rec: 0.8312 | F1: 0.8196 | AUC: 0.9838 | ECE: 0.1396
+6639.3s 1002 
+6639.3s 1003 Epoch 25/25
+6639.3s 1004 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8188 | Rec: 0.8312 | F1: 0.8196 | AUC: 0.9844 | ECE: 0.1431
+6639.3s 1005 
+6639.3s 1006 🎯 Best Fold Patient-F1 = 0.8469
+6669.3s 1007 Fold 3/5 ...
+6669.3s 1008 Epoch 1/25
+6669.3s 1009 ↳ [Metrics] Acc: 0.1250 | Prec: 0.1158 | Rec: 0.1838 | F1: 0.0809 | AUC: 0.5266 | ECE: 0.0997
+6698.6s 1010 
+6698.6s 1011 Epoch 2/25
+6698.6s 1012 ↳ [Metrics] Acc: 0.1250 | Prec: 0.1158 | Rec: 0.1838 | F1: 0.0809 | AUC: 0.5282 | ECE: 0.0992
+6727.3s 1013 
+6727.3s 1014 Epoch 3/25
+6727.3s 1015 ↳ [Metrics] Acc: 0.5192 | Prec: 0.5002 | Rec: 0.3544 | F1: 0.3367 | AUC: 0.8595 | ECE: 0.1852
+6727.3s 1016 
+6727.3s 1017 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+6765.7s 1018 
+6765.7s 1019 Epoch 4/25
+6765.7s 1020 ↳ [Metrics] Acc: 0.5288 | Prec: 0.4997 | Rec: 0.3631 | F1: 0.3455 | AUC: 0.8674 | ECE: 0.1912
+6804.3s 1021 
+6804.3s 1022 Epoch 5/25
+6804.3s 1023 ↳ [Metrics] Acc: 0.5288 | Prec: 0.4997 | Rec: 0.3631 | F1: 0.3455 | AUC: 0.8715 | ECE: 0.1866
+6842.6s 1024 
+6842.6s 1025 Epoch 6/25
+6842.6s 1026 ↳ [Metrics] Acc: 0.7788 | Prec: 0.8554 | Rec: 0.6753 | F1: 0.7084 | AUC: 0.9609 | ECE: 0.1918
+6881.0s 1027 
+6881.0s 1028 Epoch 7/25
+6881.0s 1029 ↳ [Metrics] Acc: 0.8077 | Prec: 0.8266 | Rec: 0.7138 | F1: 0.7457 | AUC: 0.9622 | ECE: 0.1196
+6919.4s 1030 
+6919.4s 1031 Epoch 8/25
+6919.4s 1032 ↳ [Metrics] Acc: 0.8077 | Prec: 0.8507 | Rec: 0.7701 | F1: 0.7880 | AUC: 0.9698 | ECE: 0.2336
+6957.5s 1033 
+6957.5s 1034 Epoch 9/25
+6957.5s 1035 ↳ [Metrics] Acc: 0.8654 | Prec: 0.8803 | Rec: 0.8011 | F1: 0.8302 | AUC: 0.9744 | ECE: 0.2237
+6995.7s 1036 
+6995.7s 1037 Epoch 10/25
+6995.7s 1038 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8654 | Rec: 0.7288 | F1: 0.7626 | AUC: 0.9753 | ECE: 0.0893
+6995.7s 1039 
+6995.7s 1040 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+7033.9s 1041 
+7033.9s 1042 Epoch 11/25
+7033.9s 1043 ↳ [Metrics] Acc: 0.8558 | Prec: 0.8226 | Rec: 0.8657 | F1: 0.8372 | AUC: 0.9771 | ECE: 0.1719
+7072.1s 1044 
+7072.1s 1045 Epoch 12/25
+7072.1s 1046 ↳ [Metrics] Acc: 0.8750 | Prec: 0.8774 | Rec: 0.8495 | F1: 0.8581 | AUC: 0.9704 | ECE: 0.1240
+7110.6s 1047 
+7110.6s 1048 Epoch 13/25
+7110.6s 1049 ↳ [Metrics] Acc: 0.8654 | Prec: 0.8445 | Rec: 0.8325 | F1: 0.8354 | AUC: 0.9823 | ECE: 0.1475
+7149.0s 1050 
+7149.0s 1051 Epoch 14/25
+7149.0s 1052 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8099 | Rec: 0.7569 | F1: 0.7739 | AUC: 0.9761 | ECE: 0.0951
+7187.5s 1053 
+7187.5s 1054 Epoch 15/25
+7187.5s 1055 ↳ [Metrics] Acc: 0.8846 | Prec: 0.9068 | Rec: 0.8289 | F1: 0.8521 | AUC: 0.9819 | ECE: 0.1370
+7225.7s 1056 
+7225.7s 1057 Epoch 16/25
+7225.7s 1058 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8472 | Rec: 0.7566 | F1: 0.7798 | AUC: 0.9813 | ECE: 0.1162
+7263.7s 1059 
+7263.7s 1060 Epoch 17/25
+7263.7s 1061 ↳ [Metrics] Acc: 0.8942 | Prec: 0.8888 | Rec: 0.8681 | F1: 0.8713 | AUC: 0.9790 | ECE: 0.1381
+7302.2s 1062 
+7302.2s 1063 Epoch 18/25
+7302.2s 1064 ↳ [Metrics] Acc: 0.8654 | Prec: 0.8759 | Rec: 0.8043 | F1: 0.8292 | AUC: 0.9808 | ECE: 0.1225
+7340.3s 1065 
+7340.3s 1066 Epoch 19/25
+7340.3s 1067 ↳ [Metrics] Acc: 0.8750 | Prec: 0.9054 | Rec: 0.7953 | F1: 0.8249 | AUC: 0.9793 | ECE: 0.1162
+7378.5s 1068 
+7378.5s 1069 Epoch 20/25
+7378.5s 1070 ↳ [Metrics] Acc: 0.8846 | Prec: 0.8992 | Rec: 0.8289 | F1: 0.8488 | AUC: 0.9827 | ECE: 0.1539
+7416.9s 1071 
+7416.9s 1072 Epoch 21/25
+7416.9s 1073 ↳ [Metrics] Acc: 0.9038 | Prec: 0.9156 | Rec: 0.8649 | F1: 0.8807 | AUC: 0.9833 | ECE: 0.1464
+7455.0s 1074 
+7455.0s 1075 Epoch 22/25
+7455.0s 1076 ↳ [Metrics] Acc: 0.8654 | Prec: 0.8910 | Rec: 0.8135 | F1: 0.8407 | AUC: 0.9830 | ECE: 0.1250
+7493.2s 1077 
+7493.2s 1078 Epoch 23/25
+7493.2s 1079 ↳ [Metrics] Acc: 0.9038 | Prec: 0.9121 | Rec: 0.8706 | F1: 0.8872 | AUC: 0.9842 | ECE: 0.1545
+7531.7s 1080 
+7531.7s 1081 Epoch 24/25
+7531.7s 1082 ↳ [Metrics] Acc: 0.9038 | Prec: 0.9121 | Rec: 0.8706 | F1: 0.8872 | AUC: 0.9829 | ECE: 0.1544
+7570.2s 1083 
+7570.2s 1084 Epoch 25/25
+7570.2s 1085 ↳ [Metrics] Acc: 0.8942 | Prec: 0.9022 | Rec: 0.8554 | F1: 0.8746 | AUC: 0.9832 | ECE: 0.1389
+7570.2s 1086 
+7570.2s 1087 🎯 Best Fold Patient-F1 = 0.8872
+7598.7s 1088 Fold 4/5 ...
+7598.7s 1089 Epoch 1/25
+7598.7s 1090 ↳ [Metrics] Acc: 0.0943 | Prec: 0.0840 | Rec: 0.0842 | F1: 0.0825 | AUC: 0.4779 | ECE: 0.1132
+7626.8s 1091 
+7626.8s 1092 Epoch 2/25
+7626.8s 1093 ↳ [Metrics] Acc: 0.0943 | Prec: 0.0847 | Rec: 0.0842 | F1: 0.0829 | AUC: 0.4800 | ECE: 0.1132
+7654.6s 1094 
+7654.6s 1095 Epoch 3/25
+7654.6s 1096 ↳ [Metrics] Acc: 0.5377 | Prec: 0.3285 | Rec: 0.3727 | F1: 0.3230 | AUC: 0.8291 | ECE: 0.2131
+7654.6s 1097 
+7654.6s 1098 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+7692.5s 1099 
+7692.5s 1100 Epoch 4/25
+7692.5s 1101 ↳ [Metrics] Acc: 0.5472 | Prec: 0.3344 | Rec: 0.3796 | F1: 0.3293 | AUC: 0.8343 | ECE: 0.2155
+7730.5s 1102 
+7730.5s 1103 Epoch 5/25
+7730.5s 1104 ↳ [Metrics] Acc: 0.5472 | Prec: 0.3344 | Rec: 0.3796 | F1: 0.3293 | AUC: 0.8427 | ECE: 0.2104
+7768.2s 1105 
+7768.2s 1106 Epoch 6/25
+7768.2s 1107 ↳ [Metrics] Acc: 0.7642 | Prec: 0.8016 | Rec: 0.6828 | F1: 0.7118 | AUC: 0.9643 | ECE: 0.1538
+7805.7s 1108 
+7805.7s 1109 Epoch 7/25
+7805.7s 1110 ↳ [Metrics] Acc: 0.8302 | Prec: 0.8390 | Rec: 0.7871 | F1: 0.7963 | AUC: 0.9764 | ECE: 0.1296
+7843.5s 1111 
+7843.5s 1112 Epoch 8/25
+7843.5s 1113 ↳ [Metrics] Acc: 0.7925 | Prec: 0.8357 | Rec: 0.6972 | F1: 0.7215 | AUC: 0.9719 | ECE: 0.0771
+7881.3s 1114 
+7881.3s 1115 Epoch 9/25
+7881.3s 1116 ↳ [Metrics] Acc: 0.7925 | Prec: 0.8964 | Rec: 0.6672 | F1: 0.6954 | AUC: 0.9700 | ECE: 0.1251
+7919.4s 1117 
+7919.4s 1118 Epoch 10/25
+7919.4s 1119 ↳ [Metrics] Acc: 0.8679 | Prec: 0.8900 | Rec: 0.8376 | F1: 0.8557 | AUC: 0.9752 | ECE: 0.1177
+7919.4s 1120 
+7919.4s 1121 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+7957.3s 1122 
+7957.3s 1123 Epoch 11/25
+7957.3s 1124 ↳ [Metrics] Acc: 0.8585 | Prec: 0.8587 | Rec: 0.8518 | F1: 0.8412 | AUC: 0.9771 | ECE: 0.1086
+7995.2s 1125 
+7995.2s 1126 Epoch 12/25
+7995.2s 1127 ↳ [Metrics] Acc: 0.8774 | Prec: 0.8718 | Rec: 0.8394 | F1: 0.8525 | AUC: 0.9792 | ECE: 0.1153
+8033.1s 1128 
+8033.1s 1129 Epoch 13/25
+8033.1s 1130 ↳ [Metrics] Acc: 0.8868 | Prec: 0.8892 | Rec: 0.8628 | F1: 0.8715 | AUC: 0.9885 | ECE: 0.1117
+8071.2s 1131 
+8071.2s 1132 Epoch 14/25
+8071.2s 1133 ↳ [Metrics] Acc: 0.8679 | Prec: 0.8709 | Rec: 0.8362 | F1: 0.8424 | AUC: 0.9896 | ECE: 0.1398
+8109.1s 1134 
+8109.1s 1135 Epoch 15/25
+8109.1s 1136 ↳ [Metrics] Acc: 0.8774 | Prec: 0.8894 | Rec: 0.8528 | F1: 0.8642 | AUC: 0.9851 | ECE: 0.1003
+8146.9s 1137 
+8146.9s 1138 Epoch 16/25
+8146.9s 1139 ↳ [Metrics] Acc: 0.8868 | Prec: 0.8765 | Rec: 0.8677 | F1: 0.8695 | AUC: 0.9801 | ECE: 0.1041
+8184.8s 1140 
+8184.8s 1141 Epoch 17/25
+8184.8s 1142 ↳ [Metrics] Acc: 0.8962 | Prec: 0.8915 | Rec: 0.8862 | F1: 0.8861 | AUC: 0.9787 | ECE: 0.1077
+8222.8s 1143 
+8222.8s 1144 Epoch 18/25
+8222.8s 1145 ↳ [Metrics] Acc: 0.8962 | Prec: 0.8980 | Rec: 0.8862 | F1: 0.8896 | AUC: 0.9816 | ECE: 0.1319
+8260.6s 1146 
+8260.6s 1147 Epoch 19/25
+8260.6s 1148 ↳ [Metrics] Acc: 0.8962 | Prec: 0.8980 | Rec: 0.8862 | F1: 0.8896 | AUC: 0.9831 | ECE: 0.1400
+8298.6s 1149 
+8298.6s 1150 Epoch 20/25
+8298.6s 1151 ↳ [Metrics] Acc: 0.8962 | Prec: 0.8915 | Rec: 0.8862 | F1: 0.8861 | AUC: 0.9826 | ECE: 0.1251
+8336.5s 1152 
+8336.5s 1153 Epoch 21/25
+8336.5s 1154 ↳ [Metrics] Acc: 0.8774 | Prec: 0.8855 | Rec: 0.8510 | F1: 0.8640 | AUC: 0.9818 | ECE: 0.1302
+8374.4s 1155 
+8374.4s 1156 Epoch 22/25
+8374.4s 1157 ↳ [Metrics] Acc: 0.8962 | Prec: 0.8980 | Rec: 0.8862 | F1: 0.8896 | AUC: 0.9831 | ECE: 0.1241
+8412.5s 1158 
+8412.5s 1159 Epoch 23/25
+8412.5s 1160 ↳ [Metrics] Acc: 0.8962 | Prec: 0.8980 | Rec: 0.8862 | F1: 0.8896 | AUC: 0.9832 | ECE: 0.1151
+8450.5s 1161 
+8450.5s 1162 Epoch 24/25
+8450.5s 1163 ↳ [Metrics] Acc: 0.8962 | Prec: 0.8980 | Rec: 0.8862 | F1: 0.8896 | AUC: 0.9854 | ECE: 0.1222
+8488.8s 1164 
+8488.8s 1165 Epoch 25/25
+8488.8s 1166 ↳ [Metrics] Acc: 0.8962 | Prec: 0.8980 | Rec: 0.8862 | F1: 0.8896 | AUC: 0.9853 | ECE: 0.1374
+8488.8s 1167 
+8488.8s 1168 🎯 Best Fold Patient-F1 = 0.8896
+8519.5s 1169 Fold 5/5 ...
+8519.5s 1170 Epoch 1/25
+8519.5s 1171 ↳ [Metrics] Acc: 0.1321 | Prec: 0.1433 | Rec: 0.2079 | F1: 0.1265 | AUC: 0.4512 | ECE: 0.0756
+8549.6s 1172 
+8549.6s 1173 Epoch 2/25
+8549.6s 1174 ↳ [Metrics] Acc: 0.1321 | Prec: 0.1384 | Rec: 0.2079 | F1: 0.1249 | AUC: 0.4531 | ECE: 0.0754
+8579.4s 1175 
+8579.4s 1176 Epoch 3/25
+8579.4s 1177 ↳ [Metrics] Acc: 0.5849 | Prec: 0.4451 | Rec: 0.4161 | F1: 0.4054 | AUC: 0.8812 | ECE: 0.2821
+8579.4s 1178 
+8579.4s 1179 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+8618.9s 1180 
+8618.9s 1181 Epoch 4/25
+8618.9s 1182 ↳ [Metrics] Acc: 0.5943 | Prec: 0.4543 | Rec: 0.4220 | F1: 0.4125 | AUC: 0.8895 | ECE: 0.2844
+8658.6s 1183 
+8658.6s 1184 Epoch 5/25
+8658.6s 1185 ↳ [Metrics] Acc: 0.6038 | Prec: 0.4570 | Rec: 0.4280 | F1: 0.4173 | AUC: 0.8969 | ECE: 0.2858
+8697.9s 1186 
+8697.9s 1187 Epoch 6/25
+8697.9s 1188 ↳ [Metrics] Acc: 0.7358 | Prec: 0.7372 | Rec: 0.6876 | F1: 0.6973 | AUC: 0.9614 | ECE: 0.1149
+8737.2s 1189 
+8737.2s 1190 Epoch 7/25
+8737.2s 1191 ↳ [Metrics] Acc: 0.8302 | Prec: 0.8101 | Rec: 0.8173 | F1: 0.8020 | AUC: 0.9730 | ECE: 0.1557
+8776.8s 1192 
+8776.8s 1193 Epoch 8/25
+8776.8s 1194 ↳ [Metrics] Acc: 0.8585 | Prec: 0.8294 | Rec: 0.8689 | F1: 0.8417 | AUC: 0.9795 | ECE: 0.1518
+8816.1s 1195 
+8816.1s 1196 Epoch 9/25
+8816.1s 1197 ↳ [Metrics] Acc: 0.8208 | Prec: 0.8189 | Rec: 0.8600 | F1: 0.8230 | AUC: 0.9721 | ECE: 0.0985
+8855.7s 1198 
+8855.7s 1199 Epoch 10/25
+8855.7s 1200 ↳ [Metrics] Acc: 0.8774 | Prec: 0.8697 | Rec: 0.8703 | F1: 0.8674 | AUC: 0.9713 | ECE: 0.1197
+8855.7s 1201 
+8855.7s 1202 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+8895.2s 1203 
+8895.2s 1204 Epoch 11/25
+8895.2s 1205 ↳ [Metrics] Acc: 0.8208 | Prec: 0.8109 | Rec: 0.8521 | F1: 0.8135 | AUC: 0.9744 | ECE: 0.0583
+8934.7s 1206 
+8934.7s 1207 Epoch 12/25
+8934.7s 1208 ↳ [Metrics] Acc: 0.8491 | Prec: 0.8196 | Rec: 0.8729 | F1: 0.8342 | AUC: 0.9804 | ECE: 0.0856
+8974.5s 1209 
+8974.5s 1210 Epoch 13/25
+8974.5s 1211 ↳ [Metrics] Acc: 0.8868 | Prec: 0.8825 | Rec: 0.8975 | F1: 0.8846 | AUC: 0.9743 | ECE: 0.0954
+9014.0s 1212 
+9014.0s 1213 Epoch 14/25
+9014.0s 1214 ↳ [Metrics] Acc: 0.8679 | Prec: 0.8481 | Rec: 0.8896 | F1: 0.8588 | AUC: 0.9778 | ECE: 0.0913
+9053.4s 1215 
+9053.4s 1216 Epoch 15/25
+9053.4s 1217 ↳ [Metrics] Acc: 0.8302 | Prec: 0.8124 | Rec: 0.8602 | F1: 0.8196 | AUC: 0.9737 | ECE: 0.0932
+9092.9s 1218 
+9092.9s 1219 Epoch 16/25
+9092.9s 1220 ↳ [Metrics] Acc: 0.8208 | Prec: 0.8210 | Rec: 0.8608 | F1: 0.8180 | AUC: 0.9737 | ECE: 0.1119
+9132.6s 1221 
+9132.6s 1222 Epoch 17/25
+9132.6s 1223 ↳ [Metrics] Acc: 0.8302 | Prec: 0.8257 | Rec: 0.8666 | F1: 0.8258 | AUC: 0.9727 | ECE: 0.0974
+9172.4s 1224 
+9172.4s 1225 Epoch 18/25
+9172.4s 1226 ↳ [Metrics] Acc: 0.8585 | Prec: 0.8416 | Rec: 0.8838 | F1: 0.8505 | AUC: 0.9791 | ECE: 0.1334
+9211.9s 1227 
+9211.9s 1228 Epoch 19/25
+9211.9s 1229 ↳ [Metrics] Acc: 0.8302 | Prec: 0.8331 | Rec: 0.8817 | F1: 0.8326 | AUC: 0.9719 | ECE: 0.1006
+9251.3s 1230 
+9251.3s 1231 Epoch 20/25
+9251.3s 1232 ↳ [Metrics] Acc: 0.8585 | Prec: 0.8490 | Rec: 0.8989 | F1: 0.8580 | AUC: 0.9744 | ECE: 0.1148
+9290.7s 1233 
+9290.7s 1234 Epoch 21/25
+9290.7s 1235 ↳ [Metrics] Acc: 0.8679 | Prec: 0.8537 | Rec: 0.9046 | F1: 0.8651 | AUC: 0.9737 | ECE: 0.1130
+9330.3s 1236 
+9330.3s 1237 Epoch 22/25
+9330.3s 1238 ↳ [Metrics] Acc: 0.8585 | Prec: 0.8319 | Rec: 0.8838 | F1: 0.8448 | AUC: 0.9747 | ECE: 0.1162
+9369.9s 1239 
+9369.9s 1240 Epoch 23/25
+9369.9s 1241 ↳ [Metrics] Acc: 0.8774 | Prec: 0.8602 | Rec: 0.9104 | F1: 0.8734 | AUC: 0.9734 | ECE: 0.1233
+9409.6s 1242 
+9409.6s 1243 Epoch 24/25
+9409.6s 1244 ↳ [Metrics] Acc: 0.8679 | Prec: 0.8481 | Rec: 0.8896 | F1: 0.8588 | AUC: 0.9738 | ECE: 0.1256
+9449.5s 1245 
+9449.5s 1246 Epoch 25/25
+9449.5s 1247 ↳ [Metrics] Acc: 0.8585 | Prec: 0.8319 | Rec: 0.8838 | F1: 0.8448 | AUC: 0.9743 | ECE: 0.1201
+9449.5s 1248 
+9449.5s 1249 🎯 Best Fold Patient-F1 = 0.8846
+9449.7s 1250 
+9449.7s 1251 ✅ swin_small FINAL OOF EVALUATION:
+9449.7s 1252 ↳ [Metrics] Acc: 0.8857 | Prec: 0.8770 | Rec: 0.8766 | F1: 0.8751 | AUC: 0.9825 | ECE: 0.1247
+9449.7s 1253 ↳ [Metrics] Acc: 0.8857 | Prec: 0.8770 | Rec: 0.8766 | F1: 0.8751 | AUC: 0.9825 | ECE: 0.1247
+9449.7s 1254 
+9449.7s 1255 ============================================================
+9449.7s 1256 Training: beit_base  (beit_base_patch16_384)
+9449.7s 1257 ============================================================
+9490.1s 1258 Fold 1/5 ...
+9490.1s 1259 Epoch 1/25
+9490.1s 1260 ↳ [Metrics] Acc: 0.2476 | Prec: 0.0413 | Rec: 0.1667 | F1: 0.0662 | AUC: 0.5469 | ECE: 0.0794
+9523.0s 1261 
+9523.0s 1262 Epoch 2/25
+9523.0s 1263 ↳ [Metrics] Acc: 0.2476 | Prec: 0.0413 | Rec: 0.1667 | F1: 0.0662 | AUC: 0.5742 | ECE: 0.0777
+9555.2s 1264 
+9555.2s 1265 Epoch 3/25
+9555.2s 1266 ↳ [Metrics] Acc: 0.2857 | Prec: 0.2448 | Rec: 0.2016 | F1: 0.1353 | AUC: 0.6704 | ECE: 0.1159
+9555.2s 1267 
+9555.2s 1268 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+9602.2s 1269 
+9602.2s 1270 Epoch 4/25
+9602.2s 1271 ↳ [Metrics] Acc: 0.3429 | Prec: 0.1918 | Rec: 0.2379 | F1: 0.1846 | AUC: 0.6994 | ECE: 0.0621
+9648.6s 1272 
+9648.6s 1273 Epoch 5/25
+9648.6s 1274 ↳ [Metrics] Acc: 0.3429 | Prec: 0.1835 | Rec: 0.2375 | F1: 0.1855 | AUC: 0.7093 | ECE: 0.0585
+9695.1s 1275 
+9695.1s 1276 Epoch 6/25
+9695.1s 1277 ↳ [Metrics] Acc: 0.3048 | Prec: 0.1871 | Rec: 0.2037 | F1: 0.1287 | AUC: 0.7329 | ECE: 0.0379
+9740.9s 1278 
+9740.9s 1279 Epoch 7/25
+9740.9s 1280 ↳ [Metrics] Acc: 0.3429 | Prec: 0.1753 | Rec: 0.2284 | F1: 0.1568 | AUC: 0.7233 | ECE: 0.0610
+9787.0s 1281 
+9787.0s 1282 Epoch 8/25
+9787.0s 1283 ↳ [Metrics] Acc: 0.4095 | Prec: 0.1477 | Rec: 0.2707 | F1: 0.1874 | AUC: 0.8081 | ECE: 0.1332
+9833.1s 1284 
+9833.1s 1285 Epoch 9/25
+9833.1s 1286 ↳ [Metrics] Acc: 0.4857 | Prec: 0.3776 | Rec: 0.3907 | F1: 0.3401 | AUC: 0.8266 | ECE: 0.0895
+9879.7s 1287 
+9879.7s 1288 Epoch 10/25
+9879.7s 1289 ↳ [Metrics] Acc: 0.4952 | Prec: 0.7392 | Rec: 0.4076 | F1: 0.4018 | AUC: 0.8711 | ECE: 0.0877
+9879.7s 1290 
+9879.7s 1291 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+9926.2s 1292 
+9926.2s 1293 Epoch 11/25
+9926.2s 1294 ↳ [Metrics] Acc: 0.5905 | Prec: 0.6685 | Rec: 0.5558 | F1: 0.5449 | AUC: 0.9107 | ECE: 0.1047
+9973.0s 1295 
+9973.0s 1296 Epoch 12/25
+9973.0s 1297 ↳ [Metrics] Acc: 0.6857 | Prec: 0.6796 | Rec: 0.7264 | F1: 0.6691 | AUC: 0.9377 | ECE: 0.1801
+10019.2s 1298 
+10019.2s 1299 Epoch 13/25
+10019.2s 1300 ↳ [Metrics] Acc: 0.6476 | Prec: 0.6304 | Rec: 0.6402 | F1: 0.6214 | AUC: 0.9185 | ECE: 0.1729
+10065.9s 1301 
+10065.9s 1302 Epoch 14/25
+10065.9s 1303 ↳ [Metrics] Acc: 0.6952 | Prec: 0.6881 | Rec: 0.7196 | F1: 0.6782 | AUC: 0.9578 | ECE: 0.1028
+10112.3s 1304 
+10112.3s 1305 Epoch 15/25
+10112.3s 1306 ↳ [Metrics] Acc: 0.7238 | Prec: 0.7323 | Rec: 0.7716 | F1: 0.7172 | AUC: 0.9631 | ECE: 0.0800
+10158.6s 1307 
+10158.6s 1308 Epoch 16/25
+10158.6s 1309 ↳ [Metrics] Acc: 0.7905 | Prec: 0.7937 | Rec: 0.7883 | F1: 0.7741 | AUC: 0.9619 | ECE: 0.0894
+10205.2s 1310 
+10205.2s 1311 Epoch 17/25
+10205.2s 1312 ↳ [Metrics] Acc: 0.8286 | Prec: 0.7912 | Rec: 0.8052 | F1: 0.7943 | AUC: 0.9721 | ECE: 0.0791
+10251.6s 1313 
+10251.6s 1314 Epoch 18/25
+10251.6s 1315 ↳ [Metrics] Acc: 0.7905 | Prec: 0.7698 | Rec: 0.7969 | F1: 0.7744 | AUC: 0.9611 | ECE: 0.0992
+10297.8s 1316 
+10297.8s 1317 Epoch 19/25
+10297.8s 1318 ↳ [Metrics] Acc: 0.7619 | Prec: 0.7348 | Rec: 0.7417 | F1: 0.7266 | AUC: 0.9641 | ECE: 0.0814
+10344.2s 1319 
+10344.2s 1320 Epoch 20/25
+10344.2s 1321 ↳ [Metrics] Acc: 0.8190 | Prec: 0.7895 | Rec: 0.8059 | F1: 0.7947 | AUC: 0.9606 | ECE: 0.1312
+10390.3s 1322 
+10390.3s 1323 Epoch 21/25
+10390.3s 1324 ↳ [Metrics] Acc: 0.8095 | Prec: 0.7778 | Rec: 0.7735 | F1: 0.7714 | AUC: 0.9660 | ECE: 0.0690
+10436.9s 1325 
+10436.9s 1326 Epoch 22/25
+10436.9s 1327 ↳ [Metrics] Acc: 0.8190 | Prec: 0.7938 | Rec: 0.7902 | F1: 0.7873 | AUC: 0.9713 | ECE: 0.0554
+10483.1s 1328 
+10483.1s 1329 Epoch 23/25
+10483.1s 1330 ↳ [Metrics] Acc: 0.8190 | Prec: 0.7878 | Rec: 0.7936 | F1: 0.7859 | AUC: 0.9710 | ECE: 0.0631
+10529.2s 1331 
+10529.2s 1332 Epoch 24/25
+10529.2s 1333 ↳ [Metrics] Acc: 0.8286 | Prec: 0.7984 | Rec: 0.8023 | F1: 0.7970 | AUC: 0.9715 | ECE: 0.0698
+10575.7s 1334 
+10575.7s 1335 Epoch 25/25
+10575.7s 1336 ↳ [Metrics] Acc: 0.8381 | Prec: 0.8127 | Rec: 0.8085 | F1: 0.8072 | AUC: 0.9724 | ECE: 0.0620
+10575.7s 1337 
+10575.7s 1338 🎯 Best Fold Patient-F1 = 0.8072
+10612.0s 1339 Fold 2/5 ...
+10612.0s 1340 Epoch 1/25
+10612.0s 1341 ↳ [Metrics] Acc: 0.2596 | Prec: 0.0437 | Rec: 0.1667 | F1: 0.0692 | AUC: 0.6120 | ECE: 0.0914
+10647.0s 1342 
+10647.0s 1343 Epoch 2/25
+10647.0s 1344 ↳ [Metrics] Acc: 0.2596 | Prec: 0.0433 | Rec: 0.1667 | F1: 0.0687 | AUC: 0.6129 | ECE: 0.0898
+10682.2s 1345 
+10682.2s 1346 Epoch 3/25
+10682.2s 1347 ↳ [Metrics] Acc: 0.3558 | Prec: 0.1987 | Rec: 0.2352 | F1: 0.1966 | AUC: 0.7177 | ECE: 0.0545
+10682.2s 1348 
+10682.2s 1349 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+10730.9s 1350 
+10730.9s 1351 Epoch 4/25
+10730.9s 1352 ↳ [Metrics] Acc: 0.3942 | Prec: 0.2214 | Rec: 0.2574 | F1: 0.2199 | AUC: 0.7484 | ECE: 0.1041
+10779.5s 1353 
+10779.5s 1354 Epoch 5/25
+10779.5s 1355 ↳ [Metrics] Acc: 0.4519 | Prec: 0.2364 | Rec: 0.2907 | F1: 0.2481 | AUC: 0.7659 | ECE: 0.1281
+10828.1s 1356 
+10828.1s 1357 Epoch 6/25
+10828.1s 1358 ↳ [Metrics] Acc: 0.5288 | Prec: 0.4360 | Rec: 0.3538 | F1: 0.3271 | AUC: 0.8763 | ECE: 0.1527
+10876.8s 1359 
+10876.8s 1360 Epoch 7/25
+10876.8s 1361 ↳ [Metrics] Acc: 0.5769 | Prec: 0.5787 | Rec: 0.4395 | F1: 0.4469 | AUC: 0.8536 | ECE: 0.1118
+10925.3s 1362 
+10925.3s 1363 Epoch 8/25
+10925.3s 1364 ↳ [Metrics] Acc: 0.7019 | Prec: 0.7294 | Rec: 0.6433 | F1: 0.6573 | AUC: 0.9266 | ECE: 0.1701
+10974.0s 1365 
+10974.0s 1366 Epoch 9/25
+10974.0s 1367 ↳ [Metrics] Acc: 0.7212 | Prec: 0.6560 | Rec: 0.5944 | F1: 0.5932 | AUC: 0.9338 | ECE: 0.1489
+11022.9s 1368 
+11022.9s 1369 Epoch 10/25
+11022.9s 1370 ↳ [Metrics] Acc: 0.7885 | Prec: 0.7758 | Rec: 0.7401 | F1: 0.7514 | AUC: 0.9415 | ECE: 0.1693
+11022.9s 1371 
+11022.9s 1372 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+11071.3s 1373 
+11071.3s 1374 Epoch 11/25
+11071.3s 1375 ↳ [Metrics] Acc: 0.7788 | Prec: 0.7844 | Rec: 0.7332 | F1: 0.7403 | AUC: 0.9606 | ECE: 0.1358
+11119.9s 1376 
+11119.9s 1377 Epoch 12/25
+11119.9s 1378 ↳ [Metrics] Acc: 0.7212 | Prec: 0.7044 | Rec: 0.7253 | F1: 0.7008 | AUC: 0.9426 | ECE: 0.0956
+11168.5s 1379 
+11168.5s 1380 Epoch 13/25
+11168.5s 1381 ↳ [Metrics] Acc: 0.7596 | Prec: 0.7839 | Rec: 0.7746 | F1: 0.7532 | AUC: 0.9618 | ECE: 0.1227
+11217.1s 1382 
+11217.1s 1383 Epoch 14/25
+11217.1s 1384 ↳ [Metrics] Acc: 0.7885 | Prec: 0.7697 | Rec: 0.7888 | F1: 0.7697 | AUC: 0.9382 | ECE: 0.0946
+11265.4s 1385 
+11265.4s 1386 Epoch 15/25
+11265.4s 1387 ↳ [Metrics] Acc: 0.7692 | Prec: 0.7479 | Rec: 0.7550 | F1: 0.7425 | AUC: 0.9505 | ECE: 0.1148
+11313.7s 1388 
+11313.7s 1389 Epoch 16/25
+11313.7s 1390 ↳ [Metrics] Acc: 0.7404 | Prec: 0.7182 | Rec: 0.7486 | F1: 0.7071 | AUC: 0.9444 | ECE: 0.0823
+11362.3s 1391 
+11362.3s 1392 Epoch 17/25
+11362.3s 1393 ↳ [Metrics] Acc: 0.7692 | Prec: 0.7472 | Rec: 0.7503 | F1: 0.7395 | AUC: 0.9390 | ECE: 0.1072
+11410.4s 1394 
+11410.4s 1395 Epoch 18/25
+11410.4s 1396 ↳ [Metrics] Acc: 0.8077 | Prec: 0.8065 | Rec: 0.7220 | F1: 0.7474 | AUC: 0.9467 | ECE: 0.1042
+11458.5s 1397 
+11458.5s 1398 Epoch 19/25
+11458.5s 1399 ↳ [Metrics] Acc: 0.7885 | Prec: 0.7868 | Rec: 0.7570 | F1: 0.7677 | AUC: 0.9552 | ECE: 0.0965
+11506.7s 1400 
+11506.7s 1401 Epoch 20/25
+11506.7s 1402 ↳ [Metrics] Acc: 0.7692 | Prec: 0.7704 | Rec: 0.7153 | F1: 0.7329 | AUC: 0.9505 | ECE: 0.0860
+11555.2s 1403 
+11555.2s 1404 Epoch 21/25
+11555.2s 1405 ↳ [Metrics] Acc: 0.8077 | Prec: 0.8000 | Rec: 0.7361 | F1: 0.7558 | AUC: 0.9524 | ECE: 0.0810
+11603.2s 1406 
+11603.2s 1407 Epoch 22/25
+11603.2s 1408 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8074 | Rec: 0.7602 | F1: 0.7768 | AUC: 0.9614 | ECE: 0.0696
+11651.5s 1409 
+11651.5s 1410 Epoch 23/25
+11651.5s 1411 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8381 | Rec: 0.7636 | F1: 0.7905 | AUC: 0.9619 | ECE: 0.0784
+11699.6s 1412 
+11699.6s 1413 Epoch 24/25
+11699.6s 1414 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8242 | Rec: 0.7366 | F1: 0.7660 | AUC: 0.9603 | ECE: 0.0795
+11748.2s 1415 
+11748.2s 1416 Epoch 25/25
+11748.2s 1417 ↳ [Metrics] Acc: 0.8269 | Prec: 0.8183 | Rec: 0.7721 | F1: 0.7877 | AUC: 0.9575 | ECE: 0.0689
+11748.2s 1418 
+11748.2s 1419 🎯 Best Fold Patient-F1 = 0.7905
+11784.6s 1420 Fold 3/5 ...
+11784.6s 1421 Epoch 1/25
+11784.6s 1422 ↳ [Metrics] Acc: 0.2692 | Prec: 0.0449 | Rec: 0.1667 | F1: 0.0707 | AUC: 0.6157 | ECE: 0.1010
+11819.0s 1423 
+11819.0s 1424 Epoch 2/25
+11819.0s 1425 ↳ [Metrics] Acc: 0.2692 | Prec: 0.0449 | Rec: 0.1667 | F1: 0.0707 | AUC: 0.6208 | ECE: 0.0993
+11853.6s 1426 
+11853.6s 1427 Epoch 3/25
+11853.6s 1428 ↳ [Metrics] Acc: 0.4808 | Prec: 0.2667 | Rec: 0.3150 | F1: 0.2748 | AUC: 0.6935 | ECE: 0.1675
+11853.6s 1429 
+11853.6s 1430 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+11901.7s 1431 
+11901.7s 1432 Epoch 4/25
+11901.7s 1433 ↳ [Metrics] Acc: 0.5192 | Prec: 0.2656 | Rec: 0.3391 | F1: 0.2894 | AUC: 0.7058 | ECE: 0.2142
+11949.7s 1434 
+11949.7s 1435 Epoch 5/25
+11949.7s 1436 ↳ [Metrics] Acc: 0.5096 | Prec: 0.2511 | Rec: 0.3303 | F1: 0.2790 | AUC: 0.7141 | ECE: 0.2201
+11997.5s 1437 
+11997.5s 1438 Epoch 6/25
+11997.5s 1439 ↳ [Metrics] Acc: 0.4904 | Prec: 0.2731 | Rec: 0.3043 | F1: 0.2371 | AUC: 0.8079 | ECE: 0.1075
+12045.8s 1440 
+12045.8s 1441 Epoch 7/25
+12045.8s 1442 ↳ [Metrics] Acc: 0.5385 | Prec: 0.5871 | Rec: 0.3822 | F1: 0.3683 | AUC: 0.8642 | ECE: 0.0711
+12093.5s 1443 
+12093.5s 1444 Epoch 8/25
+12093.5s 1445 ↳ [Metrics] Acc: 0.6731 | Prec: 0.7036 | Rec: 0.5859 | F1: 0.5753 | AUC: 0.9178 | ECE: 0.1759
+12141.7s 1446 
+12141.7s 1447 Epoch 9/25
+12141.7s 1448 ↳ [Metrics] Acc: 0.7212 | Prec: 0.7541 | Rec: 0.6292 | F1: 0.6368 | AUC: 0.9349 | ECE: 0.1420
+12189.4s 1449 
+12189.4s 1450 Epoch 10/25
+12189.4s 1451 ↳ [Metrics] Acc: 0.7212 | Prec: 0.7418 | Rec: 0.6331 | F1: 0.6509 | AUC: 0.9460 | ECE: 0.1890
+12189.4s 1452 
+12189.4s 1453 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+12237.5s 1454 
+12237.5s 1455 Epoch 11/25
+12237.5s 1456 ↳ [Metrics] Acc: 0.6250 | Prec: 0.6026 | Rec: 0.6245 | F1: 0.5856 | AUC: 0.9171 | ECE: 0.0769
+12285.4s 1457 
+12285.4s 1458 Epoch 12/25
+12285.4s 1459 ↳ [Metrics] Acc: 0.7788 | Prec: 0.7539 | Rec: 0.7654 | F1: 0.7525 | AUC: 0.9513 | ECE: 0.1380
+12333.2s 1460 
+12333.2s 1461 Epoch 13/25
+12333.2s 1462 ↳ [Metrics] Acc: 0.6731 | Prec: 0.6448 | Rec: 0.6494 | F1: 0.6322 | AUC: 0.9308 | ECE: 0.1107
+12381.0s 1463 
+12381.0s 1464 Epoch 14/25
+12381.0s 1465 ↳ [Metrics] Acc: 0.7500 | Prec: 0.7148 | Rec: 0.7368 | F1: 0.7199 | AUC: 0.9555 | ECE: 0.0741
+12428.7s 1466 
+12428.7s 1467 Epoch 15/25
+12428.7s 1468 ↳ [Metrics] Acc: 0.7981 | Prec: 0.8300 | Rec: 0.7472 | F1: 0.7706 | AUC: 0.9493 | ECE: 0.1017
+12476.4s 1469 
+12476.4s 1470 Epoch 16/25
+12476.4s 1471 ↳ [Metrics] Acc: 0.7404 | Prec: 0.7434 | Rec: 0.7090 | F1: 0.7097 | AUC: 0.9442 | ECE: 0.1119
+12523.8s 1472 
+12523.8s 1473 Epoch 17/25
+12523.8s 1474 ↳ [Metrics] Acc: 0.8269 | Prec: 0.8067 | Rec: 0.7792 | F1: 0.7851 | AUC: 0.9466 | ECE: 0.1026
+12571.6s 1475 
+12571.6s 1476 Epoch 18/25
+12571.6s 1477 ↳ [Metrics] Acc: 0.7885 | Prec: 0.7594 | Rec: 0.7947 | F1: 0.7714 | AUC: 0.9533 | ECE: 0.1063
+12618.9s 1478 
+12618.9s 1479 Epoch 19/25
+12618.9s 1480 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8062 | Rec: 0.8152 | F1: 0.8103 | AUC: 0.9559 | ECE: 0.0872
+12666.6s 1481 
+12666.6s 1482 Epoch 20/25
+12666.6s 1483 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8029 | Rec: 0.7852 | F1: 0.7916 | AUC: 0.9506 | ECE: 0.1403
+12714.0s 1484 
+12714.0s 1485 Epoch 21/25
+12714.0s 1486 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8263 | Rec: 0.7670 | F1: 0.7865 | AUC: 0.9522 | ECE: 0.0629
+12761.3s 1487 
+12761.3s 1488 Epoch 22/25
+12761.3s 1489 ↳ [Metrics] Acc: 0.8269 | Prec: 0.8546 | Rec: 0.7695 | F1: 0.7945 | AUC: 0.9533 | ECE: 0.0723
+12808.7s 1490 
+12808.7s 1491 Epoch 23/25
+12808.7s 1492 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8573 | Rec: 0.7873 | F1: 0.8072 | AUC: 0.9547 | ECE: 0.0802
+12856.1s 1493 
+12856.1s 1494 Epoch 24/25
+12856.1s 1495 ↳ [Metrics] Acc: 0.8365 | Prec: 0.8646 | Rec: 0.7783 | F1: 0.8052 | AUC: 0.9538 | ECE: 0.0854
+12903.9s 1496 
+12903.9s 1497 Epoch 25/25
+12903.9s 1498 ↳ [Metrics] Acc: 0.8173 | Prec: 0.8558 | Rec: 0.7668 | F1: 0.7945 | AUC: 0.9543 | ECE: 0.0688
+12903.9s 1499 
+12903.9s 1500 🎯 Best Fold Patient-F1 = 0.8103
+12939.2s 1501 Fold 4/5 ...
+12939.2s 1502 Epoch 1/25
+12939.2s 1503 ↳ [Metrics] Acc: 0.2264 | Prec: 0.0377 | Rec: 0.1667 | F1: 0.0615 | AUC: 0.6143 | ECE: 0.0581
+12973.2s 1504 
+12973.2s 1505 Epoch 2/25
+12973.2s 1506 ↳ [Metrics] Acc: 0.2264 | Prec: 0.0377 | Rec: 0.1667 | F1: 0.0615 | AUC: 0.5994 | ECE: 0.0563
+13006.9s 1507 
+13006.9s 1508 Epoch 3/25
+13006.9s 1509 ↳ [Metrics] Acc: 0.3396 | Prec: 0.2265 | Rec: 0.2397 | F1: 0.1700 | AUC: 0.7025 | ECE: 0.0406
+13006.9s 1510 
+13006.9s 1511 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+13053.9s 1512 
+13053.9s 1513 Epoch 4/25
+13053.9s 1514 ↳ [Metrics] Acc: 0.3208 | Prec: 0.2031 | Rec: 0.2243 | F1: 0.1596 | AUC: 0.7189 | ECE: 0.0974
+13101.2s 1515 
+13101.2s 1516 Epoch 5/25
+13101.2s 1517 ↳ [Metrics] Acc: 0.3491 | Prec: 0.2919 | Rec: 0.2428 | F1: 0.1718 | AUC: 0.7217 | ECE: 0.0480
+13148.0s 1518 
+13148.0s 1519 Epoch 6/25
+13148.0s 1520 ↳ [Metrics] Acc: 0.4340 | Prec: 0.4712 | Rec: 0.3070 | F1: 0.2366 | AUC: 0.8181 | ECE: 0.0746
+13195.4s 1521 
+13195.4s 1522 Epoch 7/25
+13195.4s 1523 ↳ [Metrics] Acc: 0.6698 | Prec: 0.8260 | Rec: 0.5421 | F1: 0.5506 | AUC: 0.9300 | ECE: 0.2180
+13242.4s 1524 
+13242.4s 1525 Epoch 8/25
+13242.4s 1526 ↳ [Metrics] Acc: 0.6698 | Prec: 0.8023 | Rec: 0.6034 | F1: 0.6030 | AUC: 0.9212 | ECE: 0.1554
+13289.2s 1527 
+13289.2s 1528 Epoch 9/25
+13289.2s 1529 ↳ [Metrics] Acc: 0.8019 | Prec: 0.8347 | Rec: 0.7749 | F1: 0.7897 | AUC: 0.9596 | ECE: 0.1945
+13336.4s 1530 
+13336.4s 1531 Epoch 10/25
+13336.4s 1532 ↳ [Metrics] Acc: 0.7925 | Prec: 0.8151 | Rec: 0.7478 | F1: 0.7571 | AUC: 0.9762 | ECE: 0.1503
+13336.4s 1533 
+13336.4s 1534 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+13383.2s 1535 
+13383.2s 1536 Epoch 11/25
+13383.2s 1537 ↳ [Metrics] Acc: 0.7264 | Prec: 0.7529 | Rec: 0.7282 | F1: 0.6863 | AUC: 0.9597 | ECE: 0.1126
+13430.2s 1538 
+13430.2s 1539 Epoch 12/25
+13430.2s 1540 ↳ [Metrics] Acc: 0.7925 | Prec: 0.8082 | Rec: 0.7950 | F1: 0.7774 | AUC: 0.9705 | ECE: 0.0810
+13477.0s 1541 
+13477.0s 1542 Epoch 13/25
+13477.0s 1543 ↳ [Metrics] Acc: 0.8208 | Prec: 0.8492 | Rec: 0.7835 | F1: 0.7947 | AUC: 0.9619 | ECE: 0.0625
+13523.9s 1544 
+13523.9s 1545 Epoch 14/25
+13523.9s 1546 ↳ [Metrics] Acc: 0.8396 | Prec: 0.8386 | Rec: 0.8169 | F1: 0.8221 | AUC: 0.9737 | ECE: 0.0849
+13570.6s 1547 
+13570.6s 1548 Epoch 15/25
+13570.6s 1549 ↳ [Metrics] Acc: 0.8113 | Prec: 0.8454 | Rec: 0.7845 | F1: 0.7860 | AUC: 0.9726 | ECE: 0.0862
+13617.6s 1550 
+13617.6s 1551 Epoch 16/25
+13617.6s 1552 ↳ [Metrics] Acc: 0.8585 | Prec: 0.8735 | Rec: 0.8290 | F1: 0.8370 | AUC: 0.9793 | ECE: 0.0732
+13664.3s 1553 
+13664.3s 1554 Epoch 17/25
+13664.3s 1555 ↳ [Metrics] Acc: 0.8491 | Prec: 0.8782 | Rec: 0.8044 | F1: 0.8283 | AUC: 0.9711 | ECE: 0.0837
+13711.3s 1556 
+13711.3s 1557 Epoch 18/25
+13711.3s 1558 ↳ [Metrics] Acc: 0.8679 | Prec: 0.9114 | Rec: 0.8262 | F1: 0.8504 | AUC: 0.9805 | ECE: 0.0900
+13757.8s 1559 
+13757.8s 1560 Epoch 19/25
+13757.8s 1561 ↳ [Metrics] Acc: 0.8774 | Prec: 0.9029 | Rec: 0.8428 | F1: 0.8612 | AUC: 0.9799 | ECE: 0.0946
+13804.6s 1562 
+13804.6s 1563 Epoch 20/25
+13804.6s 1564 ↳ [Metrics] Acc: 0.8774 | Prec: 0.9259 | Rec: 0.8197 | F1: 0.8553 | AUC: 0.9853 | ECE: 0.0817
+13851.3s 1565 
+13851.3s 1566 Epoch 21/25
+13851.3s 1567 ↳ [Metrics] Acc: 0.8962 | Prec: 0.9375 | Rec: 0.8567 | F1: 0.8846 | AUC: 0.9851 | ECE: 0.1000
+13898.3s 1568 
+13898.3s 1569 Epoch 22/25
+13898.3s 1570 ↳ [Metrics] Acc: 0.8868 | Prec: 0.9328 | Rec: 0.8498 | F1: 0.8781 | AUC: 0.9822 | ECE: 0.1043
+13944.9s 1571 
+13944.9s 1572 Epoch 23/25
+13944.9s 1573 ↳ [Metrics] Acc: 0.9057 | Prec: 0.9415 | Rec: 0.8734 | F1: 0.8994 | AUC: 0.9860 | ECE: 0.1102
+13991.5s 1574 
+13991.5s 1575 Epoch 24/25
+13991.5s 1576 ↳ [Metrics] Acc: 0.9151 | Prec: 0.9481 | Rec: 0.8886 | F1: 0.9112 | AUC: 0.9882 | ECE: 0.1172
+14038.8s 1577 
+14038.8s 1578 Epoch 25/25
+14038.8s 1579 ↳ [Metrics] Acc: 0.8868 | Prec: 0.9237 | Rec: 0.8580 | F1: 0.8783 | AUC: 0.9880 | ECE: 0.1027
+14038.8s 1580 
+14038.8s 1581 🎯 Best Fold Patient-F1 = 0.9112
+14076.5s 1582 Fold 5/5 ...
+14076.5s 1583 Epoch 1/25
+14076.5s 1584 ↳ [Metrics] Acc: 0.2736 | Prec: 0.0456 | Rec: 0.1667 | F1: 0.0716 | AUC: 0.5725 | ECE: 0.1053
+14112.9s 1585 
+14112.9s 1586 Epoch 2/25
+14112.9s 1587 ↳ [Metrics] Acc: 0.2736 | Prec: 0.0456 | Rec: 0.1667 | F1: 0.0716 | AUC: 0.5803 | ECE: 0.1037
+14149.7s 1588 
+14149.7s 1589 Epoch 3/25
+14149.7s 1590 ↳ [Metrics] Acc: 0.3585 | Prec: 0.1221 | Rec: 0.2227 | F1: 0.1559 | AUC: 0.6998 | ECE: 0.0031
+14149.7s 1591 
+14149.7s 1592 🔓 Epoch 4: Unfreezing Backbone for Fine-Tuning...
+14199.3s 1593 
+14199.3s 1594 Epoch 4/25
+14199.3s 1595 ↳ [Metrics] Acc: 0.3019 | Prec: 0.0992 | Rec: 0.1862 | F1: 0.1276 | AUC: 0.7018 | ECE: 0.0708
+14249.4s 1596 
+14249.4s 1597 Epoch 5/25
+14249.4s 1598 ↳ [Metrics] Acc: 0.3585 | Prec: 0.1184 | Rec: 0.2213 | F1: 0.1527 | AUC: 0.7289 | ECE: 0.0464
+14298.6s 1599 
+14298.6s 1600 Epoch 6/25
+14298.6s 1601 ↳ [Metrics] Acc: 0.5189 | Prec: 0.5372 | Rec: 0.3633 | F1: 0.3622 | AUC: 0.8674 | ECE: 0.1668
+14348.5s 1602 
+14348.5s 1603 Epoch 7/25
+14348.5s 1604 ↳ [Metrics] Acc: 0.6509 | Prec: 0.5522 | Rec: 0.5749 | F1: 0.5564 | AUC: 0.9216 | ECE: 0.1968
+14398.2s 1605 
+14398.2s 1606 Epoch 8/25
+14398.2s 1607 ↳ [Metrics] Acc: 0.7075 | Prec: 0.6320 | Rec: 0.6300 | F1: 0.6203 | AUC: 0.9504 | ECE: 0.2279
+14447.7s 1608 
+14447.7s 1609 Epoch 9/25
+14447.7s 1610 ↳ [Metrics] Acc: 0.8019 | Prec: 0.7714 | Rec: 0.7502 | F1: 0.7404 | AUC: 0.9720 | ECE: 0.2393
+14497.4s 1611 
+14497.4s 1612 Epoch 10/25
+14497.4s 1613 ↳ [Metrics] Acc: 0.7736 | Prec: 0.7866 | Rec: 0.7842 | F1: 0.7784 | AUC: 0.9695 | ECE: 0.1877
+14497.4s 1614 
+14497.4s 1615 🛑 Epoch 11: Disabling MixUp for Clean Label Fine-Tuning...
+14546.8s 1616 
+14546.8s 1617 Epoch 11/25
+14546.8s 1618 ↳ [Metrics] Acc: 0.7642 | Prec: 0.7339 | Rec: 0.7888 | F1: 0.7491 | AUC: 0.9712 | ECE: 0.0993
+14596.3s 1619 
+14596.3s 1620 Epoch 12/25
+14596.3s 1621 ↳ [Metrics] Acc: 0.7830 | Prec: 0.7609 | Rec: 0.7987 | F1: 0.7661 | AUC: 0.9632 | ECE: 0.0979
+14646.1s 1622 
+14646.1s 1623 Epoch 13/25
+14646.1s 1624 ↳ [Metrics] Acc: 0.7358 | Prec: 0.7121 | Rec: 0.7701 | F1: 0.7137 | AUC: 0.9542 | ECE: 0.0672
+14695.6s 1625 
+14695.6s 1626 Epoch 14/25
+14695.6s 1627 ↳ [Metrics] Acc: 0.7736 | Prec: 0.7645 | Rec: 0.8120 | F1: 0.7561 | AUC: 0.9658 | ECE: 0.0474
+14745.0s 1628 
+14745.0s 1629 Epoch 15/25
+14745.0s 1630 ↳ [Metrics] Acc: 0.8113 | Prec: 0.7837 | Rec: 0.8459 | F1: 0.8016 | AUC: 0.9713 | ECE: 0.1016
+14794.5s 1631 
+14794.5s 1632 Epoch 16/25
+14794.5s 1633 ↳ [Metrics] Acc: 0.8302 | Prec: 0.8391 | Rec: 0.8590 | F1: 0.8329 | AUC: 0.9695 | ECE: 0.0886
+14843.8s 1634 
+14843.8s 1635 Epoch 17/25
+14843.8s 1636 ↳ [Metrics] Acc: 0.8208 | Prec: 0.8089 | Rec: 0.8638 | F1: 0.8211 | AUC: 0.9750 | ECE: 0.1202
+14893.1s 1637 
+14893.1s 1638 Epoch 18/25
+14893.1s 1639 ↳ [Metrics] Acc: 0.8396 | Prec: 0.8165 | Rec: 0.8570 | F1: 0.8279 | AUC: 0.9743 | ECE: 0.1155
+14942.5s 1640 
+14942.5s 1641 Epoch 19/25
+14942.5s 1642 ↳ [Metrics] Acc: 0.8491 | Prec: 0.8165 | Rec: 0.8693 | F1: 0.8287 | AUC: 0.9762 | ECE: 0.1113
+14991.8s 1643 
+14991.8s 1644 Epoch 20/25
+14991.8s 1645 ↳ [Metrics] Acc: 0.8491 | Prec: 0.8226 | Rec: 0.8568 | F1: 0.8324 | AUC: 0.9802 | ECE: 0.1167
+15041.2s 1646 
+15041.2s 1647 Epoch 21/25
+15041.2s 1648 ↳ [Metrics] Acc: 0.8396 | Prec: 0.8076 | Rec: 0.8610 | F1: 0.8230 | AUC: 0.9789 | ECE: 0.1379
+15090.5s 1649 
+15090.5s 1650 Epoch 22/25
+15090.5s 1651 ↳ [Metrics] Acc: 0.8491 | Prec: 0.8213 | Rec: 0.8729 | F1: 0.8357 | AUC: 0.9787 | ECE: 0.1260
+15139.6s 1652 
+15139.6s 1653 Epoch 23/25
+15139.6s 1654 ↳ [Metrics] Acc: 0.8585 | Prec: 0.8372 | Rec: 0.8725 | F1: 0.8482 | AUC: 0.9795 | ECE: 0.1066
+15189.2s 1655 
+15189.2s 1656 Epoch 24/25
+15189.2s 1657 ↳ [Metrics] Acc: 0.8396 | Prec: 0.8135 | Rec: 0.8608 | F1: 0.8292 | AUC: 0.9798 | ECE: 0.0998
+15238.5s 1658 
+15238.5s 1659 Epoch 25/25
+15238.5s 1660 ↳ [Metrics] Acc: 0.8302 | Prec: 0.8046 | Rec: 0.8550 | F1: 0.8210 | AUC: 0.9801 | ECE: 0.0950
+15238.5s 1661 
+15238.5s 1662 🎯 Best Fold Patient-F1 = 0.8482
+15238.6s 1663 
+15238.6s 1664 ✅ beit_base FINAL OOF EVALUATION:
+15238.6s 1665 ↳ [Metrics] Acc: 0.8514 | Prec: 0.8406 | Rec: 0.8259 | F1: 0.8320 | AUC: 0.9704 | ECE: 0.0825
+15238.6s 1666 ↳ [Metrics] Acc: 0.8514 | Prec: 0.8406 | Rec: 0.8259 | F1: 0.8320 | AUC: 0.9704 | ECE: 0.0825
+15238.6s 1667 
+15238.6s 1668 ============================================================
+15238.6s 1669 Champion Ensemble (Dynamic Weights, Calibrated, Top-K Pruned)
+15238.6s 1670 ============================================================
+15238.6s 1671 [Pruned & Calibrated] swin_small           F1: 0.8751 | Temp: 0.71
+15238.6s 1672 [Pruned & Calibrated] convnext_tiny        F1: 0.8599 | Temp: 0.75
+15238.6s 1673 [Pruned & Calibrated] beit_base            F1: 0.8320 | Temp: 0.84
+15238.7s 1674 swin_small           Final Ensemble Weight = 0.7749
+15238.7s 1675 convnext_tiny        Final Ensemble Weight = 0.1523
+15238.7s 1676 beit_base            Final Ensemble Weight = 0.0728
+15238.7s 1677 
+15238.7s 1678 🏆 FINAL CHAMPION ENSEMBLE EVALUATION:
+15238.7s 1679 ↳ [Metrics] Acc: 0.8876 | Prec: 0.8791 | Rec: 0.8794 | F1: 0.8772 | AUC: 0.9831 | ECE: 0.0370
+15244.4s 1680 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+15244.4s 1681 cells[i][c] = re.sub('\\\\\|', '|', cell)
+15244.6s 1682 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+15244.6s 1683 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+15245.2s 1684 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+15245.5s 1685 [NbConvertApp] Writing 154487 bytes to __notebook__.ipynb
+15247.8s 1686 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+15248.7s 1687 [NbConvertApp] Writing 470171 bytes to __results__.html

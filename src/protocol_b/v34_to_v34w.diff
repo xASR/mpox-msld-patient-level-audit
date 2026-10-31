@@ -1,0 +1,122 @@
+--- v34_original.py	2026-11-01 02:15:05.576107300 +0600
++++ v34w_convnext_weights.py	2026-11-01 02:15:05.594455972 +0600
+@@ -1,4 +1,10 @@
+ # ==============================================================================
++# V34-W (2026-11): the V34 worker below, unchanged in training, data, seeds and
++# checkpoint selection. Lines marked [V34-W] only (1) select ConvNeXt-Tiny,
++# (2) refuse to run unless the inputs match the original run, (3) record the
++# epoch of each kept snapshot, and (4) save the two kept snapshots' weights, the
++# fold assignment and run metadata. None of these consume random numbers.
++# ==============================================================================
+ # MSLD v2.0 - INDIVIDUAL MODEL WORKER SCRIPT (V34 - Kaggle Final)
+ # Target: Train a single model and explicitly save its .npy arrays.
+ # Environment: Kaggle (P100 or T4x2 GPU — Single GPU utilised)
+@@ -79,8 +85,8 @@
+     # 🔴 KEEP ONLY ONE MODEL UNCOMMENTED PER KAGGLE NOTEBOOK
+     MODELS = {
+         #"efficientnetv2_s": "tf_efficientnetv2_s.in21k_ft_in1k",
+-        #"convnext_tiny":    "convnext_tiny.in12k_ft_in1k_384",
+-        "swin_small":       "swin_small_patch4_window7_224",
++        "convnext_tiny":    "convnext_tiny.in12k_ft_in1k_384",   # [V34-W] ConvNeXt-Tiny only
++        #"swin_small":       "swin_small_patch4_window7_224",
+         # "beit_base":        "beit_base_patch16_384",
+     }
+ 
+@@ -705,7 +711,7 @@
+                 v_p[sel_idx], v_pl[sel_idx], verbose=False)
+ 
+             sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+-            val_snapshots.append((sel_ll, sd))
++            val_snapshots.append((sel_ll, sd, ep + 1))   # [V34-W] + epoch number (1-based)
+             val_snapshots.sort(key=lambda s: s[0])
+             val_snapshots = val_snapshots[:2]
+             gc.collect()
+@@ -722,7 +728,7 @@
+ 
+         # ── Post-training TTA evaluation ───────────────────────────────────
+         val_calib_evals, test_evals = [], []
+-        for _, sd in val_snapshots:
++        for _, sd, _ep in val_snapshots:              # [V34-W] tuple now carries the epoch
+             model.load_state_dict(sd)
+ 
+             v_log, v_lbl, v_pid = validate(model, dl_va, use_tta=True)
+@@ -756,6 +762,47 @@
+             'val_labels':  v_pl[calib_idx],  'val_pids':    v_pp[calib_idx],
+         })
+ 
++        # [V34-W] keep the two selected snapshots' weights and the fold definition
++        import json
++        wdir = os.path.join(CFG.SAVE_DIR, "weights")
++        os.makedirs(wdir, exist_ok=True)
++        snap_meta = []
++        for rank, (s_ll, s_sd, s_ep) in enumerate(val_snapshots, 1):
++            wpath = os.path.join(wdir, f"{display_name}_fold{fold_num}_rank{rank}.pt")
++            torch.save(s_sd, wpath + ".tmp")
++            os.replace(wpath + ".tmp", wpath)
++            snap_meta.append({"rank": rank, "epoch": int(s_ep),
++                              "selection_logloss": float(s_ll), "file": os.path.basename(wpath)})
++        sel_pids = set(val_pids_sorted[sel_idx])
++        roles = pd.concat([
++            train_orig.assign(role="train_original"),
++            val_df.assign(role=np.where(val_df['patient_id'].isin(sel_pids),
++                                        "val_selection", "val_calibration")),
++            test_df.assign(role="test"),
++        ])[['filename', 'patient_id', 'label', 'role']]
++        roles.to_csv(os.path.join(wdir, f"{display_name}_fold{fold_num}_assignment.csv"), index=False)
++        aug_df[['filepath', 'patient_id', 'label']].to_csv(
++            os.path.join(wdir, f"{display_name}_fold{fold_num}_augmented_used.csv.gz"), index=False)
++        with open(os.path.join(wdir, f"{display_name}_fold{fold_num}_meta.json"), "w") as f:
++            json.dump({
++                "model": display_name, "timm_name": timm_name, "fold": fold_num,
++                "fold_source": "datalog" if datalog_success else "SGKF fallback",
++                "n_train_original": int(len(train_orig)), "n_augmented_used": int(len(aug_df)),
++                "n_val": int(len(val_df)), "n_test": int(len(test_df)),
++                "n_val_selection_patients": int(len(sel_idx)),
++                "n_val_calibration_patients": int(len(calib_idx)),
++                "snapshots": snap_meta, "calibration_half_f1": float(fold_f1),
++                "class_names": CFG.CLASS_NAMES, "img_size": CFG.IMG_SIZE,
++                "normalize_mean": [0.485, 0.456, 0.406], "normalize_std": [0.229, 0.224, 0.225],
++                "eval_resize": "Resize((img_size, img_size)), no crop",
++                "tta_views": ["identity", "hflip", "rot90", "rot270"],
++                "tta_combine": "mean of softmax probabilities, then log",
++                "patient_aggregation": "softmax(mean of image log-probabilities)",
++                "snapshot_combine": "mean of the two snapshots' patient probabilities",
++            }, f, indent=2)
++        print(f"  💾 [V34-W] Fold {fold_num} weights (epochs "
++              f"{[s['epoch'] for s in snap_meta]}) and assignment saved → {wdir}")
++
+         # Bug 4 Fix: Explicitly delete ALL GPU-holding objects so CUDA VRAM is
+         # freed immediately via reference counting, not at GC's discretion.
+         # optimizer holds param tensor refs → must be deleted before/with model.
+@@ -845,6 +892,31 @@
+ 
+     print_dataset_statistics(df)
+ 
++    # [V34-W] pre-flight: the run must see exactly the files of the original run
++    n_orig = int((df['is_augmented'] == False).sum())
++    n_aug  = int((df['is_augmented'] == True).sum())
++    n_pat  = int(df.loc[df['is_augmented'] == False, 'patient_id'].nunique())
++    assert (n_orig, n_aug, n_pat) == (755, 37044, 524), (
++        f"Expected 755 original / 37044 augmented images and 524 patients (as in the original "
++        f"run) but found {n_orig} / {n_aug} / {n_pat}. Attach ONLY the MSLD v2.0 dataset.")
++    import json, platform, sklearn, scipy, torchvision
++    run_info = {
++        "script": "V34-W (V34 + weight saving)", "python": platform.python_version(),
++        "torch": torch.__version__, "torchvision": torchvision.__version__,
++        "timm": timm.__version__, "numpy": np.__version__, "pandas": pd.__version__,
++        "sklearn": sklearn.__version__, "scipy": scipy.__version__,
++        "cuda": torch.version.cuda, "cudnn": torch.backends.cudnn.version(),
++        "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "none",
++        "seed": CFG.SEED, "img_size": CFG.IMG_SIZE, "batch_size": CFG.BATCH_SIZE,
++        "epochs": CFG.EPOCHS, "freeze_epochs": CFG.FREEZE_EPOCHS,
++        "mixup_disable_epoch": CFG.MIXUP_DISABLE_EPOCH, "class_names": CFG.CLASS_NAMES,
++        "models": CFG.MODELS, "dataset_dir": dataset_dir,
++        "n_original": n_orig, "n_augmented": n_aug, "n_patients": n_pat,
++    }
++    with open(os.path.join(CFG.SAVE_DIR, "run_info.json"), "w") as f:
++        json.dump(run_info, f, indent=2)
++    print("  [V34-W] run_info:", json.dumps(run_info))
++
+     datalog      = None
+     datalog_hits = glob.glob(os.path.join(dataset_dir, "**", "datalog.xlsx"),
+                              recursive=True)

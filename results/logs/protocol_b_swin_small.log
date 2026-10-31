@@ -1,0 +1,76 @@
+6.4s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.4s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.4s 3 0.00s - to python to disable frozen modules.
+6.4s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.0s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.0s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.0s 7 0.00s - to python to disable frozen modules.
+7.0s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+24.5s 9 ============================================================
+24.5s 10 MSLD v2.0 — Worker Script V34
+24.5s 11 ============================================================
+127.8s 12 
+127.8s 13 Raw image files found under '/kaggle/input/datasets': 40820
+128.3s 14 Label source  — directory: 40819, filename fallback: 0
+128.3s 15 Skipped       — mask files: 0, no label detected: 1
+128.3s 16 Loaded        — 755 original images (524 unique patients), 37044 augmented images
+128.3s 17 label_name  Images  Patients
+128.3s 18 Chickenpox      75        61
+128.3s 19 Cowpox      66        41
+128.3s 20 HFMD     161       141
+128.3s 21 Healthy     114       103
+128.3s 22 Measles      55        45
+128.3s 23 Monkeypox     284       133
+128.3s 24 
+128.3s 25 Total original images : 755
+128.3s 26 Total unique patients : 524
+128.3s 27 Total augmented images: 37044
+128.3s 28 
+140.3s 29 📄 Loading datalog: /kaggle/input/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20/datalog.xlsx
+140.7s 30 ✅ Datalog loaded. Sheets: ['Sheet1', 'Sheet2', 'Sheet3', 'Sheet4', 'Sheet5']
+140.7s 31 
+140.7s 32 ============================================================
+140.7s 33 Training: swin_small  (swin_small_patch4_window7_224)
+140.7s 34 ============================================================
+140.7s 35 
+140.7s 36 ── Fold 1/5
+140.9s 37 [Datalog] train=537, val=144, test=74 images
+141.8s 38 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+141.8s 39 
+141.8s 40 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+13361.1s 41 🎯 Fold 1 Disjoint Calib-F1 = 0.8454
+13361.1s 42 💾 Fold 1 checkpoint atomically stored → /kaggle/working/outputs
+13361.4s 43 
+13361.4s 44 ── Fold 2/5
+13361.6s 45 [Datalog] train=509, val=164, test=82 images
+25856.3s 46 🎯 Fold 2 Disjoint Calib-F1 = 0.8433
+25856.3s 47 💾 Fold 2 checkpoint atomically stored → /kaggle/working/outputs
+25856.5s 48 
+25856.5s 49 ── Fold 3/5
+25856.7s 50 [Datalog] train=538, val=153, test=64 images
+39006.5s 51 🎯 Fold 3 Disjoint Calib-F1 = 0.8148
+39006.5s 52 💾 Fold 3 checkpoint atomically stored → /kaggle/working/outputs
+39006.8s 53 
+39006.8s 54 ── Fold 4/5
+39007.0s 55 [Datalog] train=524, val=150, test=81 images
+41531.7s 56 🎯 Fold 4 Disjoint Calib-F1 = 0.8152
+41531.7s 57 💾 Fold 4 checkpoint atomically stored → /kaggle/working/outputs
+41532.0s 58 
+41532.0s 59 ── Fold 5/5
+41532.1s 60 ⏱️  TIME LIMIT REACHED — stopping further folds.
+41532.1s 61 
+41532.1s 62 📊 swin_small Cross-Fold Calib-F1: 0.8297 ± 0.0170  (95% CI ±0.0270)
+41532.1s 63 💾 Final 6 .npy arrays atomically saved for swin_small.
+41532.1s 64 
+41532.1s 65 📊 swin_small — Final Test Set Evaluation:
+41532.1s 66 ↳ Acc:0.8656 | Prec:0.8735 | Rec:0.8546 | F1:0.8621 | AUC:0.9737 | ECE:0.1095 | LogLoss:0.5014
+41532.1s 67 
+41532.1s 68 📋 Classification Report → /kaggle/working/outputs/swin_small_classification_report.txt
+41537.4s 69 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+41537.4s 70 cells[i][c] = re.sub('\\\\\|', '|', cell)
+41537.5s 71 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+41537.5s 72 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+41538.1s 73 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+41538.4s 74 [NbConvertApp] Writing 61974 bytes to __notebook__.ipynb
+41540.8s 75 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+41541.8s 76 [NbConvertApp] Writing 463198 bytes to __results__.html

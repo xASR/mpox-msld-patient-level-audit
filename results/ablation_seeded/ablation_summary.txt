@@ -1,0 +1,4 @@
+1A_augment_then_split: n=5 runs, accuracy 85.32% +/- 1.11 (95% CI 83.95 to 86.70); runs: 83.84, 86.36, 84.83, 85.10, 86.49
+   test images whose photo has copies in training: 100.0%; whose patient is in training: 100.0%
+1B_split_then_augment: n=5 runs, accuracy 50.34% +/- 3.96 (95% CI 45.43 to 55.26); runs: 52.15, 46.21, 47.06, 50.35, 55.95
+Paired gap 1A - 1B over 5 seeds: 34.98 points (95% CI 29.97 to 39.99)

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this code or the MSLD v2.0 audit, please cite it as below."
+title: "Patient-level evaluation of deep learning for six-class mpox skin lesion classification: a data leakage audit of MSLD v2.0 and a calibrated CNN and transformer ensemble"
+type: software
+authors:
+  - family-names: "Siddik"
+    given-names: "Alve"
+date-released: 2026-10-31
+repository-code: "https://github.com/xASR/mpox-msld-patient-level-audit"
+license: MIT
+keywords:
+  - mpox
+  - skin lesion classification
+  - data leakage
+  - patient-level evaluation
+  - MSLD v2.0
+  - calibration

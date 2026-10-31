@@ -1,0 +1,7 @@
+top_folder,parent_folder,files,image_ext,readable
+Skin Lesion Dataset,Chickenpox,1125,1125,1125
+Skin Lesion Dataset,Cowpox,990,990,990
+Skin Lesion Dataset,HFMD,2415,2415,2415
+Skin Lesion Dataset,Healthy,1710,1710,1710
+Skin Lesion Dataset,Measles,825,825,825
+Skin Lesion Dataset,Monkeypox,4260,4260,4260

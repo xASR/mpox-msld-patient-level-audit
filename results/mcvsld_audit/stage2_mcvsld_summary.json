@@ -1,0 +1,20 @@
+{
+  "mcvsld_source_used": "/kaggle/input/datasets/alvesiddik/multi-class-viral-skin-lesion-dataset-mcvsld",
+  "published_mcvsld_images_mendeley": 9060,
+  "images_present_in_this_copy": 11325,
+  "unreadable_images": 0,
+  "distinct_photograph_names_mcvsld": 755,
+  "distinct_patient_ids_mcvsld": 524,
+  "msld_original_photographs": 755,
+  "mcvsld_names_also_in_msld": 11325,
+  "exact_internal_duplicate_images_mcvsld": 1870,
+  "exact_internal_duplicate_groups_mcvsld": 929,
+  "cross_dataset_exact_to_msld_original": 877,
+  "cross_dataset_exact_to_msld_augmented": 10803,
+  "cross_dataset_exact_either": 11325,
+  "phash_le10_to_some_msld_original": 7787,
+  "phash_le10_and_same_name": 7738,
+  "no_msld_original_within_10_bits": 3538,
+  "no_exact_and_no_phash_match": 0,
+  "internal_cross_photo_candidate_pairs": 1074
+}

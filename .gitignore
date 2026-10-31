@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+# Dataset and model weights are not tracked
+data/
+*.pth
+*.pt
+*.ckpt
+*.tmp.npy

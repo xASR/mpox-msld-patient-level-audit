@@ -1,0 +1,74 @@
+{
+  "1A_augment_then_split": {
+    "n_runs": 5,
+    "acc_mean": 85.32450331125827,
+    "acc_sd": 1.1087524732058285,
+    "acc_t95": [
+      83.94780528235921,
+      86.70120134015733
+    ],
+    "acc_runs": [
+      83.84,
+      86.36,
+      84.83,
+      85.1,
+      86.49
+    ],
+    "f1_mean": 0.8393095165914499,
+    "f1_sd": 0.0130583564784837,
+    "n_test_range": [
+      1510,
+      1510
+    ],
+    "n_train_range": [
+      6040,
+      6040
+    ]
+  },
+  "1B_split_then_augment": {
+    "n_runs": 5,
+    "acc_mean": 50.34399004527971,
+    "acc_sd": 3.956441921230963,
+    "acc_t95": [
+      45.43141855070309,
+      55.25656153985633
+    ],
+    "acc_runs": [
+      52.15,
+      46.21,
+      47.06,
+      50.35,
+      55.95
+    ],
+    "f1_mean": 0.42822433025358747,
+    "f1_sd": 0.048330457507228496,
+    "n_test_range": [
+      136,
+      168
+    ],
+    "n_train_range": [
+      5870,
+      6190
+    ]
+  },
+  "gap": {
+    "per_seed": [
+      31.69,
+      40.15,
+      37.78,
+      34.74,
+      30.54
+    ],
+    "mean": 34.98051326597857,
+    "sd": 4.035476497829398,
+    "t95": [
+      29.9698073830264,
+      39.991219148930746
+    ],
+    "paired_t": 4.176556008556718e-05,
+    "seeds_favouring_1A": 5,
+    "exact_sign_test_two_sided": 0.0625,
+    "wilcoxon_exact_two_sided": 0.0625,
+    "note": "paired by seed, not by patient; test populations differ between 1A and 1B; no per-image predictions saved"
+  }
+}

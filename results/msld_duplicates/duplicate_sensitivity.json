@@ -1,0 +1,62 @@
+{
+  "affected_present": [
+    "CHP_26",
+    "HFMD_130",
+    "HEALTHY_21",
+    "HEALTHY_77"
+  ],
+  "affected_predictions": {
+    "CHP_26": {
+      "label": 4,
+      "ensemble": 4,
+      "convnext_scaled": 4
+    },
+    "HFMD_130": {
+      "label": 5,
+      "ensemble": 5,
+      "convnext_scaled": 5
+    },
+    "HEALTHY_21": {
+      "label": 0,
+      "ensemble": 0,
+      "convnext_scaled": 0
+    },
+    "HEALTHY_77": {
+      "label": 0,
+      "ensemble": 0,
+      "convnext_scaled": 0
+    }
+  },
+  "ensemble_all": {
+    "acc": 0.8817204301075269,
+    "prec": 0.9086902304781562,
+    "rec": 0.8647297147297147,
+    "f1": 0.8830498024182701,
+    "auc": 0.9812507941635543,
+    "ece": 0.0726014894382768,
+    "ll": 0.40844688778862587,
+    "n": 186,
+    "correct": 164
+  },
+  "ensemble_excluding": {
+    "acc": 0.8791208791208791,
+    "prec": 0.90625,
+    "rec": 0.8618627254548383,
+    "f1": 0.8802389691103066,
+    "auc": 0.9804722559894982,
+    "ece": 0.07465799567188161,
+    "ll": 0.41695572117660257,
+    "n": 182,
+    "correct": 160
+  },
+  "convnext_scaled_excluding": {
+    "acc": 0.8736263736263736,
+    "prec": 0.8913183901746606,
+    "rec": 0.8526034661955791,
+    "f1": 0.8671436870978156,
+    "auc": 0.9818152779292655,
+    "ece": 0.06372815110599811,
+    "ll": 0.4060517058322246,
+    "correct": 159
+  }
+}

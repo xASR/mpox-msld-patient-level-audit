@@ -1,0 +1,78 @@
+7.1s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.1s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.1s 3 0.00s - to python to disable frozen modules.
+7.1s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.7s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.7s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.7s 7 0.00s - to python to disable frozen modules.
+7.7s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+26.5s 9 ============================================================
+26.5s 10 MSLD v2.0 — Worker Script V34
+26.5s 11 ============================================================
+125.0s 12 
+125.0s 13 Raw image files found under '/kaggle/input/datasets': 40820
+125.5s 14 Label source  — directory: 40819, filename fallback: 0
+125.5s 15 Skipped       — mask files: 0, no label detected: 1
+125.5s 16 Loaded        — 755 original images (524 unique patients), 37044 augmented images
+125.5s 17 label_name  Images  Patients
+125.5s 18 Chickenpox      75        61
+125.5s 19 Cowpox      66        41
+125.5s 20 HFMD     161       141
+125.5s 21 Healthy     114       103
+125.5s 22 Measles      55        45
+125.5s 23 Monkeypox     284       133
+125.5s 24 
+125.5s 25 Total original images : 755
+125.5s 26 Total unique patients : 524
+125.5s 27 Total augmented images: 37044
+125.5s 28 
+138.5s 29 📄 Loading datalog: /kaggle/input/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20/datalog.xlsx
+138.8s 30 ✅ Datalog loaded. Sheets: ['Sheet1', 'Sheet2', 'Sheet3', 'Sheet4', 'Sheet5']
+138.8s 31 
+138.8s 32 ============================================================
+138.8s 33 Training: convnext_tiny  (convnext_tiny.in12k_ft_in1k_384)
+138.8s 34 ============================================================
+138.8s 35 
+138.8s 36 ── Fold 1/5
+139.0s 37 [Datalog] train=537, val=144, test=74 images
+139.5s 38 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+139.5s 39 
+139.5s 40 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+7342.4s 41 🎯 Fold 1 Disjoint Calib-F1 = 0.8190
+7342.4s 42 💾 Fold 1 checkpoint atomically stored → /kaggle/working/outputs
+7342.4s 43 
+7342.4s 44 ── Fold 2/5
+7342.6s 45 [Datalog] train=509, val=164, test=82 images
+14135.6s 46 🎯 Fold 2 Disjoint Calib-F1 = 0.8832
+14135.6s 47 💾 Fold 2 checkpoint atomically stored → /kaggle/working/outputs
+14135.6s 48 
+14135.6s 49 ── Fold 3/5
+14135.8s 50 [Datalog] train=538, val=153, test=64 images
+21342.3s 51 🎯 Fold 3 Disjoint Calib-F1 = 0.8072
+21342.3s 52 💾 Fold 3 checkpoint atomically stored → /kaggle/working/outputs
+21342.3s 53 
+21342.3s 54 ── Fold 4/5
+21342.5s 55 [Datalog] train=524, val=150, test=81 images
+28369.7s 56 🎯 Fold 4 Disjoint Calib-F1 = 0.7989
+28369.7s 57 💾 Fold 4 checkpoint atomically stored → /kaggle/working/outputs
+28369.7s 58 
+28369.7s 59 ── Fold 5/5
+28369.9s 60 [Datalog] train=538, val=154, test=63 images
+35570.5s 61 🎯 Fold 5 Disjoint Calib-F1 = 0.8705
+35570.5s 62 💾 Fold 5 checkpoint atomically stored → /kaggle/working/outputs
+35570.6s 63 
+35570.6s 64 📊 convnext_tiny Cross-Fold Calib-F1: 0.8358 ± 0.0384  (95% CI ±0.0477)
+35570.6s 65 💾 Final 6 .npy arrays atomically saved for convnext_tiny.
+35570.6s 66 
+35570.6s 67 📊 convnext_tiny — Final Test Set Evaluation:
+35570.6s 68 ↳ Acc:0.8750 | Prec:0.8936 | Rec:0.8444 | F1:0.8633 | AUC:0.9835 | ECE:0.1290 | LogLoss:0.4563
+35570.6s 69 
+35570.6s 70 📋 Classification Report → /kaggle/working/outputs/convnext_tiny_classification_report.txt
+35576.1s 71 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+35576.1s 72 cells[i][c] = re.sub('\\\\\|', '|', cell)
+35576.3s 73 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+35576.3s 74 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+35577.0s 75 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+35577.3s 76 [NbConvertApp] Writing 62116 bytes to __notebook__.ipynb
+35579.6s 77 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+35580.6s 78 [NbConvertApp] Writing 463317 bytes to __results__.html

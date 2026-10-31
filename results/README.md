@@ -1,0 +1,6 @@
+# Results
+
+- `predictions/<backbone>/` holds the six arrays written by `src/protocol_b/train_worker_v34.py` for each backbone: `*_test_probs.npy`, `*_test_labels.npy`, `*_test_pids.npy` for its pooled test patients and `*_val_*.npy` for its calibration halves. Probabilities are per patient, six columns in the order Healthy, Cowpox, Mpox, Measles, Chickenpox, HFMD. The `pids` arrays are object arrays of strings, so load them with `np.load(path, allow_pickle=True)`.
+- `protocol_b_merge/` is the output of `src/protocol_b/merge_ensemble.py` on those arrays: `report.json` (temperatures, weights, all metrics, bootstrap intervals, McNemar tests, per-class results, reliability bins, and the same merge without overlap removal under `ens_leaky`), `confusion_matrix.csv` and `roc_points.json`.
+- `ablation_seeded/` holds the output of `src/ablation/leakage_ablation_seeded.py`: one row per run in `ablation_runs.csv` (pipeline, seed, minutes, train and test sizes, correct predictions, accuracy, macro F1, and the share of test images whose photograph or patient also appears in training) and the printed summary in `ablation_summary.txt`.
+- `logs/` holds the Kaggle logs: one per protocol B backbone and one for protocol A.
