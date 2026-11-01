@@ -4,6 +4,24 @@ Code, saved predictions and logs for our study of six-class skin lesion classifi
 
 > **Manuscript:** *Patient-level evaluation of deep learning for six-class mpox skin lesion classification: a data leakage audit of MSLD v2.0 and a calibrated CNN and transformer ensemble.* Under preparation. Citation details will be added here once it is published.
 
+## Completed ConvNeXt re-run and Grad-CAM, 2 November 2026
+
+The ConvNeXt-Tiny weight-saving re-run reproduced the original pooled arrays exactly: 216 test patients and 217 calibration-half patients, identical identifiers, order and labels, 100% top-1 agreement, Cohen's kappa 1.0, and maximum probability difference 0.0. The original four-backbone ensemble remains the primary result (164/186, accuracy 88.17%, macro F1 0.8830, macro AUC 0.9813, ECE 7.26%). The duplicate-exclusion sensitivity AUC is 0.9805, rounded from the stored 0.9804722559894982.
+
+- `results/convnext_v34w/`: 36 re-run prediction arrays, run metadata, fold assignments, selected augmented-image lists, comparison reports, checkpoint summary, run log and hashes of ten archived weight files. Large `.pt` weights are kept outside ordinary Git.
+- `results/gradcam/`: the complete saved Grad-CAM output (39 selected images from 31 identifiers, 66 raw maps), weight verification and parameter-randomisation tables.
+- `figures/fig6_gradcam_examples.png`, `figures/Figure6_panel_manifest.csv`, and `figures/supplementary/`: the manuscript panels, selection manifest and seven readable Figure S1 pages.
+- `src/gradcam/gradcam_convnext.py` and its notebook: the permanent cleanup fix uses `python_gc`, `correct_rows` and `incorrect_rows`. It leaves image selection and map calculations unchanged.
+- `src/figures/make_gradcam_figures.py`: rebuilds the manuscript panels from the saved Grad-CAM originals and overlays. It preserves complete source photographs and their aspect ratios.
+
+All five folds passed strict checkpoint loading and reproduced their saved predictions with maximum difference 0.0. Grad-CAM explains the re-trained ConvNeXt-Tiny only. The first-12-image, rank-1 parameter-randomisation check covered 10 identifiers and three classes: median Spearman correlation 0.002 after head randomisation and -0.015 after head-plus-final-stage randomisation. The head-only maximum remained 0.777. These descriptive checks do not establish lesion-localisation accuracy or causal explanations.
+
+The re-run used Python 3.12.12, PyTorch 2.10.0+cu128 and timm 1.0.25; the Grad-CAM session reported PyTorch 2.11.0+cu128 and timm 1.0.29. See `environments/README.md`. These version records supplement the original-run `requirements.txt`.
+
+The MCVSLD finding applies to version 1 of the Mendeley record. The archived ZIP is 167,736,585 bytes with SHA-256 `ef594772ee91281158c5a1685a0b0d900163913f4716aeb4465e256c287c104c`. No finding is extended to other versions.
+
+The dataset photographs remain subject to their original terms; the MIT code licence does not relicense the source images.
+
 ## Why this repository exists
 
 Several papers on MSLD v2.0 report test accuracy above 90%. Many of them augment the images first and split the augmented pool at random afterwards. When that happens, a rotated or colour-shifted copy of a test photograph can sit in the training set, and so can other photographs of the same patient. The model is partly being tested on pictures it has already seen.
@@ -23,7 +41,7 @@ We wanted two numbers: how much that shortcut adds, and what accuracy holds up w
 ## Update, November 2026
 
 - **Duplicate photographs in MSLD v2.0.** Four pairs of patient IDs share a photograph (CHP_26_01/CHP_62_01, HFMD_130_01/HFMD_96_01, HEALTHY_21_01/HEALTHY_77_01, CWP_02_01/CWP_31_01), so the 524 IDs represent at most 520 people. Three pairs put an identical image in training and test of the official folds; removing the four affected test patients gives 160 of 182 correct (87.91%). Code: `src/mcvsld_audit/stage2b_msld_duplicate_pairs.py`, `src/analysis/duplicate_sensitivity.py`; results: `results/msld_duplicates/`.
-- **MCVSLD is not an external test set.** In version 1 of the MCVSLD Mendeley archive (which we uploaded unchanged to Kaggle for processing), all 11,325 images are byte-identical MSLD v2.0 files with the same names (755 originals and 10,570 released augmentations). Code: `src/mcvsld_audit/`; results: `results/mcvsld_audit/`.
+- **MCVSLD version 1 supplies no independent external images.** In version 1 of the MCVSLD Mendeley archive (which we uploaded unchanged to Kaggle for processing), all 11,325 images are byte-identical MSLD v2.0 files with the same names (755 originals and 10,570 released augmentations). Code: `src/mcvsld_audit/`; results: `results/mcvsld_audit/`.
 - **Ablation statistics.** The five-seed comparison is paired by seed, not by patient (the two pipelines use different test images). The leaky pipeline was ahead on 5 of 5 seeds; exact sign test p = 0.0625; t-based 95% CI of the gap 29.97 to 39.99 points (`src/analysis/leakage_seed_stats.py`).
 - **ConvNeXt-Tiny weights.** The original runs never saved weights. `src/protocol_b/train_worker_v34w_convnext.py` is the V34 worker with weight saving added (diff in `v34_to_v34w.diff`); `compare_convnext_rerun.py` compares the re-run with the original predictions; `src/gradcam/gradcam_convnext.py` (and `notebooks/gradcam_convnext.ipynb`) produces qualitative Grad-CAM maps for ConvNeXt-Tiny only.
 
@@ -32,30 +50,36 @@ We wanted two numbers: how much that shortcut adds, and what accuracy holds up w
 ```
 mpox-msld-patient-level-audit/
 ├── README.md, requirements.txt, LICENSE, CITATION.cff, .gitignore
+├── environments/README.md                   # execution environments recorded for each run
 ├── src/
-│   ├── audit/dataset_audit.py             # patient counts, official folds, augmented pool
-│   ├── mcvsld_audit/                       # Stage 1, 2, 2b: MCVSLD audit and MSLD duplicate-photo search
-│   ├── ablation/                           # leakage ablation: two unseeded runs + 5-seed script
-│   ├── analysis/                           # seed-level ablation statistics, duplicate sensitivity analysis
+│   ├── audit/dataset_audit.py               # patient counts, official folds, augmented pool
+│   ├── mcvsld_audit/                         # MCVSLD audit and MSLD duplicate-photo search
+│   ├── ablation/                             # unseeded and five-seed leakage ablations
+│   ├── analysis/                             # seed-level statistics and duplicate sensitivity
 │   ├── protocol_a/train_sgkf_ensemble_v8.py
-│   ├── protocol_b/                         # V34 worker, V34-W (weight saving), diff, merge, re-run comparison
-│   ├── gradcam/gradcam_convnext.py         # qualitative Grad-CAM for ConvNeXt-Tiny
-│   └── figures/make_figures.py
-├── notebooks/                              # Kaggle notebooks for the audit, V34-W and Grad-CAM
+│   ├── protocol_b/                           # V34/V34-W workers, merge and re-run comparison
+│   ├── gradcam/gradcam_convnext.py           # qualitative ConvNeXt-Tiny Grad-CAM, cleanup fixed
+│   └── figures/
+│       ├── make_figures.py                  # Figures 1-5 from saved results
+│       └── make_gradcam_figures.py           # Figure 6 and paged Figure S1 from saved maps
+├── notebooks/                                # audit, V34-W and corrected Grad-CAM notebooks
 ├── results/
-│   ├── predictions/                        # 24 saved arrays from protocol B
-│   ├── protocol_b_merge/                   # report.json, confusion matrix, ROC points
-│   ├── ablation_seeded/                    # per-run CSV, summary, seed-level statistics
-│   ├── mcvsld_audit/                       # MCVSLD audit table and summaries
-│   ├── msld_duplicates/                    # duplicate-photo pairs, fold placement, sensitivity analysis
-│   └── logs/                               # Kaggle logs
-├── figures/                                # Figs. 1 to 5
-└── development/                            # earlier experiments, archived as run
+│   ├── predictions/                          # 24 original Protocol B arrays
+│   ├── protocol_b_merge/                     # primary ensemble report, confusion matrix and ROC data
+│   ├── ablation_seeded/                      # per-run totals, summary and seed-level statistics
+│   ├── mcvsld_audit/                         # version-1 audit tables and summaries
+│   ├── msld_duplicates/                      # duplicate pairs, fold placement and sensitivity
+│   ├── convnext_v34w/                        # re-run arrays, metadata, comparison and checkpoint hashes
+│   ├── gradcam/                              # selected photographs, overlays, raw maps, CSVs and gallery
+│   └── logs/                                 # original Kaggle logs
+├── figures/                                  # Figures 1-6 and Figure6_panel_manifest.csv
+│   └── supplementary/                        # seven readable Figure S1 pages
+└── development/                              # earlier experiments, archived as run
 ```
 
 ## Data
 
-MSLD v2.0 is public on Kaggle: [Mpox Skin Lesion Dataset Version 2.0 (MSLD v2.0)](https://www.kaggle.com/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20). It is not included here. Please follow the dataset's own licence and cite its authors:
+MSLD v2.0 is public on Kaggle: [Mpox Skin Lesion Dataset Version 2.0 (MSLD v2.0)](https://www.kaggle.com/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20). The full dataset is not distributed here. Selected source photographs, Grad-CAM overlays and derived galleries are included in `results/gradcam/` and the manuscript figures. Please follow the source dataset's terms and cite its authors:
 
 > S. N. Ali *et al.*, "A web-based mpox skin lesion detection system using state-of-the-art deep learning models considering racial diversity," *Biomedical Signal Processing and Control*, vol. 98, 106742, 2024.
 
@@ -122,7 +146,7 @@ Five folds of `StratifiedGroupKFold` over the original images, grouped by patien
 
 Read these as optimistic. Epochs, backbones, temperatures and ensemble weights were all chosen using the same out-of-fold predictions that produce the score. Protocol B was built to remove that.
 
-### 3. Protocol B: official folds, nothing tuned on test patients (`src/protocol_b/`)
+### 3. Protocol B: official folds with separate selection and calibration (`src/protocol_b/`)
 
 ![Protocol B pipeline](figures/fig1_protocol_b_pipeline.png)
 
@@ -130,7 +154,7 @@ Read these as optimistic. Epochs, backbones, temperatures and ensemble weights w
 2. Each fold's validation patients are split in half. One half picks the two best checkpoints (by log-loss). The other half is kept for calibration.
 3. The merge script drops calibration patients who are test patients of the same backbone in another fold, joins the four backbones on patient ID (122 calibration and 186 test patients), fits one temperature per backbone and then the ensemble weights, and scores the test patients once.
 
-Results on the 186 test patients shared by all four backbones:
+Results on the 186 test patients shared by all four backbones. Backbone macro AUC values in this table are before temperature scaling; the ensemble AUC is after scaling. ECE is shown before and after scaling:
 
 | Model | Accuracy | Macro F1 | Macro AUC | ECE before scaling | ECE after scaling |
 |---|---:|---:|---:|---:|---:|
@@ -171,7 +195,7 @@ cd mpox-msld-patient-level-audit
 pip install -r requirements.txt
 ```
 
-On Kaggle you only need `pip install timm==1.0.29 openpyxl`. The rest is preinstalled.
+Kaggle base images can change. The root `requirements.txt` records the original-run package versions; `environments/README.md` distinguishes those runs from V34-W and the Grad-CAM session. The re-run's complete recorded package versions are in `results/convnext_v34w/run_info.json`.
 
 ### Step 0: audit the dataset (CPU, about a minute)
 
@@ -221,7 +245,7 @@ The merge reproduces the reported ensemble exactly (164 of 186 patients correct,
 - **The first two ablation scripts were not fully seeded.** That is why 1A gave 82.12% once and 89.47% the next time. Use `leakage_ablation_seeded.py`; its five-seed results are the ones reported. The absolute 1B accuracy is low because ViT-Tiny is trained with a fixed learning rate and no schedule on about 600 photographs. The ablation is built to measure the gap, not to be a strong classifier.
 - **An earlier ablation attempt is not included.** It compared Swin-Tiny under the two pipelines (74.83% against 77.78%) but did not hold the training budget equal, so it does not isolate the effect of augmentation order.
 - **Swin-Small and BEiT-Base have four folds, not five**, for the time-limit reason above.
-- **Scripts in `src/` are the versions that produced the reported numbers.** The only edits are documentation, and in `train_worker_v34.py` the backbone, data path and output path can be set from the environment instead of by commenting lines in and out. `merge_ensemble.py` finds the prediction files by name instead of by a fixed folder layout.
+- **Original training and analysis code is retained.** In `train_worker_v34.py`, the backbone, data path and output path can be set from the environment. `merge_ensemble.py` finds prediction files by name. V34-W adds checkpoint/output records and input checks for the ConvNeXt re-run. The Grad-CAM script and notebook include the permanent cleanup-name fix, and the separate figure helper arranges the saved images and overlays. These changes and the exact re-run comparison are documented in the completed-run section.
 - **The `development/` folder is a record, not a pipeline.** It holds the code and outputs of the earlier experiments reported as Tables 11 and 12 in the manuscript (twelve CNNs under five-fold cross-validation, then single-split tuning). Some of those experiments were set aside in the paper because of in-sample threshold tuning or duplicated images. They are kept so every reported number can be traced to the code that produced it.
 - **This is research code, not a medical device.** Nothing here has been tested on clinical photographs or confirmed against PCR results.
 
@@ -235,22 +259,4 @@ We thank the authors of MSLD v2.0 for releasing the images, the patient-coded fi
 
 ## Licence
 
-The code is released under the MIT licence (see `LICENSE`). The MSLD v2.0 images are not part of this repository and remain under their original licence.
-
-## Completed ConvNeXt re-run and Grad-CAM, 2 November 2026
-
-The ConvNeXt-Tiny weight-saving re-run reproduced the original pooled arrays exactly: 216 test patients and 217 calibration-half patients, identical identifiers, order and labels, 100% top-1 agreement, Cohen's kappa 1.0, and maximum probability difference 0.0. The original four-backbone ensemble remains the primary result (164/186, accuracy 88.17%, macro F1 0.8830, macro AUC 0.9813, ECE 7.26%). The duplicate-exclusion sensitivity AUC is 0.9805, rounded from the stored 0.9804722559894982.
-
-- `results/convnext_v34w/`: 36 re-run prediction arrays, run metadata, fold assignments, selected augmented-image lists, comparison reports, checkpoint summary, run log and hashes of ten archived weight files. Large `.pt` weights are kept outside ordinary Git.
-- `results/gradcam/`: the complete saved Grad-CAM output (39 selected images from 31 identifiers, 66 raw maps), weight verification and parameter-randomisation tables.
-- `figures/fig6_gradcam_examples.png`, `figures/Figure6_panel_manifest.csv`, and `figures/supplementary/`: the manuscript panels, selection manifest and seven readable Figure S1 pages.
-- `src/gradcam/gradcam_convnext.py` and its notebook: the permanent cleanup fix uses `python_gc`, `correct_rows` and `incorrect_rows`. It leaves image selection and map calculations unchanged.
-- `src/figures/make_gradcam_figures.py`: rebuilds the manuscript panels from the saved Grad-CAM originals and overlays. It preserves complete source photographs and their aspect ratios.
-
-All five folds passed strict checkpoint loading and reproduced their saved predictions with maximum difference 0.0. Grad-CAM explains the re-trained ConvNeXt-Tiny only. The first-12-image, rank-1 parameter-randomisation check covered 10 identifiers and three classes: median Spearman correlation 0.002 after head randomisation and -0.015 after head-plus-final-stage randomisation. The head-only maximum remained 0.777. These descriptive checks do not establish lesion-localisation accuracy or causal explanations.
-
-The re-run used Python 3.12.12, PyTorch 2.10.0+cu128 and timm 1.0.25; the Grad-CAM session reported PyTorch 2.11.0+cu128 and timm 1.0.29. See `environments/README.md`. These version records supplement the original-run `requirements.txt`.
-
-The MCVSLD finding applies to version 1 of the Mendeley record. The archived ZIP is 167,736,585 bytes with SHA-256 `ef594772ee91281158c5a1685a0b0d900163913f4716aeb4465e256c287c104c`. No finding is extended to other versions.
-
-The dataset photographs remain subject to their original terms; the MIT code licence does not relicense the source images.
+The code is released under the MIT licence (see `LICENSE`). The full datasets and large trained checkpoint files are not included. Selected dataset photographs appear in the Grad-CAM outputs and manuscript figures; those photographs remain subject to the source dataset's terms. The MIT code licence does not relicense the photographs.
