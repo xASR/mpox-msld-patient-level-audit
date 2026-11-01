@@ -1,0 +1,56 @@
+{
+  "model": "convnext_tiny",
+  "timm_name": "convnext_tiny.in12k_ft_in1k_384",
+  "fold": 3,
+  "fold_source": "datalog",
+  "n_train_original": 538,
+  "n_augmented_used": 14119,
+  "n_val": 153,
+  "n_test": 64,
+  "n_val_selection_patients": 51,
+  "n_val_calibration_patients": 52,
+  "snapshots": [
+    {
+      "rank": 1,
+      "epoch": 3,
+      "selection_logloss": 0.5816810118913115,
+      "file": "convnext_tiny_fold3_rank1.pt"
+    },
+    {
+      "rank": 2,
+      "epoch": 4,
+      "selection_logloss": 0.6049995985090006,
+      "file": "convnext_tiny_fold3_rank2.pt"
+    }
+  ],
+  "calibration_half_f1": 0.8071979190400244,
+  "class_names": [
+    "Healthy",
+    "Cowpox",
+    "Monkeypox",
+    "Measles",
+    "Chickenpox",
+    "HFMD"
+  ],
+  "img_size": 384,
+  "normalize_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "normalize_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "eval_resize": "Resize((img_size, img_size)), no crop",
+  "tta_views": [
+    "identity",
+    "hflip",
+    "rot90",
+    "rot270"
+  ],
+  "tta_combine": "mean of softmax probabilities, then log",
+  "patient_aggregation": "softmax(mean of image log-probabilities)",
+  "snapshot_combine": "mean of the two snapshots' patient probabilities"
+}

@@ -1,0 +1,84 @@
+6.0s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.0s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.0s 3 0.00s - to python to disable frozen modules.
+6.0s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+6.6s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.6s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.6s 7 0.00s - to python to disable frozen modules.
+6.6s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+25.1s 9 ============================================================
+25.1s 10 MSLD v2.0 — Worker Script V34
+25.1s 11 ============================================================
+107.7s 12 
+107.7s 13 Raw image files found under '/kaggle/input/datasets': 40820
+108.2s 14 Label source  — directory: 40819, filename fallback: 0
+108.2s 15 Skipped       — mask files: 0, no label detected: 1
+108.2s 16 Loaded        — 755 original images (524 unique patients), 37044 augmented images
+108.2s 17 label_name  Images  Patients
+108.2s 18 Chickenpox      75        61
+108.2s 19 Cowpox      66        41
+108.2s 20 HFMD     161       141
+108.2s 21 Healthy     114       103
+108.2s 22 Measles      55        45
+108.2s 23 Monkeypox     284       133
+108.2s 24 
+108.2s 25 Total original images : 755
+108.2s 26 Total unique patients : 524
+108.2s 27 Total augmented images: 37044
+108.2s 28 
+108.2s 29 [V34-W] run_info: {"script": "V34-W (V34 + weight saving)", "python": "3.12.12", "torch": "2.10.0+cu128", "torchvision": "0.25.0+cu128", "timm": "1.0.25", "numpy": "2.0.2", "pandas": "2.3.3", "sklearn": "1.6.1", "scipy": "1.16.3", "cuda": "12.8", "cudnn": 91002, "gpu": "Tesla T4", "seed": 42, "img_size": 384, "batch_size": 16, "epochs": 25, "freeze_epochs": 3, "mixup_disable_epoch": 10, "class_names": ["Healthy", "Cowpox", "Monkeypox", "Measles", "Chickenpox", "HFMD"], "models": {"convnext_tiny": "convnext_tiny.in12k_ft_in1k_384"}, "dataset_dir": "/kaggle/input/datasets", "n_original": 755, "n_augmented": 37044, "n_patients": 524}
+122.2s 30 📄 Loading datalog: /kaggle/input/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20/datalog.xlsx
+122.6s 31 ✅ Datalog loaded. Sheets: ['Sheet1', 'Sheet2', 'Sheet3', 'Sheet4', 'Sheet5']
+122.6s 32 
+122.6s 33 ============================================================
+122.6s 34 Training: convnext_tiny  (convnext_tiny.in12k_ft_in1k_384)
+122.6s 35 ============================================================
+122.6s 36 
+122.6s 37 ── Fold 1/5
+122.8s 38 [Datalog] train=537, val=144, test=74 images
+123.3s 39 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+123.3s 40 
+123.3s 41 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+7185.2s 42 🎯 Fold 1 Disjoint Calib-F1 = 0.8190
+7185.2s 43 💾 Fold 1 checkpoint atomically stored → /kaggle/working/outputs
+7185.7s 44 💾 [V34-W] Fold 1 weights (epochs [4, 5]) and assignment saved → /kaggle/working/outputs/weights
+7185.7s 45 
+7185.7s 46 ── Fold 2/5
+7185.9s 47 [Datalog] train=509, val=164, test=82 images
+13815.6s 48 🎯 Fold 2 Disjoint Calib-F1 = 0.8832
+13815.6s 49 💾 Fold 2 checkpoint atomically stored → /kaggle/working/outputs
+13816.1s 50 💾 [V34-W] Fold 2 weights (epochs [6, 5]) and assignment saved → /kaggle/working/outputs/weights
+13816.1s 51 
+13816.1s 52 ── Fold 3/5
+13816.3s 53 [Datalog] train=538, val=153, test=64 images
+20902.7s 54 🎯 Fold 3 Disjoint Calib-F1 = 0.8072
+20902.7s 55 💾 Fold 3 checkpoint atomically stored → /kaggle/working/outputs
+20903.2s 56 💾 [V34-W] Fold 3 weights (epochs [3, 4]) and assignment saved → /kaggle/working/outputs/weights
+20903.2s 57 
+20903.2s 58 ── Fold 4/5
+20903.4s 59 [Datalog] train=524, val=150, test=81 images
+27747.9s 60 🎯 Fold 4 Disjoint Calib-F1 = 0.7989
+27747.9s 61 💾 Fold 4 checkpoint atomically stored → /kaggle/working/outputs
+27748.3s 62 💾 [V34-W] Fold 4 weights (epochs [5, 4]) and assignment saved → /kaggle/working/outputs/weights
+27748.3s 63 
+27748.3s 64 ── Fold 5/5
+27748.5s 65 [Datalog] train=538, val=154, test=63 images
+34739.6s 66 🎯 Fold 5 Disjoint Calib-F1 = 0.8705
+34739.6s 67 💾 Fold 5 checkpoint atomically stored → /kaggle/working/outputs
+34740.1s 68 💾 [V34-W] Fold 5 weights (epochs [5, 4]) and assignment saved → /kaggle/working/outputs/weights
+34740.2s 69 
+34740.2s 70 📊 convnext_tiny Cross-Fold Calib-F1: 0.8358 ± 0.0384  (95% CI ±0.0477)
+34740.2s 71 💾 Final 6 .npy arrays atomically saved for convnext_tiny.
+34740.2s 72 
+34740.2s 73 📊 convnext_tiny — Final Test Set Evaluation:
+34740.2s 74 ↳ Acc:0.8750 | Prec:0.8936 | Rec:0.8444 | F1:0.8633 | AUC:0.9835 | ECE:0.1290 | LogLoss:0.4563
+34740.2s 75 
+34740.2s 76 📋 Classification Report → /kaggle/working/outputs/convnext_tiny_classification_report.txt
+34745.5s 77 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+34745.5s 78 cells[i][c] = re.sub('\\\\\|', '|', cell)
+34745.6s 79 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+34745.6s 80 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+34746.2s 81 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+34746.5s 82 [NbConvertApp] Writing 70685 bytes to __notebook__.ipynb
+34748.8s 83 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+34749.7s 84 [NbConvertApp] Writing 490629 bytes to __results__.html

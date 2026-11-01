@@ -1,0 +1,54 @@
+{
+  "checkpoints": [
+    {
+      "filename": "convnext_tiny_fold1_rank1.pt",
+      "bytes": 111358911,
+      "sha256": "5374eb24e15ff13fa7dbfc0a275d19932aabf063e7f550deed1891dfbdad4b5d"
+    },
+    {
+      "filename": "convnext_tiny_fold1_rank2.pt",
+      "bytes": 111358911,
+      "sha256": "b78d27bc4d3959555a29f17531e3adbd28d48f248a406047cb94702f2e5fcc08"
+    },
+    {
+      "filename": "convnext_tiny_fold2_rank1.pt",
+      "bytes": 111358911,
+      "sha256": "5896969d9177e7c9682e9ca4642d2ba8e78d74182e92e0ac059e86417e675d72"
+    },
+    {
+      "filename": "convnext_tiny_fold2_rank2.pt",
+      "bytes": 111358911,
+      "sha256": "f8d356fa9e00844d1fe10d1ee72f6175c8ec6bff6a69167531461db8740e2b4e"
+    },
+    {
+      "filename": "convnext_tiny_fold3_rank1.pt",
+      "bytes": 111358911,
+      "sha256": "ff864be347aa9b4a376a2680ff54f7e4593abbb96f8226e55cc940e878be9b20"
+    },
+    {
+      "filename": "convnext_tiny_fold3_rank2.pt",
+      "bytes": 111358911,
+      "sha256": "46224b03f38b84698f8521d9bea5dd7ba246124e19164eccb3449e4efd9d1068"
+    },
+    {
+      "filename": "convnext_tiny_fold4_rank1.pt",
+      "bytes": 111358911,
+      "sha256": "33b1419d2f159181d92d32bdc40b301faebd50a3974876c66efc933cbf2cba7b"
+    },
+    {
+      "filename": "convnext_tiny_fold4_rank2.pt",
+      "bytes": 111358911,
+      "sha256": "857d60eae3fd8fbe947e5c44104bb121b693a28d4a9f16e720fb641f7d521435"
+    },
+    {
+      "filename": "convnext_tiny_fold5_rank1.pt",
+      "bytes": 111358911,
+      "sha256": "e5bb86e8136175274104b52765881336755f80be333a16f5ad5ebf93bb30c5e4"
+    },
+    {
+      "filename": "convnext_tiny_fold5_rank2.pt",
+      "bytes": 111358911,
+      "sha256": "7c33c363040e9cb1a580057cc75128ede03a2f359969f8a8c6536a2bc87cd501"
+    }
+  ]
+}

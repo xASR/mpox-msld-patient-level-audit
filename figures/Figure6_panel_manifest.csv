@@ -1,0 +1,7 @@
+panel,filename,patient_id,fold,dataset_class,predicted_class,predicted_probability,subset_rule,original_gallery_reason
+a,HEALTHY_02_01.jpg,HEALTHY_02,3,Healthy,Healthy,0.3909668922424316,lowest-confidence correct Healthy image,"correct, lowest confidence"
+b,CWP_22_01.jpg,CWP_22,4,Cowpox,Cowpox,0.9694504141807556,highest-confidence correct Cowpox image,"correct, highest confidence"
+c,MKP_62_01.jpg,MKP_62,2,Mpox,Chickenpox,0.9216383099555968,highest-confidence mpox-to-chickenpox error,mpox predicted as chickenpox
+d,MSL_21_01.jpg,MSL_21,1,Measles,Measles,0.9642349481582642,highest-confidence correct Measles image,"correct, highest confidence"
+e,CHP_14_02.jpg,CHP_14,1,Chickenpox,Mpox,0.9250351786613464,highest-confidence chickenpox-to-mpox error,"incorrect, highest confidence; chickenpox predicted as mpox"
+f,HFMD_23_01.jpg,HFMD_23,1,HFMD,HFMD,0.961621642112732,highest-confidence correct HFMD image,"correct, highest confidence"

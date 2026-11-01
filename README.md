@@ -236,3 +236,21 @@ We thank the authors of MSLD v2.0 for releasing the images, the patient-coded fi
 ## Licence
 
 The code is released under the MIT licence (see `LICENSE`). The MSLD v2.0 images are not part of this repository and remain under their original licence.
+
+## Completed ConvNeXt re-run and Grad-CAM, 2 November 2026
+
+The ConvNeXt-Tiny weight-saving re-run reproduced the original pooled arrays exactly: 216 test patients and 217 calibration-half patients, identical identifiers, order and labels, 100% top-1 agreement, Cohen's kappa 1.0, and maximum probability difference 0.0. The original four-backbone ensemble remains the primary result (164/186, accuracy 88.17%, macro F1 0.8830, macro AUC 0.9813, ECE 7.26%). The duplicate-exclusion sensitivity AUC is 0.9805, rounded from the stored 0.9804722559894982.
+
+- `results/convnext_v34w/`: 36 re-run prediction arrays, run metadata, fold assignments, selected augmented-image lists, comparison reports, checkpoint summary, run log and hashes of ten archived weight files. Large `.pt` weights are kept outside ordinary Git.
+- `results/gradcam/`: the complete saved Grad-CAM output (39 selected images from 31 identifiers, 66 raw maps), weight verification and parameter-randomisation tables.
+- `figures/fig6_gradcam_examples.png`, `figures/Figure6_panel_manifest.csv`, and `figures/supplementary/`: the manuscript panels, selection manifest and seven readable Figure S1 pages.
+- `src/gradcam/gradcam_convnext.py` and its notebook: the permanent cleanup fix uses `python_gc`, `correct_rows` and `incorrect_rows`. It leaves image selection and map calculations unchanged.
+- `src/figures/make_gradcam_figures.py`: rebuilds the manuscript panels from the saved Grad-CAM originals and overlays. It preserves complete source photographs and their aspect ratios.
+
+All five folds passed strict checkpoint loading and reproduced their saved predictions with maximum difference 0.0. Grad-CAM explains the re-trained ConvNeXt-Tiny only. The first-12-image, rank-1 parameter-randomisation check covered 10 identifiers and three classes: median Spearman correlation 0.002 after head randomisation and -0.015 after head-plus-final-stage randomisation. The head-only maximum remained 0.777. These descriptive checks do not establish lesion-localisation accuracy or causal explanations.
+
+The re-run used Python 3.12.12, PyTorch 2.10.0+cu128 and timm 1.0.25; the Grad-CAM session reported PyTorch 2.11.0+cu128 and timm 1.0.29. See `environments/README.md`. These version records supplement the original-run `requirements.txt`.
+
+The MCVSLD finding applies to version 1 of the Mendeley record. The archived ZIP is 167,736,585 bytes with SHA-256 `ef594772ee91281158c5a1685a0b0d900163913f4716aeb4465e256c287c104c`. No finding is extended to other versions.
+
+The dataset photographs remain subject to their original terms; the MIT code licence does not relicense the source images.

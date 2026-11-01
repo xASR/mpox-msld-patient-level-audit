@@ -4,3 +4,6 @@
 - `protocol_b_merge/` is the output of `src/protocol_b/merge_ensemble.py` on those arrays: `report.json` (temperatures, weights, all metrics, bootstrap intervals, McNemar tests, per-class results, reliability bins, and the same merge without overlap removal under `ens_leaky`), `confusion_matrix.csv` and `roc_points.json`.
 - `ablation_seeded/` holds the output of `src/ablation/leakage_ablation_seeded.py`: one row per run in `ablation_runs.csv` (pipeline, seed, minutes, train and test sizes, correct predictions, accuracy, macro F1, and the share of test images whose photograph or patient also appears in training) and the printed summary in `ablation_summary.txt`.
 - `logs/` holds the Kaggle logs: one per protocol B backbone and one for protocol A.
+
+- `convnext_v34w/` contains completed re-run predictions, fold metadata and assignments, software versions, comparison reports and archived checkpoint hashes. `.pt` checkpoints are stored separately.
+- `gradcam/` contains the complete completed Grad-CAM output: five CSVs, 66 raw maps, originals, overlays and full gallery, plus reviewed map-integrity and randomisation summaries. The class order matches the original predictions.

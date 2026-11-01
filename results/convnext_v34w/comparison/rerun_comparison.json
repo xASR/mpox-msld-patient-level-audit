@@ -1,0 +1,82 @@
+{
+  "test": {
+    "split": "test",
+    "same_patient_order": true,
+    "same_labels": true,
+    "n_patients": 216,
+    "top1_agreement_n": 216,
+    "top1_agreement_pct": 100.0,
+    "cohen_kappa": 1.0,
+    "max_abs_prob_diff": 0.0,
+    "mean_abs_prob_diff": 0.0,
+    "mean_abs_true_class_prob_diff": 0.0,
+    "exactly_reproduced": true,
+    "original": {
+      "accuracy": 0.875,
+      "macro_precision": 0.8935811765024245,
+      "macro_recall": 0.8444164427094369,
+      "macro_f1": 0.8633379526843026,
+      "macro_auc": 0.983460272439534,
+      "ece": 0.1289916734928361,
+      "log_loss": 0.4562544932884727,
+      "correct": 189,
+      "n": 216
+    },
+    "rerun": {
+      "accuracy": 0.875,
+      "macro_precision": 0.8935811765024245,
+      "macro_recall": 0.8444164427094369,
+      "macro_f1": 0.8633379526843026,
+      "macro_auc": 0.983460272439534,
+      "ece": 0.1289916734928361,
+      "log_loss": 0.4562544932884727,
+      "correct": 189,
+      "n": 216
+    },
+    "mcnemar": {
+      "original_only_correct": 0,
+      "rerun_only_correct": 0,
+      "exact_p": 1.0
+    }
+  },
+  "val": {
+    "split": "val",
+    "same_patient_order": true,
+    "same_labels": true,
+    "n_patients": 217,
+    "top1_agreement_n": 217,
+    "top1_agreement_pct": 100.0,
+    "cohen_kappa": 1.0,
+    "max_abs_prob_diff": 0.0,
+    "mean_abs_prob_diff": 0.0,
+    "mean_abs_true_class_prob_diff": 0.0,
+    "exactly_reproduced": true,
+    "original": {
+      "accuracy": 0.8755760368663594,
+      "macro_precision": 0.8864087301587301,
+      "macro_recall": 0.8362669494248441,
+      "macro_f1": 0.8568367399876483,
+      "macro_auc": 0.9794508438494813,
+      "ece": 0.1459861068326934,
+      "log_loss": 0.48016034610461095,
+      "correct": 190,
+      "n": 217
+    },
+    "rerun": {
+      "accuracy": 0.8755760368663594,
+      "macro_precision": 0.8864087301587301,
+      "macro_recall": 0.8362669494248441,
+      "macro_f1": 0.8568367399876483,
+      "macro_auc": 0.9794508438494813,
+      "ece": 0.1459861068326934,
+      "log_loss": 0.48016034610461095,
+      "correct": 190,
+      "n": 217
+    },
+    "mcnemar": {
+      "original_only_correct": 0,
+      "rerun_only_correct": 0,
+      "exact_p": 1.0
+    }
+  }
+}

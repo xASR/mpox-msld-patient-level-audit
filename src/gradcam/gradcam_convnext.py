@@ -7,7 +7,8 @@
 # Run the cells in order. Cell 2 must pass before anything else is trusted.
 
 # %% CELL 1: configuration, inputs, checks
-import os, re, json, glob, gc
+import os, re, json, glob
+import gc as python_gc
 from pathlib import Path
 import numpy as np, pandas as pd
 import torch, torch.nn.functional as F
@@ -130,9 +131,9 @@ MPX, CHP = CLASS_NAMES.index("Monkeypox"), CLASS_NAMES.index("Chickenpox")
 sel = []
 for c in range(len(CLASS_NAMES)):
     g = pred[pred["true"] == c].sort_values(["conf", "filename"])
-    gc, gi = g[g["correct"]], g[~g["correct"]]
-    picks = [("correct, highest confidence", gc.tail(1)), ("correct, lowest confidence", gc.head(1)),
-             ("incorrect, highest confidence", gi.tail(1)), ("incorrect, lowest confidence", gi.head(1))]
+    correct_rows, incorrect_rows = g[g["correct"]], g[~g["correct"]]
+    picks = [("correct, highest confidence", correct_rows.tail(1)), ("correct, lowest confidence", correct_rows.head(1)),
+             ("incorrect, highest confidence", incorrect_rows.tail(1)), ("incorrect, lowest confidence", incorrect_rows.head(1))]
     for why, d in picks:
         for r in d.itertuples():
             sel.append((r.filename, why))
@@ -149,6 +150,7 @@ print(sel[["filename", "fold", "true", "pred", "conf", "reason"]].assign(
 
 
 # %% CELL 4: Grad-CAM on the output of the last ConvNeXt stage
+import gc as python_gc
 class GradCAM:
     def __init__(self, model):
         self.model = model
@@ -203,7 +205,7 @@ for k in sorted(sel["fold"].unique()):
         img.save(OUT / f"fold{k}_{Path(r.filename).stem}_original.png")
     for c in cams:
         c.close()
-    del cams; gc.collect()
+    del cams; python_gc.collect()
     if DEVICE.type == "cuda":
         torch.cuda.empty_cache()
 index = pd.DataFrame(index); index.to_csv(OUT / "gradcam_index.csv", index=False)
@@ -230,13 +232,14 @@ print("saved", OUT / "gradcam_gallery.png")
 
 
 # %% CELL 6 (optional): parameter-randomisation sanity check (Adebayo et al., 2018)
+import gc as python_gc
 from scipy.stats import spearmanr
 torch.manual_seed(0)
 check = []
 for r in sel.head(12).itertuples():
     k = r.fold
     img = Image.open(image_path(r.filename)).convert("RGB"); x = VAL_TF(img)[None].to(DEVICE)
-    base = GradCAM(load_model(weights[k][0])); m0, _ = base(x, r.pred); base.close(); del base; gc.collect()
+    base = GradCAM(load_model(weights[k][0])); m0, _ = base(x, r.pred); base.close(); del base; python_gc.collect()
     for level in ("head", "head+last_stage"):
         m = load_model(weights[k][0])
         for mod in ([m.head] if level == "head" else [m.head, m.stages[-1]]):
@@ -244,7 +247,7 @@ for r in sel.head(12).itertuples():
                 if hasattr(sub, "reset_parameters"):
                     sub.reset_parameters()
         g = GradCAM(m); mr, _ = g(x, r.pred); g.close()
-        del g, m; gc.collect()
+        del g, m; python_gc.collect()
         rho = spearmanr(m0.ravel(), mr.ravel()).correlation if mr.max() > 0 and m0.max() > 0 else float("nan")
         check.append({"filename": r.filename, "randomised": level, "spearman_vs_trained": rho})
 check = pd.DataFrame(check); check.to_csv(OUT / "randomisation_check.csv", index=False)

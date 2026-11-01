@@ -1,0 +1,35 @@
+{
+  "script": "V34-W (V34 + weight saving)",
+  "python": "3.12.12",
+  "torch": "2.10.0+cu128",
+  "torchvision": "0.25.0+cu128",
+  "timm": "1.0.25",
+  "numpy": "2.0.2",
+  "pandas": "2.3.3",
+  "sklearn": "1.6.1",
+  "scipy": "1.16.3",
+  "cuda": "12.8",
+  "cudnn": 91002,
+  "gpu": "Tesla T4",
+  "seed": 42,
+  "img_size": 384,
+  "batch_size": 16,
+  "epochs": 25,
+  "freeze_epochs": 3,
+  "mixup_disable_epoch": 10,
+  "class_names": [
+    "Healthy",
+    "Cowpox",
+    "Monkeypox",
+    "Measles",
+    "Chickenpox",
+    "HFMD"
+  ],
+  "models": {
+    "convnext_tiny": "convnext_tiny.in12k_ft_in1k_384"
+  },
+  "dataset_dir": "/kaggle/input/datasets",
+  "n_original": 755,
+  "n_augmented": 37044,
+  "n_patients": 524
+}

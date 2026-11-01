@@ -1,0 +1,6 @@
+fold,patients,same_patient_order,max_abs_diff
+1,53,True,0.0
+2,54,True,0.0
+3,53,True,0.0
+4,53,True,0.0
+5,51,True,0.0
