@@ -1,0 +1,169 @@
+{
+  "schema": "pb_known_duplicate_corrected_v1",
+  "protocol": "Duplicate-corrected official-fold Protocol B",
+  "class_names": [
+    "Healthy",
+    "Cowpox",
+    "Monkeypox",
+    "Measles",
+    "Chickenpox",
+    "HFMD"
+  ],
+  "models": {
+    "efficientnetv2_s": {
+      "timm_name": "tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_repo": "timm/tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_revision": "ea9abc143ea2b9d8e1ec1de277bce02149b9cf0e",
+      "hf_file": "model.safetensors"
+    },
+    "convnext_tiny": {
+      "timm_name": "convnext_tiny.in12k_ft_in1k_384",
+      "hf_repo": "timm/convnext_tiny.in12k_ft_in1k_384",
+      "hf_revision": "bac32564d7c9a688e40c76b6d17fcde4e0b15a19",
+      "hf_file": "model.safetensors"
+    },
+    "swin_small": {
+      "timm_name": "swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_repo": "timm/swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_revision": "221ee757828e4772df860bd42ef476de78dd5fc6",
+      "hf_file": "model.safetensors"
+    },
+    "beit_base": {
+      "timm_name": "beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_repo": "timm/beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_revision": "982da264d54e96afd1465eb6a5c3f227ae138222",
+      "hf_file": "model.safetensors"
+    }
+  },
+  "datalog_sha256": "77284ec66733bf60a8858f207c67ee9b280b4daa9b108cec1116b65b56987c53",
+  "cohort_counts": {
+    "clinical_original_images": 755,
+    "known_groups": 520,
+    "official_test_appearances": 364,
+    "unique_official_test_image_filenames": 297,
+    "unique_test_groups": 215,
+    "pooled_calibration_group_candidates": 217,
+    "pooled_calibration_test_overlap_groups": 79,
+    "pooled_calibration_groups_after_test_exclusion": 138
+  },
+  "split_rule": "Preserve official test images; among known-group role conflicts keep test > calibration > selection > training and exclude other-role images. Do not move images into the test cohort.",
+  "augmentation_rule": "Retain the original V34-W sampled released-augmentation entries only when their source identifier/group remains training; no resampling and no deduplication of repeated fold-folder entries.",
+  "evaluation_unit": "Known-duplicate-aware group. Original filename identifiers are retained in assignments.",
+  "pooled_calibration_rule": "Remove all pooled test groups from the pooled calibration group candidates before fitting temperatures or ensemble weights.",
+  "training": {
+    "epochs": 25,
+    "freeze_epochs": 3,
+    "img_size": 384,
+    "batch_size": 16,
+    "mixup_disable_epoch": 10,
+    "mixup_alpha": 0.1,
+    "cutmix_alpha": 0.0,
+    "label_smoothing": 0.1,
+    "optimizer": "AdamW",
+    "head_lr": 0.001,
+    "full_lr": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_epochs": 2,
+    "lr_min": 1e-06,
+    "class_weights": "Effective-number weights beta=0.999 from corrected original training images.",
+    "selection": "Two epochs with lowest selection-group log-loss; no test or calibration labels used.",
+    "tta": [
+      "identity",
+      "horizontal_flip",
+      "rotate90",
+      "rotate270"
+    ],
+    "aggregation": "Mean view softmax, geometric mean across images per known group, arithmetic mean across two checkpoints.",
+    "training_seed_rule": "42 + 100 * model_index + fold; independent new jobs, model order EfficientNetV2-S, ConvNeXt-Tiny, Swin-Small, BEiT-Base.",
+    "dataloader_seed": 42,
+    "timm": "1.0.29",
+    "retained_inference_weights_per_fold": 2
+  },
+  "reproducibility_scope": "Fresh corrected runs. Epoch-boundary resume includes full optimizer/scheduler/scaler/RNG state and requires matching recorded software/GPU environment. Historical design reuse and unknown identity links remain limitations.",
+  "files": {
+    "augmented/fold1.csv": {
+      "sha256": "12236fb6e8b2ec424f2e57dbc7273670015dabe76461c5fbfb25e44027d9ddc8",
+      "bytes": 2608964
+    },
+    "augmented/fold2.csv": {
+      "sha256": "079bfd795ee08d1ad1dc67290e916427cd19f7a87c8e0c27a962fb38733e2b82",
+      "bytes": 2465288
+    },
+    "augmented/fold3.csv": {
+      "sha256": "03942933188098e0c5332d6303f0f72979e5b094702b5f1b4f51b58ba66c9e26",
+      "bytes": 2580548
+    },
+    "augmented/fold4.csv": {
+      "sha256": "87bc701c851847af80ec69974cd293a2f4c86ebb94048d1ccc3e19478ed7d64b",
+      "bytes": 2515061
+    },
+    "augmented/fold5.csv": {
+      "sha256": "fed16f008d4e1cd16024b7e8020135c037687217ac9d3f3f3571d9e7dbf38684",
+      "bytes": 2595179
+    },
+    "clinical_images.csv": {
+      "sha256": "9d2bbc4d13529a67add8ca759ce64ec39110369f10cb15b1d4f7be541974f6aa",
+      "bytes": 123039
+    },
+    "code/corrected_core.py": {
+      "sha256": "891c1810c20abbd44c07f53e79195faaf1a434e8310a398b22c8f01e452e6b47",
+      "bytes": 10753
+    },
+    "code/merge_corrected.py": {
+      "sha256": "709603ad4ac9c086f00f98239be5e5234e6b1f5779f75d6adfc5ddaf9cda5051",
+      "bytes": 18208
+    },
+    "code/resume_engine.py": {
+      "sha256": "ccd45fe71433b9d71e73878be43d9f06e6b4d92995193a69cc8c9de24cd7b897",
+      "bytes": 12276
+    },
+    "code/run_jobs.py": {
+      "sha256": "4a558a61693de0b5700789051f2aa98c4466efdf3d9ba8e0339aa5fd2c4df7e0",
+      "bytes": 6405
+    },
+    "code/train_fold.py": {
+      "sha256": "19e19e5260478cb0956d262d3ec9d18d2fe8889bdb850424c28948836fe93cad",
+      "bytes": 15516
+    },
+    "cohort_counts.json": {
+      "sha256": "ebbc72a02e0919944f822982c2a121e4ab8a77907dd29b9bec19dd272fb88c7b",
+      "bytes": 323
+    },
+    "confirmed_duplicates.json": {
+      "sha256": "2e2aea8af9f5d2499ce53461838744cd105ce452bba4a03b11e3111672daa81f",
+      "bytes": 1799
+    },
+    "excluded_original_images.csv": {
+      "sha256": "9953a4891194180d8ada234e17ca361ad1420d928e0c5c4a4c35d2b5675f6045",
+      "bytes": 2024
+    },
+    "provenance/original_worker_v34.py": {
+      "sha256": "7c330090665178809286a652615b1e4769b5ce45d449c47e3394900981e7249a",
+      "bytes": 38351
+    },
+    "split_summary.csv": {
+      "sha256": "a13f8cec598e1ee997bd9e554ec3bdaaa3d73d3d3fe6cfcd254c7f0392507ac8",
+      "bytes": 350
+    },
+    "splits/fold1.csv": {
+      "sha256": "84e081d69a45550875b3145a8df3e2cc3a5c8a751f2babd42ff0c39dba62aff8",
+      "bytes": 144289
+    },
+    "splits/fold2.csv": {
+      "sha256": "740bb375c2fc469f25c39165c1567e28433a42bacca7a502f0525b13a170c285",
+      "bytes": 144138
+    },
+    "splits/fold3.csv": {
+      "sha256": "38b9d71af3095d3b8deb08d909c13e50678b63db23d0626ea8e7ce32dd35b11b",
+      "bytes": 144487
+    },
+    "splits/fold4.csv": {
+      "sha256": "aaa20f985b5c94d7b01cf9ff57797f532779b1a3d013847010b5ab2f2e83f93c",
+      "bytes": 144148
+    },
+    "splits/fold5.csv": {
+      "sha256": "af2d846ceee257ecbc8d7f8ffcb50b92f0806fda33b420f9e38ab46ed6fe2a0c",
+      "bytes": 144546
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "fold2_calibration_groups": 41,
+  "fold2_test_groups": 105,
+  "primary_fold_reconstruction_max_abs_diff": 1.1102230246251565e-16,
+  "other_four_folds_identical": true,
+  "fold2_calibration_fit": {
+    "temperature_messages": [
+      "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+    ],
+    "weight_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "calibration_log_loss": 0.30288430017814794
+  },
+  "seed": 344,
+  "fold2_ensemble_changed_decisions": 11
+}

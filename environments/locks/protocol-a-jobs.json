@@ -1,0 +1,982 @@
+[
+  {
+    "model": "beit_base",
+    "fold": 1,
+    "seed": 343,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_repo": "timm/beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_revision": "982da264d54e96afd1465eb6a5c3f227ae138222",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "beit_base",
+    "fold": 2,
+    "seed": 344,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_repo": "timm/beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_revision": "982da264d54e96afd1465eb6a5c3f227ae138222",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "beit_base",
+    "fold": 3,
+    "seed": 345,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_repo": "timm/beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_revision": "982da264d54e96afd1465eb6a5c3f227ae138222",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "beit_base",
+    "fold": 4,
+    "seed": 346,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_repo": "timm/beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_revision": "982da264d54e96afd1465eb6a5c3f227ae138222",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "beit_base",
+    "fold": 5,
+    "seed": 347,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_repo": "timm/beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_revision": "982da264d54e96afd1465eb6a5c3f227ae138222",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "convnext_tiny",
+    "fold": 1,
+    "seed": 143,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "convnext_tiny.in12k_ft_in1k_384",
+      "hf_repo": "timm/convnext_tiny.in12k_ft_in1k_384",
+      "hf_revision": "bac32564d7c9a688e40c76b6d17fcde4e0b15a19",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "convnext_tiny",
+    "fold": 2,
+    "seed": 144,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "convnext_tiny.in12k_ft_in1k_384",
+      "hf_repo": "timm/convnext_tiny.in12k_ft_in1k_384",
+      "hf_revision": "bac32564d7c9a688e40c76b6d17fcde4e0b15a19",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "convnext_tiny",
+    "fold": 3,
+    "seed": 145,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "convnext_tiny.in12k_ft_in1k_384",
+      "hf_repo": "timm/convnext_tiny.in12k_ft_in1k_384",
+      "hf_revision": "bac32564d7c9a688e40c76b6d17fcde4e0b15a19",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "convnext_tiny",
+    "fold": 4,
+    "seed": 146,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "convnext_tiny.in12k_ft_in1k_384",
+      "hf_repo": "timm/convnext_tiny.in12k_ft_in1k_384",
+      "hf_revision": "bac32564d7c9a688e40c76b6d17fcde4e0b15a19",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "convnext_tiny",
+    "fold": 5,
+    "seed": 147,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "convnext_tiny.in12k_ft_in1k_384",
+      "hf_repo": "timm/convnext_tiny.in12k_ft_in1k_384",
+      "hf_revision": "bac32564d7c9a688e40c76b6d17fcde4e0b15a19",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "efficientnetv2_s",
+    "fold": 1,
+    "seed": 43,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_repo": "timm/tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_revision": "ea9abc143ea2b9d8e1ec1de277bce02149b9cf0e",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "efficientnetv2_s",
+    "fold": 2,
+    "seed": 44,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_repo": "timm/tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_revision": "ea9abc143ea2b9d8e1ec1de277bce02149b9cf0e",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "efficientnetv2_s",
+    "fold": 3,
+    "seed": 45,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_repo": "timm/tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_revision": "ea9abc143ea2b9d8e1ec1de277bce02149b9cf0e",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "efficientnetv2_s",
+    "fold": 4,
+    "seed": 46,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_repo": "timm/tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_revision": "ea9abc143ea2b9d8e1ec1de277bce02149b9cf0e",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "efficientnetv2_s",
+    "fold": 5,
+    "seed": 47,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_repo": "timm/tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_revision": "ea9abc143ea2b9d8e1ec1de277bce02149b9cf0e",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "swin_small",
+    "fold": 1,
+    "seed": 243,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_repo": "timm/swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_revision": "221ee757828e4772df860bd42ef476de78dd5fc6",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "swin_small",
+    "fold": 2,
+    "seed": 244,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_repo": "timm/swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_revision": "221ee757828e4772df860bd42ef476de78dd5fc6",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "swin_small",
+    "fold": 3,
+    "seed": 245,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_repo": "timm/swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_revision": "221ee757828e4772df860bd42ef476de78dd5fc6",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "swin_small",
+    "fold": 4,
+    "seed": 246,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_repo": "timm/swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_revision": "221ee757828e4772df860bd42ef476de78dd5fc6",
+      "hf_file": "model.safetensors"
+    }
+  },
+  {
+    "model": "swin_small",
+    "fold": 5,
+    "seed": 247,
+    "environment": {
+      "python": "3.13.16",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "cuda_device_count": 2,
+      "gpu": "Tesla T4",
+      "torchvision": "0.26.0+cu130",
+      "timm": "1.0.29",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "sklearn": "1.6.1",
+      "PIL": "13.0.0"
+    },
+    "training": {
+      "epochs": 25,
+      "freeze_epochs": 3,
+      "mixup_disable_epoch": 10,
+      "img_size": 384,
+      "batch_size": 16,
+      "base_seed": 42,
+      "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+      "mixup_alpha": 0.2,
+      "cutmix_alpha": 1.0,
+      "label_smoothing": 0.1,
+      "retained_checkpoints": 2,
+      "selection_metric": "selection-cluster log-loss",
+      "outer_folds": 5,
+      "outer_split_seed": 42,
+      "inner_split_seed_rule": "4200 + fold",
+      "calibration_half_seed_rule": "4300 + fold",
+      "temperature_bounds": [
+        0.1,
+        5.0
+      ],
+      "ensemble_models": "all four, no test-based pruning"
+    },
+    "pretrained_source": {
+      "timm_name": "swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_repo": "timm/swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_revision": "221ee757828e4772df860bd42ef476de78dd5fc6",
+      "hf_file": "model.safetensors"
+    }
+  }
+]

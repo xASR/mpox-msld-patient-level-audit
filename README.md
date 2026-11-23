@@ -1,262 +1,114 @@
-# Patient-level mpox skin lesion classification on MSLD v2.0
+# Augmentation leakage and duplicate-aware evaluation of Mpox skin lesion classifiers
 
-Code, saved predictions and logs for our study of six-class skin lesion classification on the Mpox Skin Lesion Dataset v2.0 (MSLD v2.0): a data leakage audit of the dataset, a controlled ablation that measures how much an image-level split inflates accuracy, and a calibrated CNN and transformer ensemble evaluated per patient.
+This project audits augmentation leakage in the Mpox Skin Lesion Dataset v2.0 (MSLD v2.0) and evaluates six-class image classifiers under duplicate-aware splits. **Protocol A** is the primary full-coverage benchmark. **Protocol B** is a secondary benchmark based on the published workbook assignments. Controlled exposure experiments quantify how the training and test partition affects the reported accuracy.
 
-> **Manuscript:** *Patient-level evaluation of deep learning for six-class mpox skin lesion classification: a data leakage audit of MSLD v2.0 and a calibrated CNN and transformer ensemble.* Under preparation. Citation details will be added here once it is published.
-
-## Completed ConvNeXt re-run and Grad-CAM, 2 November 2026
+## Data and evaluation units
 
-The ConvNeXt-Tiny weight-saving re-run reproduced the original pooled arrays exactly: 216 test patients and 217 calibration-half patients, identical identifiers, order and labels, 100% top-1 agreement, Cohen's kappa 1.0, and maximum probability difference 0.0. The original four-backbone ensemble remains the primary result (164/186, accuracy 88.17%, macro F1 0.8830, macro AUC 0.9813, ECE 7.26%). The duplicate-exclusion sensitivity AUC is 0.9805, rounded from the stored 0.9804722559894982.
+- The clinical inventory contains **755 original images**, **524 filename identifiers**, and **520 known groups** after linking four confirmed cross-identifier duplicate pairs. A known group is a connected component defined using filename identifiers, exact matches, and confirmed duplicate links. Clinical identities were unavailable.
+- The model output order is Healthy, Cowpox, Mpox, Measles, Chickenpox, and hand, foot, and mouth disease (HFMD). The frozen model and prediction records use the label `Monkeypox` for Mpox.
+- The first duplicate screen adjudicated all 46 candidates. The broader search produced 2,127 candidates, of which 103 were visually reviewed. It confirmed no additional links and left 2,024 lower-priority pairs unadjudicated.
+- All **11,325 images** in version 1 of the Mendeley MCVSLD record matched MSLD v2.0 files byte for byte. This release provided no independent external validation images. [MCVSLD version 1](https://data.mendeley.com/datasets/dfztdtfsxz/1)
+- Obtain the clinical originals, released augmentation folders, and `datalog.xlsx` from the dataset distributor. The frozen inventory specifies the archive and eligible inputs for each experiment. [MSLD v2.0 on Kaggle](https://www.kaggle.com/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20) · [MSLD v2.0 dataset paper](https://doi.org/10.1016/j.bspc.2024.106742)
 
-- `results/convnext_v34w/`: 36 re-run prediction arrays, run metadata, fold assignments, selected augmented-image lists, comparison reports, checkpoint summary, run log and hashes of ten archived weight files. Large `.pt` weights are kept outside ordinary Git.
-- `results/gradcam/`: the complete saved Grad-CAM output (39 selected images from 31 identifiers, 66 raw maps), weight verification and parameter-randomisation tables.
-- `figures/fig6_gradcam_examples.png`, `figures/Figure6_panel_manifest.csv`, and `figures/supplementary/`: the manuscript panels, selection manifest and seven readable Figure S1 pages.
-- `src/gradcam/gradcam_convnext.py` and its notebook: the permanent cleanup fix uses `python_gc`, `correct_rows` and `incorrect_rows`. It leaves image selection and map calculations unchanged.
-- `src/figures/make_gradcam_figures.py`: rebuilds the manuscript panels from the saved Grad-CAM originals and overlays. It preserves complete source photographs and their aspect ratios.
+## Main evaluation protocols
 
-All five folds passed strict checkpoint loading and reproduced their saved predictions with maximum difference 0.0. Grad-CAM explains the re-trained ConvNeXt-Tiny only. The first-12-image, rank-1 parameter-randomisation check covered 10 identifiers and three classes: median Spearman correlation 0.002 after head randomisation and -0.015 after head-plus-final-stage randomisation. The head-only maximum remained 0.777. These descriptive checks do not establish lesion-localisation accuracy or causal explanations.
+| Design | Split and training | Held-out evaluation |
+| --- | --- | --- |
+| **A · Full coverage** | Five stratified outer group folds, with disjoint inner checkpoint-selection and calibration groups. Original training images receive online augmentation. The primary outer split seed is 42. | Each of the 755 original images and 520 known groups is tested once. Temperatures and mixture weights are fitted within each fold. |
+| **B · Official assignments** | Five workbook folds. Within each fold, overlapping groups are assigned by priority in the order test, calibration, selection, then training. Released offline augmentations are restricted to sources that remain eligible for training. Training also uses online transforms. | 364 test-image appearances represent **297 distinct images (39.34%)**. The 264 test-group appearances represent **215 distinct groups (41.35%)**. Repeated held-out predictions are pooled by group. Removing 79 pooled test groups from 217 calibration candidates leaves **138 calibration groups**. |
 
-The re-run used Python 3.12.12, PyTorch 2.10.0+cu128 and timm 1.0.25; the Grad-CAM session reported PyTorch 2.11.0+cu128 and timm 1.0.29. See `environments/README.md`. These version records supplement the original-run `requirements.txt`.
+### Backbone configurations
 
-The MCVSLD finding applies to version 1 of the Mendeley record. The archived ZIP is 167,736,585 bytes with SHA-256 `ef594772ee91281158c5a1685a0b0d900163913f4716aeb4465e256c287c104c`. No finding is extended to other versions.
+All four main backbones use ImageNet-pretrained weights, a six-class head, and 384 × 384 inputs. ViT-Tiny is used in the leakage experiments alongside ConvNeXt-Tiny.
 
-The dataset photographs remain subject to their original terms; the MIT code licence does not relicense the source images.
+| Backbone | `timm` identifier | Input (px) | Parameters (M) | Use |
+| --- | --- | ---: | ---: | --- |
+| EfficientNetV2-S | `tf_efficientnetv2_s.in21k_ft_in1k` | 384 | 20.2 | A, B, configuration sensitivity |
+| ConvNeXt-Tiny | `convnext_tiny.in12k_ft_in1k_384` | 384 | 27.8 | A, B, leakage experiments |
+| Swin-Small | `swin_small_patch4_window7_224.ms_in22k_ft_in1k` | 384 | 48.8 | A, B |
+| BEiT-Base | `beit_base_patch16_384.in22k_ft_in22k_in1k` | 384 | 86.0 | A, B, precision sensitivity |
+| ViT-Tiny | `vit_tiny_patch16_224.augreg_in21k_ft_in1k` | 128 | 5.5 | Leakage experiments |
 
-## Why this repository exists
+Both main protocols train for **25 epochs** at batch size **16** using mixed precision. AdamW uses a head learning rate of **0.001** for epochs 1–3, then **0.0001** for full fine-tuning, weight decay **0.01**, and a cosine schedule with two warm-up epochs and minimum learning rate **0.000001**. Main training transformations use a random resized crop (area scale 0.5–1.0), horizontal flips (probability 0.5), rotations up to 15°, brightness/contrast/saturation jitter of 0.4, hue jitter of 0.1, 3 × 3 Gaussian blur, and ImageNet normalization.
 
-Several papers on MSLD v2.0 report test accuracy above 90%. Many of them augment the images first and split the augmented pool at random afterwards. When that happens, a rotated or colour-shifted copy of a test photograph can sit in the training set, and so can other photographs of the same patient. The model is partly being tested on pictures it has already seen.
+| Setting | Protocol A | Protocol B |
+| --- | --- | --- |
+| Mixing, epochs 1–10 | Mixup α = 0.2 and CutMix α = 1.0 | Mixup α = 0.1 and CutMix disabled |
+| Hard-label loss, epochs 11–25 | Inverse-frequency weighted cross-entropy | Effective-number weighted cross-entropy, β = 0.999 |
+| Label smoothing | 0.1 | 0.1 |
+| Checkpoint selection | Two lowest selection-group log-loss epochs per fold and model | Same rule |
+| Test views | Identity, horizontal flip, and 0.9× and 1.1× rescaling | Identity, horizontal flip, and 90° and 270° rotations |
+| Probability aggregation | Average view logits before softmax, average checkpoint probabilities per image, then form a confidence-weighted group mean | Average view probabilities, form a normalized geometric group mean per checkpoint, then average the two checkpoint vectors |
+| Final calibration | Per outer fold | Once on the pooled eligible calibration cohort |
 
-We wanted two numbers: how much that shortcut adds, and what accuracy holds up when every patient stays on one side of the split. Short answer: in our ablation the shortcut added about 35 percentage points (averaged over five seeds), and with patient-level evaluation the best ensembles land near 88%.
+Each backbone’s temperature is fitted by minimizing calibration-group log-loss with a bound of **[0.1, 5.0]**. Softmax-parameterized mixture weights minimize log-loss on the calibration groups. Main classification uses the maximum class probability. The manifests pin class order, split membership, pretrained revisions, and job configurations.
 
-## Main findings
+### Main results
 
-- **The public release has 524 patient IDs, not 541, and at most 520 distinct patients.** Counting patient IDs in the file names gives 524 across 755 original images; the dataset paper reports 541. Four pairs of IDs share a photograph.
-- **The official folds are not a partition.** The five sheets of `datalog.xlsx` each assign all 755 images to train, validation or test, but their test parts overlap. Taken together they cover only 364 images (48.2%) and 216 patients, so "averaged over the five official folds" is not the same as "every image tested once".
-- **Augmenting before splitting inflates accuracy by about 35 points.** With the same ViT-Tiny, image size and training budget, an image-level split of the augmented pool gave 85.32 ± 1.11% over five seeds. A patient-level split gave 50.34 ± 3.96%. The leaky pipeline won on every seed, by 30.5 to 40.2 points.
-- **Patient-level accuracy sits near 88%.** Under the official folds with training-only augmentation (protocol B), a temperature-scaled ensemble reached 88.17% accuracy (95% CI 82.7 to 92.1%), macro F1 0.883, macro AUC 0.981 and ECE 7.26% on 186 held-out patients. Stratified group cross-validation (protocol A) gave 88.76%, but that figure is optimistic because model choices were made on the evaluated folds.
-- **The ensemble could not be separated from temperature-scaled ConvNeXt-Tiny alone.** Most of the calibration gain comes from temperature scaling, not from combining models.
-- **Chickenpox is the hard class.** Seven of 24 chickenpox patients were predicted as mpox.
+| Ensemble | Correct / evaluated | Accuracy (%) | Macro F1 | Macro AUC | Ten-bin ECE (%) | Log-loss |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| **A · Original images** | 611 / 755 | **80.93** | 0.7959 | 0.9674 | 5.27 | 0.5536 |
+| **A · Known groups** | 442 / 520 | **85.00** | 0.8333 | 0.9748 | 2.76 | 0.4509 |
+| B · Pooled official test groups | 189 / 215 | 87.91 | 0.8627 | 0.9794 | 6.25 | 0.4195 |
 
+| Raw backbone | Protocol A image accuracy (%) | Protocol A group accuracy (%) | Protocol B group accuracy (%) |
+| --- | ---: | ---: | ---: |
+| EfficientNetV2-S | 62.38 | 69.42 | 82.79 |
+| ConvNeXt-Tiny | 81.72 | 85.77 | 86.05 |
+| Swin-Small | 80.93 | 85.00 | 85.12 |
+| BEiT-Base | 71.79 | 76.15 | 85.58 |
 
-## Update, November 2026
+AUC is the macro one-versus-rest ROC area. Group-accuracy Wilson 95% CIs for the ensemble are **81.67%–87.81%** for A and **82.87%–91.61%** for B. The cohorts and evaluation units differ across designs. Protocol A preserves the initial BEiT-Base fold-2 fit. Substituting the repeat and refitting only that fold’s ensemble left overall group accuracy at 442/520.
 
-- **Duplicate photographs in MSLD v2.0.** Four pairs of patient IDs share a photograph (CHP_26_01/CHP_62_01, HFMD_130_01/HFMD_96_01, HEALTHY_21_01/HEALTHY_77_01, CWP_02_01/CWP_31_01), so the 524 IDs represent at most 520 people. Three pairs put an identical image in training and test of the official folds; removing the four affected test patients gives 160 of 182 correct (87.91%). Code: `src/mcvsld_audit/stage2b_msld_duplicate_pairs.py`, `src/analysis/duplicate_sensitivity.py`; results: `results/msld_duplicates/`.
-- **MCVSLD version 1 supplies no independent external images.** In version 1 of the MCVSLD Mendeley archive (which we uploaded unchanged to Kaggle for processing), all 11,325 images are byte-identical MSLD v2.0 files with the same names (755 originals and 10,570 released augmentations). Code: `src/mcvsld_audit/`; results: `results/mcvsld_audit/`.
-- **Ablation statistics.** The five-seed comparison is paired by seed, not by patient (the two pipelines use different test images). The leaky pipeline was ahead on 5 of 5 seeds; exact sign test p = 0.0625; t-based 95% CI of the gap 29.97 to 39.99 points (`src/analysis/leakage_seed_stats.py`).
-- **ConvNeXt-Tiny weights.** The original runs never saved weights. `src/protocol_b/train_worker_v34w_convnext.py` is the V34 worker with weight saving added (diff in `v34_to_v34w.diff`); `compare_convnext_rerun.py` compares the re-run with the original predictions; `src/gradcam/gradcam_convnext.py` (and `notebooks/gradcam_convnext.ipynb`) produces qualitative Grad-CAM maps for ConvNeXt-Tiny only.
+## Leakage experiments
 
-## Repository layout
+The released-pool comparison uses **32,777 source–pixel combinations** (755 originals and 32,022 distinct within-source augmentation items), derived from the released folders by source filename and decoded-pixel digest. Every item-random test item shared a source with training. Reconstructed splits of the 7,532-entry folders were audited separately for ancestry.
 
-```
-mpox-msld-patient-level-audit/
-├── README.md, requirements.txt, LICENSE, CITATION.cff, .gitignore
-├── environments/README.md                   # execution environments recorded for each run
-├── src/
-│   ├── audit/dataset_audit.py               # patient counts, official folds, augmented pool
-│   ├── mcvsld_audit/                         # MCVSLD audit and MSLD duplicate-photo search
-│   ├── ablation/                             # unseeded and five-seed leakage ablations
-│   ├── analysis/                             # seed-level statistics and duplicate sensitivity
-│   ├── protocol_a/train_sgkf_ensemble_v8.py
-│   ├── protocol_b/                           # V34/V34-W workers, merge and re-run comparison
-│   ├── gradcam/gradcam_convnext.py           # qualitative ConvNeXt-Tiny Grad-CAM, cleanup fixed
-│   └── figures/
-│       ├── make_figures.py                  # Figures 1-5 from saved results
-│       └── make_gradcam_figures.py           # Figure 6 and paged Figure S1 from saved maps
-├── notebooks/                                # audit, V34-W and corrected Grad-CAM notebooks
-├── results/
-│   ├── predictions/                          # 24 original Protocol B arrays
-│   ├── protocol_b_merge/                     # primary ensemble report, confusion matrix and ROC data
-│   ├── ablation_seeded/                      # per-run totals, summary and seed-level statistics
-│   ├── mcvsld_audit/                         # version-1 audit tables and summaries
-│   ├── msld_duplicates/                      # duplicate pairs, fold placement and sensitivity
-│   ├── convnext_v34w/                        # re-run arrays, metadata, comparison and checkpoint hashes
-│   ├── gradcam/                              # selected photographs, overlays, raw maps, CSVs and gallery
-│   └── logs/                                 # original Kaggle logs
-├── figures/                                  # Figures 1-6 and Figure6_panel_manifest.csv
-│   └── supplementary/                        # seven readable Figure S1 pages
-└── development/                              # earlier experiments, archived as run
-```
+| Backbone | Item-random accuracy (%) | Group-disjoint accuracy (%) |
+| --- | ---: | ---: |
+| ViT-Tiny, 128 px | 95.85 | 53.89 |
+| ConvNeXt-Tiny, 384 px | 99.88 | 83.60 |
 
-## Data
+The released-pool values are means over five splits on all held-out items. In the separate matched-exposure study, each pair shared the original test cohort, initialization, and scheduled training budget. Inserting eight same-source relatives per test original into same-class training slots increased original-image accuracy by **38.09 percentage points for ViT-Tiny** and **16.08 points for ConvNeXt-Tiny** over ten seeds. Both exact two-sided sign tests were reported as **p = 0.0020**. The zero- and eight-relative endpoints use seeds 0–9. The two- and four-relative ConvNeXt-Tiny analyses use seeds 0–4.
 
-MSLD v2.0 is public on Kaggle: [Mpox Skin Lesion Dataset Version 2.0 (MSLD v2.0)](https://www.kaggle.com/datasets/joydippaul/mpox-skin-lesion-dataset-version-20-msld-v20). The full dataset is not distributed here. Selected source photographs, Grad-CAM overlays and derived galleries are included in `results/gradcam/` and the manuscript figures. Please follow the source dataset's terms and cite its authors:
+ViT-Tiny uses 100 epochs, batch size 32, Adam at 0.001, and a single evaluation view. ConvNeXt-Tiny uses 25 epochs, batch size 16, the staged Protocol A optimizer and loss recipe, and a single evaluation view. Both exposure experiments evaluate the final epoch.
 
-> S. N. Ali *et al.*, "A web-based mpox skin lesion detection system using state-of-the-art deep learning models considering racial diversity," *Biomedical Signal Processing and Control*, vol. 98, 106742, 2024.
+## Additional analyses
 
-The release contains 755 original photographs in six classes, the five-sheet `datalog.xlsx`, and a folder of augmented images (`FOLDS_AUG`) with one sub-folder per fold.
+| Analysis | Configuration and reported result |
+| --- | --- |
+| **Metadata and border features** | On the frozen Protocol A folds, separate logistic regressions and random forests used non-pixel file/geometry features (Tier 1A) or the same features plus statistics from the outer 12-pixel band and corners (Tier 1B). The Tier 1A random forest reached **55.77%** group accuracy versus **26.92%** for the group majority baseline. The Tier 1B random forest reached **57.50%**. |
+| **EfficientNetV2-S configuration sensitivity** | On the same 215 official test groups, A-style training and A inference gave **148/215 (68.84%)**. Replicating the scheduled B budget with freshly shuffled passes over the original training images gave **179/215 (83.26%)** under A inference, a paired gain of **0.1442** (95% CI 0.0791 to 0.2093, Holm-adjusted McNemar **p = 0.0002**). Folds 1–5 used 919, 868, 910, 886, and 914 mini-batches of 16 per epoch. The full supplement includes loss/mixing and inference-recipe crossovers. |
+| **Mpox operating points** | Each fold’s disjoint calibration set selects the Youden’s J, 85%, or 90% sensitivity rule. The 95% minimum-positive rule is secondary. At the 85% and 90% targets, primary held-out ensemble sensitivity was **77.44%** for both and specificity was **92.51%** and **87.86%**, respectively. Stability is reported across six Protocol A split seeds. |
+| **Partial exposure** | ConvNeXt-Tiny uses one relative per exposed original. We shuffle test groups within each class with random seed 615000 plus the experiment seed. A single class-proportional order supplies nested sets of 10, 26, 52, or 104 of the 104 test groups. At nominal 50% exposure, accuracy was **99.23%** on exposed images and **85.75%** on unexposed images. The five-seed clean anchor was **83.03%** overall. |
+| **BEiT-Base precision** | On Protocol A fold 2 at seeds 344–348, four microbatches of four preserved an effective batch of 16. The clipped FP16 arm capped the finite global L2 norm of accumulated, unscaled gradients at **1.0** before the optimizer step. Mean accuracy ± SD was **0.8400 ± 0.0395** under unclipped FP16, **0.8019 ± 0.1253** under clipped FP16, and **0.8381 ± 0.0067** under FP32. |
+| **Stability and residual similarity** | Five additional Protocol A split seeds are 17, 73, 101, 137, and 211. The frozen-prediction residual-similarity analysis used an eight-bit distance cutoff and flagged four test groups. Excluding these groups yielded **438/516 (84.88%)**, compared with the primary 442/520. |
+| **Ensemble attribution and perturbation** | The supplementary Protocol B analysis uses all 40 retained checkpoints. The true-class probability contrast between border masking and equal-area internal controls was **0.0351** with mean-color fill and **0.0036** with blur fill. The supplement includes parameter-randomization checks and representative ensemble Grad-CAM maps. |
 
-### What the audit found
+Independent external validation and manually annotated tests of eye bars, watermarks, and other source marks were outside the study. Border perturbations and Grad-CAM provide model diagnostics. Clinical localization and artifact-specific reliance require independent evidence.
 
-| Class | Images | Patients in file names | Patients reported |
-|---|---:|---:|---:|
-| Mpox | 284 | 133 | 143 |
-| Chickenpox | 75 | 61 | 62 |
-| Measles | 55 | 45 | 46 |
-| Cowpox | 66 | 41 | 41 |
-| HFMD | 161 | 141 | 144 |
-| Healthy | 114 | 103 | 105 |
-| **Total** | **755** | **524** | **541** |
+## Reproduction
 
-| Official fold | Train | Validation | Test |
-|---|---:|---:|---:|
-| Sheet 1 | 537 | 144 | 74 |
-| Sheet 2 | 509 | 164 | 82 |
-| Sheet 3 | 538 | 153 | 64 |
-| Sheet 4 | 524 | 150 | 81 |
-| Sheet 5 | 538 | 154 | 63 |
+Start with the **saved-prediction** workflow to rebuild metrics, calibration summaries, and tables. Use the **training** and **attribution** notebooks when checkpoint generation or image-based reevaluation is required. Within each frozen bundle, preserve its original internal paths and manifest checks. Use the [reproduction runbook](docs/reproduce.md), [artifact registry](reproducibility/artifacts.tsv), and [results index](results/README.md) to locate the inputs and saved outputs.
 
-The test partitions add up to 364 images, 48.2% of the dataset. `FOLDS_AUG` holds 37,044 files but only 10,570 distinct names (14 per original image), and 10,290 of those names appear in more than one fold folder. Each fold folder holds 14 copies of that fold's training images (7,518, 7,126, 7,532, 7,336 and 7,532 files). That 7,532 matches the training-set size reported by some earlier studies, which suggests they used one fold folder as their whole dataset.
+| Workflow | Entry point | Required material |
+| --- | --- | --- |
+| Protocol A preflight and training | `notebooks/protocol_a/Protocol_A_755_Revised_Run.ipynb` | Distributor’s MSLD v2.0 release, the extracted Protocol A design, and the release code dataset. GPU for training. |
+| Protocol B publication analysis | `notebooks/protocol_b/01_CPU_Final_Publication.ipynb` | `PB_Final_Verified_Inputs.zip` with all 20 completed jobs, plus the release code dataset. CPU. |
+| Released-pool and matched-exposure tables | `notebooks/leakage/04_CPU_Final_Report.ipynb` | Frozen leakage input bundle and the completed jobs required by its merger, including the seed 0–4 baseline records. CPU. |
+| Five additional analyses | `notebooks/extensions/04_CPU_Consolidate.ipynb` | `MSLD_Final_CPU_Inputs.zip` with the sealed design and four completed result sets. CPU for consolidation. |
+| Ensemble attribution | `notebooks/attribution/02_GPU_Ensemble_GradCAM.ipynb` | Original clinical images, the verified B inputs, the 40 selected checkpoint tensors, and the release code dataset. Use the quantitative GPU validation entry point and its supplemental inputs for the perturbation and randomization tables. |
 
-There is also one non-clinical file, `Keywords.jpg`, at the dataset root. A loose parser can pick it up as an extra "mpox" image. Our protocol A code did, which is why protocol A reports 525 patients instead of 524.
+| Location | Contents |
+| --- | --- |
+| `src/` | Inventory, grouping, training, aggregation, calibration, leakage experiments, and supplementary analyses. |
+| `notebooks/` | CPU table reproduction and GPU training or attribution entry points. |
+| `reproducibility/` and `environments/` | Artifact checksums, frozen design and weight identifiers, and run-specific dependency records. |
+| `results/` and `figures/` | Canonical results tables and the figures used in the manuscript and supplement. |
+| `docs/` | Reproduction instructions, data provenance, and artifact-to-manuscript mapping. |
 
-## Experiments
+The saved run records pin the environment per job. For example, the Protocol A training records report Tesla T4, Python 3.13.16, PyTorch 2.11.0+cu130, torchvision 0.26.0+cu130, and timm 1.0.29. Trained tensors and resumable training state are stored with saved training outputs. The CPU workflow uses archived probabilities and verified split records.
 
-### 1. Controlled leakage ablation (`src/ablation/`)
+## Citation and license
 
-Same model (ViT-Tiny, `vit_tiny_patch16_224` at 128 px), same augmentation (original plus 9 MATLAB-style copies per image), Adam at 1e-3, batch 32, 100 epochs. The only difference is when augmentation happens.
-
-Five seeded runs of each pipeline (`leakage_ablation_seeded.py`, raw results in `results/ablation_seeded/`):
-
-| Pipeline | What happens | Test images | Accuracy, mean ± SD (95% CI) | Macro F1 |
-|---|---|---:|---:|---:|
-| 1A, image-level | augment all 755 images x10, then split 80:20 at random | 1,510 | 85.32 ± 1.11% (83.95 to 86.70) | 0.839 ± 0.013 |
-| 1B, patient-level | split patients first, then augment training images only | 136 to 168 | 50.34 ± 3.96% (45.43 to 55.26) | 0.428 ± 0.048 |
-
-| Seed | 0 | 1 | 2 | 3 | 4 |
-|---|---:|---:|---:|---:|---:|
-| 1A accuracy | 83.84% | 86.36% | 84.83% | 85.10% | 86.49% |
-| 1B accuracy | 52.15% | 46.21% | 47.06% | 50.35% | 55.95% |
-| Gap (points) | 31.7 | 40.2 | 37.8 | 34.7 | 30.5 |
-
-The paired gap is 34.98 points (95% CI 29.97 to 39.99, paired t-test p < 0.001). In every 1A run, 100% of the test images had augmented copies of the same photograph in the training set, and 100% belonged to a patient who was also in training. That check is computed inside the script, so it is not an assumption.
-
-Before the seeded repeats we ran the two pipelines without full seeding (`leakage_ablation_1A.py`, `leakage_ablation_1A_1B.py`): 1A gave 82.12% and 89.47%, 1B gave 62.14% (87 of 140). Those single runs sit on either side of, or above, the seeded range, which is why we report the seeded means. The seeded script writes one row per run to a CSV, resumes if a session restarts, and stops cleanly before Kaggle's time limit. Each run takes about 13 minutes on a T4, so all ten take a little over two hours.
-
-### 2. Protocol A: stratified group cross-validation (`src/protocol_a/`)
-
-Five folds of `StratifiedGroupKFold` over the original images, grouped by patient. Four ImageNet-pretrained backbones (EfficientNetV2-S, ConvNeXt-Tiny, Swin-Small, BEiT-Base) at 384 px, 25 epochs, mixup and CutMix early in training, 4-view test-time augmentation, confidence-weighted aggregation per patient. The top three backbones were combined with fitted temperatures and weights.
-
-| Model | Patient accuracy (n = 525) |
-|---|---:|
-| Swin-Small | 88.57% |
-| ConvNeXt-Tiny | 87.43% |
-| BEiT-Base | 85.14% |
-| EfficientNetV2-S | 72.76% |
-| Ensemble (Swin, ConvNeXt, BEiT) | **88.76%** (95% CI 86.10 to 91.43%), F1 0.877, AUC 0.983, ECE 3.70% |
-
-Read these as optimistic. Epochs, backbones, temperatures and ensemble weights were all chosen using the same out-of-fold predictions that produce the score. Protocol B was built to remove that.
-
-### 3. Protocol B: official folds with separate selection and calibration (`src/protocol_b/`)
-
-![Protocol B pipeline](figures/fig1_protocol_b_pipeline.png)
-
-1. Each backbone is trained in its own run on the five official folds. Augmented images are used only if they belong to a training patient of that fold.
-2. Each fold's validation patients are split in half. One half picks the two best checkpoints (by log-loss). The other half is kept for calibration.
-3. The merge script drops calibration patients who are test patients of the same backbone in another fold, joins the four backbones on patient ID (122 calibration and 186 test patients), fits one temperature per backbone and then the ensemble weights, and scores the test patients once.
-
-Results on the 186 test patients shared by all four backbones. Backbone macro AUC values in this table are before temperature scaling; the ensemble AUC is after scaling. ECE is shown before and after scaling:
-
-| Model | Accuracy | Macro F1 | Macro AUC | ECE before scaling | ECE after scaling |
-|---|---:|---:|---:|---:|---:|
-| EfficientNetV2-S | 82.26% | 0.806 | 0.969 | 16.02% | 5.88% |
-| ConvNeXt-Tiny | 87.63% | 0.870 | 0.983 | 12.77% | 6.19% |
-| Swin-Small | 86.56% | 0.862 | 0.974 | 10.95% | 4.26% |
-| BEiT-Base | 83.87% | 0.817 | 0.954 | 12.37% | 5.46% |
-| **Ensemble** | **88.17%** | **0.883** | **0.981** | | **7.26%** |
-
-Ensemble 95% intervals (2,000 bootstrap resamples): accuracy 83.3 to 92.5%, F1 0.832 to 0.928, AUC 0.970 to 0.990, ECE 4.9 to 12.1%. The fitted weights put 65% on ConvNeXt-Tiny, 35% on EfficientNetV2-S and almost nothing on the two transformers. McNemar tests against each backbone: p = 0.007 (EfficientNetV2-S), 1.0 (ConvNeXt-Tiny), 0.58 (Swin-Small), 0.057 (BEiT-Base).
-
-| Class | Test patients | Precision | Recall | F1 |
-|---|---:|---:|---:|---:|
-| Healthy | 33 | 0.941 | 0.970 | 0.955 |
-| Cowpox | 14 | 1.000 | 0.857 | 0.923 |
-| Mpox | 45 | 0.792 | 0.844 | 0.817 |
-| Measles | 18 | 1.000 | 0.889 | 0.941 |
-| Chickenpox | 24 | 0.842 | 0.667 | 0.744 |
-| HFMD | 52 | 0.877 | 0.962 | 0.917 |
-
-If the overlapping calibration patients are not removed, accuracy goes to 88.71% and ECE drops to 6.53%. That small, too-good improvement is exactly what leaking test patients into calibration looks like.
-
-<p align="center">
-  <img src="figures/fig3_confusion_matrix.png" width="32%">
-  <img src="figures/fig4_roc_per_class.png" width="32%">
-  <img src="figures/fig5_reliability.png" width="32%">
-</p>
-
-## Reproducing the results
-
-### Environment
-
-The reported runs used Kaggle notebooks with one NVIDIA T4 GPU, Python 3.12, PyTorch 2.11, timm 1.0.29, scikit-learn 1.6.1, SciPy 1.16.3 and NumPy 2.1.3.
-
-```bash
-git clone https://github.com/xASR/mpox-msld-patient-level-audit.git
-cd mpox-msld-patient-level-audit
-pip install -r requirements.txt
-```
-
-Kaggle base images can change. The root `requirements.txt` records the original-run package versions; `environments/README.md` distinguishes those runs from V34-W and the Grad-CAM session. The re-run's complete recorded package versions are in `results/convnext_v34w/run_info.json`.
-
-### Step 0: audit the dataset (CPU, about a minute)
-
-```bash
-python src/audit/dataset_audit.py /path/to/msld_v2 --json results/audit.json
-```
-
-This prints the class and patient table, the train, validation and test sizes of each official sheet, whether any sheet shares a patient between its partitions, how much of the dataset is ever tested, and the size of the augmented pool.
-
-### Step 1: leakage ablation (GPU)
-
-Attach MSLD v2.0 to a Kaggle notebook and run `src/ablation/leakage_ablation_1A_1B.py`. Check `dataset_dir` near the top of the file first, since Kaggle's input path depends on how the dataset was attached. For the five-seed version, run `leakage_ablation_seeded.py`. It saves `ablation_runs.csv` and `ablation_summary.txt` to `/kaggle/working`.
-
-### Step 2: protocol A (GPU, about 4.3 hours)
-
-Run `src/protocol_a/train_sgkf_ensemble_v8.py` in one Kaggle session. Set `dataset_dir` in the main block to your input path. It trains all four backbones and prints per-model and ensemble results.
-
-### Step 3: protocol B (GPU, four sessions of 10 to 11.5 hours)
-
-A full five-fold run of one backbone takes most of a Kaggle session, so each backbone gets its own notebook:
-
-```bash
-MSLD_MODEL=efficientnetv2_s python src/protocol_b/train_worker_v34.py
-MSLD_MODEL=convnext_tiny    python src/protocol_b/train_worker_v34.py
-MSLD_MODEL=swin_small       python src/protocol_b/train_worker_v34.py
-MSLD_MODEL=beit_base        python src/protocol_b/train_worker_v34.py
-```
-
-In a notebook cell, set `os.environ["MSLD_MODEL"] = "swin_small"` before running the script, or pass `--model swin_small`. `MSLD_DATA_DIR` (default `/kaggle/input/datasets`) and `MSLD_OUT_DIR` (default `/kaggle/working/outputs`) can be changed the same way. Each run writes six arrays: probabilities, labels and patient IDs for its pooled test patients and for its calibration halves.
-
-In our runs, Swin-Small and BEiT-Base hit the 11.5-hour guard during fold 4, and fold 5 never started. Their pooled test sets therefore cover 186 patients instead of 216, and the ensemble is scored on those 186.
-
-### Step 4: merge and statistics (CPU, under a minute)
-
-The arrays from our runs are already in `results/predictions/`, so this step works straight after cloning:
-
-```bash
-python src/protocol_b/merge_ensemble.py results/predictions results/protocol_b_merge
-python src/figures/make_figures.py results/protocol_b_merge figures
-```
-
-The merge reproduces the reported ensemble exactly (164 of 186 patients correct, macro F1 0.8830, macro AUC 0.9813, ECE 0.0726).
-
-## Things to know before reusing this code
-
-- **Protocol A is optimistic by design.** It is kept because it is a common setup in the literature and shows what that setup gives on this data. Use protocol B numbers when comparing with other work.
-- **The first two ablation scripts were not fully seeded.** That is why 1A gave 82.12% once and 89.47% the next time. Use `leakage_ablation_seeded.py`; its five-seed results are the ones reported. The absolute 1B accuracy is low because ViT-Tiny is trained with a fixed learning rate and no schedule on about 600 photographs. The ablation is built to measure the gap, not to be a strong classifier.
-- **An earlier ablation attempt is not included.** It compared Swin-Tiny under the two pipelines (74.83% against 77.78%) but did not hold the training budget equal, so it does not isolate the effect of augmentation order.
-- **Swin-Small and BEiT-Base have four folds, not five**, for the time-limit reason above.
-- **Original training and analysis code is retained.** In `train_worker_v34.py`, the backbone, data path and output path can be set from the environment. `merge_ensemble.py` finds prediction files by name. V34-W adds checkpoint/output records and input checks for the ConvNeXt re-run. The Grad-CAM script and notebook include the permanent cleanup-name fix, and the separate figure helper arranges the saved images and overlays. These changes and the exact re-run comparison are documented in the completed-run section.
-- **The `development/` folder is a record, not a pipeline.** It holds the code and outputs of the earlier experiments reported as Tables 11 and 12 in the manuscript (twelve CNNs under five-fold cross-validation, then single-split tuning). Some of those experiments were set aside in the paper because of in-sample threshold tuning or duplicated images. They are kept so every reported number can be traced to the code that produced it.
-- **This is research code, not a medical device.** Nothing here has been tested on clinical photographs or confirmed against PCR results.
-
-## Citation
-
-If this code or the audit helps your work, please cite the manuscript once it is out. Until then you can cite the repository through `CITATION.cff` (GitHub shows a "Cite this repository" button).
-
-## Acknowledgements
-
-We thank the authors of MSLD v2.0 for releasing the images, the patient-coded file names and the fold definitions. None of this audit would be possible without them. Pretrained weights come from the [timm](https://github.com/huggingface/pytorch-image-models) library.
-
-## Licence
-
-The code is released under the MIT licence (see `LICENSE`). The full datasets and large trained checkpoint files are not included. Selected dataset photographs appear in the Grad-CAM outputs and manuscript figures; those photographs remain subject to the source dataset's terms. The MIT code licence does not relicense the photographs.
+Cite *Augmentation leakage and duplicate-aware evaluation of Mpox skin lesion classifiers* and the dataset sources above. The research code is available under the repository’s [MIT license](LICENSE). Source images and derived image displays follow the respective providers’ terms.

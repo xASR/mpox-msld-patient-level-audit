@@ -1,0 +1,6 @@
+Score,Rule,"SENSITIVITY, % (Wilson 95% CI)","SPECIFICITY, % (Wilson 95% CI)","PPV, % (Wilson 95% CI)","NPV, % (Wilson 95% CI)",False positives
+convnext_tiny,secondary_sens95,84.96 (77.91–90.05),74.68 (70.12–78.75),53.55 (46.82–60.16),93.53 (90.21–95.77),98
+convnext_tiny_scaled,secondary_sens95,85.71 (78.76–90.66),75.19 (70.66–79.24),54.29 (47.53–60.89),93.87 (90.63–96.04),96
+ensemble,secondary_sens95,87.22 (80.48–91.86),80.88 (76.66–84.49),61.05 (53.97–67.70),94.85 (91.91–96.76),74
+swin_small,secondary_sens95,87.97 (81.35–92.46),74.16 (69.58–78.27),53.92 (47.27–60.42),94.72 (91.60–96.72),100
+swin_small_scaled,secondary_sens95,88.72 (82.22–93.05),75.71 (71.20–79.72),55.66 (48.93–62.19),95.13 (92.12–97.03),94

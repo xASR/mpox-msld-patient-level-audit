@@ -1,0 +1,5 @@
+Backbone,Protocol A ECE (%),Protocol B ECE (%)
+EfficientNetV2-S,6.20 → 2.82,18.88 → 3.45
+ConvNeXt-Tiny,13.19 → 4.21,12.01 → 4.48
+Swin-Small,12.28 → 4.12,9.86 → 4.48
+BEiT-Base,9.87 → 5.46,11.57 → 4.73

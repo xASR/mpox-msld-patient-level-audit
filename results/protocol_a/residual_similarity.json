@@ -1,0 +1,9 @@
+{
+  "comparison": "candidate minus no candidate under the specified metric",
+  "cutoff": 8,
+  "estimate": 0.15116279069767447,
+  "bootstrap_95": [
+    0.12015503875968991,
+    0.1821705426356589
+  ]
+}

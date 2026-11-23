@@ -1,0 +1,11 @@
+{
+  "accuracy_change": -0.13953488372093023,
+  "accuracy_change_ci_hi": -0.06976744186046512,
+  "accuracy_change_ci_lo": -0.20465116279069767,
+  "exact_mcnemar_descriptive": 0.00010049669926914809,
+  "first_only_correct": 44,
+  "groups": 215,
+  "macro_f1_change": -0.15837452816852038,
+  "n": 215,
+  "second_only_correct": 14
+}

@@ -8,3 +8,11 @@ data/
 *.pt
 *.ckpt
 *.tmp.npy
+
+# Local exports and recovery assets
+/runtime/
+/local_inputs/
+*.zip
+*.npz
+*.npy
+*.safetensors

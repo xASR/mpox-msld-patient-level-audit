@@ -1,0 +1,7 @@
+* text=auto eol=lf
+src/** -text whitespace=cr-at-eol,-blank-at-eof
+results/** -text whitespace=cr-at-eol,-blank-at-eof
+reproducibility/manifests/** -text whitespace=cr-at-eol,-blank-at-eof
+environments/locks/** -text whitespace=cr-at-eol,-blank-at-eof
+archive/development/** -text whitespace=cr-at-eol,-blank-at-eof
+*.png binary

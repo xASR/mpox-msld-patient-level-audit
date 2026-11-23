@@ -1,0 +1,20 @@
+{
+  "input_manifest_sha256": "856d1724988275704854984023a5c9be4d39869fb02187bcd011118c0de20200",
+  "final_input_manifest_sha256": "aa5c843f9c3eddb09b74c39c548496f33a13af56f7aab395f98e125e730431f8",
+  "calibration_groups": 138,
+  "test_groups": 215,
+  "calibration_test_overlap_after_filter": 0,
+  "temperature_fit": "Bounded scalar calibration log-loss minimization on [0.1,5].",
+  "mixture_fit": "Positive softmax weights, uniform initialization, L-BFGS-B on calibration log-loss.",
+  "calibration_cohort_sha256": "d3b6c0a9b1228ffa6b5092a6ce4c7354b92ac2bc329715d95fecd591b2453217",
+  "test_labels_used_for_parameter_fitting": false,
+  "ensemble_prediction_sha256": "2bfd4ce6493ca3a36c396112a916e1d9ecc4699836796b441d00e93db7342553",
+  "numpy_independent_count_rank_check": "PASS",
+  "software": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "bootstrap_scope": "Known-group sampling only; training, checkpoint selection and calibration remain fixed. Not training/design uncertainty.",
+  "clinical_identity_verified": false,
+  "historical_design_and_same_corpus_development_limitations_remain": true
+}

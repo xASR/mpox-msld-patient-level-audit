@@ -1,0 +1,7 @@
+Fold (sheet),Training,Validation,Test,Total
+1,537,144,74,755
+2,509,164,82,755
+3,538,153,64,755
+4,524,150,81,755
+5,538,154,63,755
+Sum of test partitions,,,364,

@@ -1,0 +1,54 @@
+{
+  "selection": "Use fold 5 for Rahim Table 5 class counts. Test both release folders matching Pal total as a sensitivity. No individual published assignments available here.",
+  "source_records": [
+    "https://doi.org/10.1177/20552076251344135",
+    "https://arxiv.org/html/2507.15915v1"
+  ],
+  "unit": "every physical file in a single released augmented training folder, no append or dedup",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "ordering": "lexical relative path",
+  "80_20": "class-stratified train_test_split, exactly 6025 training and 1507 test",
+  "75_15_10": "within-class RandomState(seed) permutation, exact published class counts, train first, then validation, then test",
+  "rahim_counts": {
+    "Monkeypox": [
+      2226,
+      445,
+      297
+    ],
+    "HFMD": [
+      1145,
+      228,
+      153
+    ],
+    "Healthy": [
+      871,
+      174,
+      117
+    ],
+    "Chickenpox": [
+      557,
+      111,
+      74
+    ],
+    "Cowpox": [
+      451,
+      91,
+      60
+    ],
+    "Measles": [
+      399,
+      80,
+      53
+    ]
+  },
+  "outcomes": [
+    "held-out entries sharing a source filename, known group, file SHA-256 or decoded RGB digest with training",
+    "numbers of unique source filenames in each role"
+  ]
+}
