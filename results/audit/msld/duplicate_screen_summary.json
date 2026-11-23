@@ -1,0 +1,38 @@
+{
+  "source_sha256": "96bfa794dc5909e9caa68d45e6dd0288250e1b3bae83dacc296852078816b182",
+  "source_zip_intact": true,
+  "images_reported_verified": 755,
+  "candidate_table_matches_recorded_sha256": true,
+  "all_candidate_filenames_hashes_and_known_groups_match_frozen_clinical_manifest": true,
+  "candidate_pairs": 2127,
+  "cross_group_pairs": 2110,
+  "same_known_group_pairs": 17,
+  "cross_group_raw_identical": 0,
+  "cross_group_rgb_identical": 0,
+  "priority_candidates": 103,
+  "cross_group_phash_le_8": 9,
+  "all_22_comparison_rows_reproduced": true,
+  "maximum_numeric_difference": 5.683466436368079e-08,
+  "all_7_paired_tests_reproduced": true,
+  "official_ensemble": {
+    "n": 215,
+    "correct": 189,
+    "accuracy": 0.8790697674418605,
+    "macro_precision": 0.9143187048313489,
+    "macro_recall": 0.8324921973505863,
+    "macro_f1": 0.8626979664260367,
+    "macro_auc": 0.9793886870360821,
+    "ece": 0.06247383616297224,
+    "log_loss": 0.4194926598645333,
+    "brier_multiclass": 0.20120299456522242
+  },
+  "visual_adjudication": {
+    "priority_pairs_visually_triaged": 103,
+    "review_material": "Nine paired-thumbnail contact sheets, saved in visual_review",
+    "new_same_source_cross_group_links_confirmed": 0,
+    "remaining_pairs_not_visually_adjudicated": 2024,
+    "review_scope": "Content comparison only; no inference of clinical patient identity. This does not certify that every pair is unrelated."
+  },
+  "external_validation": "pending",
+  "verified_patient_identity": "pending"
+}

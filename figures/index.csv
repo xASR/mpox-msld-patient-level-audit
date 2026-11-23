@@ -1,0 +1,9 @@
+figure,caption,file,sha256
+Figure 1,"Data grouping, model development, and evaluation workflow.",figures/main/Figure_1.png,b6b0cc9eb4357f03f946f5a94816be12a993eaeb5431e4d385ec193b055b5b58
+Figure 2,Clinical image and known-group counts by class.,figures/main/Figure_2.png,5643a85116f93ff3a5099478755c3cf42f1c49b7225358e47e030996df01a144
+Figure 3,Accuracy by split design and by matched training exposure.,figures/main/Figure_3.png,05edc13627c474fd0b5d96cc1cc7f5905fabd603dd16d26087cc3e0849cebb87
+Figure 4,Ensemble confusion matrices for Protocols A and B.,figures/main/Figure_4.png,cffc224a12a92229ea5f468c2f236ad5151e77781b609807b226a1804b0ae429
+Figure 5,One-versus-rest ensemble ROC curves for both protocols.,figures/main/Figure_5.png,71e45c05575a5b8d0a29b81d7313511d4e42ab1326f8ef0dca4a88bc4b160b4e
+Figure 6,Reliability diagrams for Protocols A and B.,figures/main/Figure_6.png,819d580283469113fbcee1b714014907ae0b2ca23cbf7a1d1e63355182269c59
+Supplementary Figure S1,Quantitative ensemble sensitivity and saliency diagnostics.,figures/supplementary/Figure_S1.png,d20c234d7780a3d3596561979b91f0c8378c926d0fff285fedb37b12b98f5769
+Supplementary Figure S2,Representative ensemble Grad-CAM attribution maps.,Author-held Supplementary Figure S2,76103def9fec4fd87102e552ee24a9b7d2ba6627da282b9c93150883674275c0

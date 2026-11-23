@@ -1,0 +1,26 @@
+{
+  "physical_original_entries": 3775,
+  "physical_augmented_entries": 37044,
+  "distinct_augmented_filenames": 10570,
+  "augmented_filenames_with_multiple_file_hashes": 10216,
+  "canonical_items": 32777,
+  "clinical_originals": 755,
+  "canonical_augmented": 32022,
+  "groups": 520,
+  "canonical_identity": "source filename and decoded RGB size/pixels, original preferred, lexical relative path breaks ties",
+  "rgb_digest": "SHA256(str(PIL_RGB.size).encode() + PIL_RGB.tobytes())",
+  "source_inventory_hash": "1adfd6bce4ccb396cbf23a2bcc2857749c3579a64df5889880022bc2f212c350",
+  "decoded_inventory_hash": "6706834b3ed9a63010da2bf2500f86ba9975802084c6eefdbec8a4f5a6c8a10c",
+  "unique_raw_augmented_sha256": 32266,
+  "unique_augmented_decoded_rgb": 32266,
+  "unique_canonical_rgb_all_sources": 32773,
+  "cross_source_rgb_digests": 4,
+  "fold_entries": {
+    "1": 7518,
+    "2": 7126,
+    "3": 7532,
+    "4": 7336,
+    "5": 7532
+  },
+  "rule_recomputed_matches_canonical_path_list": true
+}

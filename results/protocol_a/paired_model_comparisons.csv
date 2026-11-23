@@ -1,0 +1,5 @@
+Backbone,Ensemble only correct,Backbone only correct,Exact p,Holm p,F1 difference 95% CI,AUC difference 95% CI
+EfficientNetV2-S,102,21,0.0000,0.0000,0.1180 to 0.2116,0.0399 to 0.0648
+ConvNeXt-Tiny,19,23,0.6440,1.0000,-0.0348 to 0.0226,-0.0014 to 0.0094
+Swin-Small,7,7,1.0000,1.0000,-0.0246 to 0.0093,-0.0058 to 0.0020
+BEiT-Base,62,16,0.0000,0.0000,0.0625 to 0.1407,0.0163 to 0.0341

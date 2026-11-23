@@ -1,0 +1,113 @@
+{
+  "format_version": 1,
+  "protocol": "Protocol A revised 755 image grouped evaluation",
+  "counts": {
+    "clinical_images": 755,
+    "filename_patient_ids": 524,
+    "known_duplicate_aware_clusters": 520
+  },
+  "class_names": [
+    "Healthy",
+    "Cowpox",
+    "Monkeypox",
+    "Measles",
+    "Chickenpox",
+    "HFMD"
+  ],
+  "training": {
+    "epochs": 25,
+    "freeze_epochs": 3,
+    "mixup_disable_epoch": 10,
+    "img_size": 384,
+    "batch_size": 16,
+    "base_seed": 42,
+    "job_seed_rule": "42 + 100 * model_index_in_manifest + fold",
+    "mixup_alpha": 0.2,
+    "cutmix_alpha": 1.0,
+    "label_smoothing": 0.1,
+    "retained_checkpoints": 2,
+    "selection_metric": "selection-cluster log-loss",
+    "outer_folds": 5,
+    "outer_split_seed": 42,
+    "inner_split_seed_rule": "4200 + fold",
+    "calibration_half_seed_rule": "4300 + fold",
+    "temperature_bounds": [
+      0.1,
+      5.0
+    ],
+    "ensemble_models": "all four, no test-based pruning"
+  },
+  "evaluation_unit": "520 filename-derived groups after linking four confirmed duplicate-photograph identifier pairs; not independently verified clinical patient identities",
+  "aggregation": "Mean TTA logits then softmax; equal image-probability mean across two checkpoints; confidence-weighted mean across images in each patient cluster",
+  "tta": [
+    "identity",
+    "horizontal_flip",
+    "rescale_0.9_then_resize",
+    "rescale_1.1_then_resize"
+  ],
+  "scope_note": "Revised experiment, not a bit-exact reproduction of the original 756-file run. Outer test labels are not used for checkpoint, temperature or weight fitting.",
+  "models": {
+    "efficientnetv2_s": {
+      "timm_name": "tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_repo": "timm/tf_efficientnetv2_s.in21k_ft_in1k",
+      "hf_revision": "ea9abc143ea2b9d8e1ec1de277bce02149b9cf0e",
+      "hf_file": "model.safetensors"
+    },
+    "convnext_tiny": {
+      "timm_name": "convnext_tiny.in12k_ft_in1k_384",
+      "hf_repo": "timm/convnext_tiny.in12k_ft_in1k_384",
+      "hf_revision": "bac32564d7c9a688e40c76b6d17fcde4e0b15a19",
+      "hf_file": "model.safetensors"
+    },
+    "swin_small": {
+      "timm_name": "swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_repo": "timm/swin_small_patch4_window7_224.ms_in22k_ft_in1k",
+      "hf_revision": "221ee757828e4772df860bd42ef476de78dd5fc6",
+      "hf_file": "model.safetensors"
+    },
+    "beit_base": {
+      "timm_name": "beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_repo": "timm/beit_base_patch16_384.in22k_ft_in22k_in1k",
+      "hf_revision": "982da264d54e96afd1465eb6a5c3f227ae138222",
+      "hf_file": "model.safetensors"
+    }
+  },
+  "files": {
+    "clinical_images.csv": {
+      "bytes": 74709,
+      "sha256": "06ad3fbbba89b1f11c04202ed32d25305df4fb0aaab06e60a685c41372687e40"
+    },
+    "confirmed_duplicates.json": {
+      "bytes": 1799,
+      "sha256": "2e2aea8af9f5d2499ce53461838744cd105ce452bba4a03b11e3111672daa81f"
+    },
+    "original_protocol_a_worker.py": {
+      "bytes": 17443,
+      "sha256": "e3d934df72eea5cd5e51544a4bf40be34d6615ee02b38fc602c69be26fb1f163"
+    },
+    "split_summary.csv": {
+      "bytes": 291,
+      "sha256": "782d1f1c04d175353d7717f1753e9578768df762cc1f20dc873e411f1cfb7b8c"
+    },
+    "splits/fold1.csv": {
+      "bytes": 79689,
+      "sha256": "ae098bd441e537427ab58232c9c4f6b84ba064da2d1cca03fe5aa6e3d2dd9eed"
+    },
+    "splits/fold2.csv": {
+      "bytes": 79648,
+      "sha256": "716c0b9e16b88fd8c2c83ab8543e9c1766412bf14b6ac7a127dc07c5b7c3d286"
+    },
+    "splits/fold3.csv": {
+      "bytes": 79682,
+      "sha256": "a15fa6cd7d54f3da3dda8a98a8c389162fb24e87af4eeb8265a4f43fa4256d9c"
+    },
+    "splits/fold4.csv": {
+      "bytes": 79620,
+      "sha256": "93967948c44d10e8addbdd6c4c417fdb2bafc131f4619381de3a2959c43d72b9"
+    },
+    "splits/fold5.csv": {
+      "bytes": 79758,
+      "sha256": "63d4fc083857a31d720e3bdb297caaf3025c4b6b80e8f864cad67c62c62f26a1"
+    }
+  }
+}

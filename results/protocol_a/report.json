@@ -1,0 +1,544 @@
+{
+  "n_test": 520,
+  "evaluation_unit": "known-duplicate-aware patient cluster",
+  "ens_fixed": {
+    "acc": 0.85,
+    "prec": 0.835100303083698,
+    "rec": 0.8352392418955886,
+    "f1": 0.8333234272990203,
+    "auc": 0.9747935502234032,
+    "ece": 0.027554691438540328,
+    "ll": 0.4508844126185714
+  },
+  "singles_raw": {
+    "efficientnetv2_s": {
+      "acc": 0.6942307692307692,
+      "prec": 0.6888538887944412,
+      "rec": 0.6868533670778252,
+      "f1": 0.6712296525294607,
+      "auc": 0.9231979155699079,
+      "ece": 0.061969447842419596,
+      "ll": 0.9209950772241642
+    },
+    "convnext_tiny": {
+      "acc": 0.8576923076923076,
+      "prec": 0.8432827704519927,
+      "rec": 0.8385536963323341,
+      "f1": 0.8392615563456834,
+      "auc": 0.9710471841919318,
+      "ece": 0.13190268650511633,
+      "ll": 0.5439517796509186
+    },
+    "swin_small": {
+      "acc": 0.85,
+      "prec": 0.8446815775227492,
+      "rec": 0.8412919553786428,
+      "f1": 0.8406404918966591,
+      "auc": 0.9764977114438214,
+      "ece": 0.12282029391100174,
+      "ll": 0.5041804903516484
+    },
+    "beit_base": {
+      "acc": 0.7615384615384615,
+      "prec": 0.7460463089681953,
+      "rec": 0.7351642996379839,
+      "f1": 0.7325501622730323,
+      "auc": 0.9501215562802554,
+      "ece": 0.09868231524878404,
+      "ll": 0.7483072723612316
+    }
+  },
+  "singles_tempscaled": {
+    "efficientnetv2_s": {
+      "acc": 0.6942307692307692,
+      "prec": 0.6888538887944412,
+      "rec": 0.6868533670778252,
+      "f1": 0.6712296525294607,
+      "auc": 0.9197076454462616,
+      "ece": 0.028194815922275244,
+      "ll": 0.9431725495519813
+    },
+    "convnext_tiny": {
+      "acc": 0.8576923076923076,
+      "prec": 0.8432827704519927,
+      "rec": 0.8385536963323341,
+      "f1": 0.8392615563456834,
+      "auc": 0.9676906439351346,
+      "ece": 0.042138098942315724,
+      "ll": 0.5034810775065389
+    },
+    "swin_small": {
+      "acc": 0.85,
+      "prec": 0.8446815775227492,
+      "rec": 0.8412919553786428,
+      "f1": 0.8406404918966591,
+      "auc": 0.9762643397843029,
+      "ece": 0.04123229247612414,
+      "ll": 0.4375684317762382
+    },
+    "beit_base": {
+      "acc": 0.7615384615384615,
+      "prec": 0.7460463089681953,
+      "rec": 0.7351642996379839,
+      "f1": 0.7325501622730323,
+      "auc": 0.949152108950195,
+      "ece": 0.05456163440095273,
+      "ll": 0.7219270931709527
+    }
+  },
+  "correct": {
+    "efficientnetv2_s": 361,
+    "convnext_tiny": 446,
+    "swin_small": 442,
+    "beit_base": 396,
+    "ensemble": 442
+  },
+  "accuracy_wilson_95_ci": [
+    0.8167482430632129,
+    0.8781184840176492
+  ],
+  "class_support": {
+    "Healthy": 102,
+    "Cowpox": 40,
+    "Mpox": 133,
+    "Measles": 45,
+    "Chickenpox": 60,
+    "HFMD": 140
+  },
+  "per_class": {
+    "Healthy": {
+      "precision": 0.9411764705882353,
+      "recall": 0.9411764705882353,
+      "f1-score": 0.9411764705882353,
+      "support": 102.0
+    },
+    "Cowpox": {
+      "precision": 0.7804878048780488,
+      "recall": 0.8,
+      "f1-score": 0.7901234567901234,
+      "support": 40.0
+    },
+    "Mpox": {
+      "precision": 0.8468468468468469,
+      "recall": 0.706766917293233,
+      "f1-score": 0.7704918032786885,
+      "support": 133.0
+    },
+    "Measles": {
+      "precision": 0.8636363636363636,
+      "recall": 0.8444444444444444,
+      "f1-score": 0.8539325842696629,
+      "support": 45.0
+    },
+    "Chickenpox": {
+      "precision": 0.7213114754098361,
+      "recall": 0.7333333333333333,
+      "f1-score": 0.7272727272727273,
+      "support": 60.0
+    },
+    "HFMD": {
+      "precision": 0.8571428571428571,
+      "recall": 0.9857142857142858,
+      "f1-score": 0.9169435215946844,
+      "support": 140.0
+    }
+  },
+  "per_class_auc": {
+    "Healthy": 0.9978891077962285,
+    "Cowpox": 0.9933333333333333,
+    "Mpox": 0.9420450350682908,
+    "Measles": 0.9818011695906432,
+    "Chickenpox": 0.9467753623188406,
+    "HFMD": 0.9869172932330827
+  },
+  "confusion": [
+    [
+      96,
+      0,
+      2,
+      2,
+      0,
+      2
+    ],
+    [
+      1,
+      32,
+      5,
+      0,
+      2,
+      0
+    ],
+    [
+      3,
+      7,
+      94,
+      2,
+      15,
+      12
+    ],
+    [
+      2,
+      0,
+      1,
+      38,
+      0,
+      4
+    ],
+    [
+      0,
+      2,
+      9,
+      0,
+      44,
+      5
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      0,
+      138
+    ]
+  ],
+  "mcnemar": {
+    "efficientnetv2_s": {
+      "ens_only": 102,
+      "single_only": 21,
+      "p": 5.820852423965583e-14
+    },
+    "convnext_tiny": {
+      "ens_only": 19,
+      "single_only": 23,
+      "p": 0.6439689563703723
+    },
+    "swin_small": {
+      "ens_only": 7,
+      "single_only": 7,
+      "p": 1.0
+    },
+    "beit_base": {
+      "ens_only": 62,
+      "single_only": 16,
+      "p": 1.5129781377543388e-07
+    }
+  },
+  "boot_n": 2000,
+  "boot_ci": {
+    "acc": [
+      0.8173076923076923,
+      0.8807692307692307
+    ],
+    "f1": [
+      0.796250386844324,
+      0.8681629079392515
+    ],
+    "auc": [
+      0.9649995291522463,
+      0.9827305185160191
+    ],
+    "ece": [
+      0.020094762176628218,
+      0.061460624418154086
+    ]
+  },
+  "boot_dauc": {
+    "efficientnetv2_s": [
+      0.05159462625517373,
+      0.03987425216715212,
+      0.0648056791587475
+    ],
+    "convnext_tiny": [
+      0.003727237164706431,
+      -0.0014418709630802577,
+      0.009402031442795692
+    ],
+    "swin_small": [
+      -0.0017509045877747776,
+      -0.005815436684904867,
+      0.0020198015380669216
+    ],
+    "beit_base": [
+      0.02475658778188231,
+      0.01626141780603372,
+      0.03409409564961902
+    ]
+  },
+  "boot_df1": {
+    "efficientnetv2_s": [
+      0.16349638160894586,
+      0.11795780027976828,
+      0.21156649532249822
+    ],
+    "convnext_tiny": [
+      -0.005594365737915155,
+      -0.03478742016556662,
+      0.022570099183884116
+    ],
+    "swin_small": [
+      -0.0071625753042339774,
+      -0.02464432916600475,
+      0.00931073264987196
+    ],
+    "beit_base": [
+      0.10167115973233808,
+      0.06250569492239869,
+      0.14067764411356307
+    ]
+  },
+  "bootstrap_scope": "Patient clusters resampled; trained models and fold-specific calibration parameters kept fixed.",
+  "reliability_ens": [
+    {
+      "lo": 0.30000000000000004,
+      "hi": 0.4,
+      "n": 5,
+      "conf": 0.3861285003632979,
+      "acc": 0.4
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.5,
+      "n": 16,
+      "conf": 0.460017616379686,
+      "acc": 0.1875
+    },
+    {
+      "lo": 0.5,
+      "hi": 0.6000000000000001,
+      "n": 27,
+      "conf": 0.5459040704664392,
+      "acc": 0.5185185185185185
+    },
+    {
+      "lo": 0.6000000000000001,
+      "hi": 0.7000000000000001,
+      "n": 34,
+      "conf": 0.6466981388713191,
+      "acc": 0.6764705882352942
+    },
+    {
+      "lo": 0.7000000000000001,
+      "hi": 0.8,
+      "n": 43,
+      "conf": 0.7626032082922333,
+      "acc": 0.6976744186046512
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.9,
+      "n": 64,
+      "conf": 0.8563303761872436,
+      "acc": 0.84375
+    },
+    {
+      "lo": 0.9,
+      "hi": 1.0,
+      "n": 331,
+      "conf": 0.968429138895057,
+      "acc": 0.9546827794561934
+    }
+  ],
+  "reliability_convnext_raw": [
+    {
+      "lo": 0.2,
+      "hi": 0.30000000000000004,
+      "n": 1,
+      "conf": 0.29052650062660873,
+      "acc": 1.0
+    },
+    {
+      "lo": 0.30000000000000004,
+      "hi": 0.4,
+      "n": 19,
+      "conf": 0.3472398971471202,
+      "acc": 0.47368421052631576
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.5,
+      "n": 57,
+      "conf": 0.45101884755310534,
+      "acc": 0.6140350877192983
+    },
+    {
+      "lo": 0.5,
+      "hi": 0.6000000000000001,
+      "n": 50,
+      "conf": 0.5628493013801606,
+      "acc": 0.84
+    },
+    {
+      "lo": 0.6000000000000001,
+      "hi": 0.7000000000000001,
+      "n": 61,
+      "conf": 0.6468237272317433,
+      "acc": 0.7704918032786885
+    },
+    {
+      "lo": 0.7000000000000001,
+      "hi": 0.8,
+      "n": 115,
+      "conf": 0.7506505054508266,
+      "acc": 0.8869565217391304
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.9,
+      "n": 143,
+      "conf": 0.8534988908576727,
+      "acc": 0.965034965034965
+    },
+    {
+      "lo": 0.9,
+      "hi": 1.0,
+      "n": 74,
+      "conf": 0.9302781379831617,
+      "acc": 0.972972972972973
+    }
+  ],
+  "protocol": "A",
+  "counts": {
+    "clinical_images": 755,
+    "filename_patient_ids": 524,
+    "known_duplicate_aware_clusters": 520
+  },
+  "n_cal": {
+    "by_fold": {
+      "1": 39,
+      "2": 41,
+      "3": 42,
+      "4": 42,
+      "5": 41
+    }
+  },
+  "calibration_by_fold": {
+    "1": {
+      "temperatures": {
+        "efficientnetv2_s": 0.5909122855149181,
+        "convnext_tiny": 0.5626928950914787,
+        "swin_small": 0.596112861555909,
+        "beit_base": 0.6457373095801774
+      },
+      "weights": {
+        "efficientnetv2_s": 0.023218076806475,
+        "convnext_tiny": 0.3355939818632323,
+        "swin_small": 0.38370378024166585,
+        "beit_base": 0.25748416108862665
+      },
+      "calibration_clusters": 39,
+      "diagnostics": {
+        "temperature_messages": [
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        ],
+        "weight_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "calibration_log_loss": 0.2667397596126627
+      }
+    },
+    "2": {
+      "temperatures": {
+        "efficientnetv2_s": 1.1718671298509702,
+        "convnext_tiny": 0.6243974629828929,
+        "swin_small": 0.5015411783706253,
+        "beit_base": 0.5486665988040856
+      },
+      "weights": {
+        "efficientnetv2_s": 1.686184183466896e-06,
+        "convnext_tiny": 0.0005071852661622676,
+        "swin_small": 0.9676033626350451,
+        "beit_base": 0.03188776591460917
+      },
+      "calibration_clusters": 41,
+      "diagnostics": {
+        "temperature_messages": [
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        ],
+        "weight_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "calibration_log_loss": 0.33554821747302327
+      }
+    },
+    "3": {
+      "temperatures": {
+        "efficientnetv2_s": 0.92998696572561,
+        "convnext_tiny": 0.5353144459174989,
+        "swin_small": 0.44765065933074066,
+        "beit_base": 0.5869061167311512
+      },
+      "weights": {
+        "efficientnetv2_s": 1.2092629566708989e-05,
+        "convnext_tiny": 0.15093572734325733,
+        "swin_small": 0.848963067883454,
+        "beit_base": 8.911214372189647e-05
+      },
+      "calibration_clusters": 42,
+      "diagnostics": {
+        "temperature_messages": [
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        ],
+        "weight_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "calibration_log_loss": 0.2483284738111715
+      }
+    },
+    "4": {
+      "temperatures": {
+        "efficientnetv2_s": 0.787330469792489,
+        "convnext_tiny": 0.779309955219382,
+        "swin_small": 0.6748195731459345,
+        "beit_base": 0.7990247822728277
+      },
+      "weights": {
+        "efficientnetv2_s": 0.14344668288949847,
+        "convnext_tiny": 4.488869937664815e-06,
+        "swin_small": 0.8565307170838026,
+        "beit_base": 1.811115676119703e-05
+      },
+      "calibration_clusters": 42,
+      "diagnostics": {
+        "temperature_messages": [
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        ],
+        "weight_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "calibration_log_loss": 0.43061785605051883
+      }
+    },
+    "5": {
+      "temperatures": {
+        "efficientnetv2_s": 0.8492432581273481,
+        "convnext_tiny": 0.4858261529066124,
+        "swin_small": 0.6147250609310492,
+        "beit_base": 0.6775717636534758
+      },
+      "weights": {
+        "efficientnetv2_s": 2.995302796175976e-05,
+        "convnext_tiny": 0.8442735514635712,
+        "swin_small": 0.15564764494123587,
+        "beit_base": 4.885056723109915e-05
+      },
+      "calibration_clusters": 41,
+      "diagnostics": {
+        "temperature_messages": [
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL"
+        ],
+        "weight_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+        "calibration_log_loss": 0.2704684077527837
+      }
+    }
+  },
+  "input_manifest_sha256": "b880264f09050c3dd6254c45eb4dfc579eb5cb55048a370f7f5f34271e639407",
+  "test_used_for_selection_or_calibration": false,
+  "note": "Revised Protocol A; fixed outer test groups; no global fitting on the pooled outer-test predictions."
+}

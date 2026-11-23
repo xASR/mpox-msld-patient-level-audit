@@ -1,0 +1,205 @@
+{
+  "protocol": "Duplicate-corrected official-fold Protocol B",
+  "schema": "pb_known_duplicate_corrected_v1",
+  "input_manifest_sha256": "856d1724988275704854984023a5c9be4d39869fb02187bcd011118c0de20200",
+  "completed_jobs": 20,
+  "test_groups": 215,
+  "calibration_candidates": 217,
+  "excluded_calibration_test_overlap": 79,
+  "calibration_groups_used": 138,
+  "ensemble": {
+    "n": 215,
+    "correct": 189,
+    "accuracy": 0.8790697674418605,
+    "macro_precision": 0.9143187048313489,
+    "macro_recall": 0.8324921973505863,
+    "macro_f1": 0.8626979664260367,
+    "macro_auc": 0.9793886870360821,
+    "ece": 0.06247383616297224,
+    "log_loss": 0.4194926598645333
+  },
+  "accuracy_wilson_95_ci": [
+    0.8287083670830723,
+    0.9161230779200095
+  ],
+  "temperatures": {
+    "efficientnetv2_s": 0.5543445247102743,
+    "convnext_tiny": 0.6321526528658377,
+    "swin_small": 0.7058064578983655,
+    "beit_base": 0.7060211865409867
+  },
+  "weights": {
+    "efficientnetv2_s": 0.16632093868585196,
+    "convnext_tiny": 0.21505821254987514,
+    "swin_small": 0.4151791557796588,
+    "beit_base": 0.20344169298461404
+  },
+  "conditional_bootstrap_n": 2000,
+  "conditional_bootstrap_95_ci": {
+    "macro_f1": [
+      0.8036316804461733,
+      0.9089167753072075
+    ],
+    "macro_auc": [
+      0.966649156690853,
+      0.9899064857625501
+    ],
+    "ece": [
+      0.0417024896871619,
+      0.10833543937193815
+    ]
+  },
+  "bootstrap_scope": "Resamples known groups with training, temperature and weights fixed; excludes training/design uncertainty.",
+  "reliability_bins": [
+    {
+      "lower": 0.30000000000000004,
+      "upper": 0.4,
+      "n": 2,
+      "confidence": 0.3543088562115458,
+      "accuracy": 0.5
+    },
+    {
+      "lower": 0.4,
+      "upper": 0.5,
+      "n": 13,
+      "confidence": 0.4506829314345778,
+      "accuracy": 0.6153846153846154
+    },
+    {
+      "lower": 0.5,
+      "upper": 0.6000000000000001,
+      "n": 12,
+      "confidence": 0.5516833618131677,
+      "accuracy": 0.5
+    },
+    {
+      "lower": 0.6000000000000001,
+      "upper": 0.7000000000000001,
+      "n": 13,
+      "confidence": 0.6353984492725225,
+      "accuracy": 0.9230769230769231
+    },
+    {
+      "lower": 0.7000000000000001,
+      "upper": 0.8,
+      "n": 17,
+      "confidence": 0.7480296402855502,
+      "accuracy": 0.8823529411764706
+    },
+    {
+      "lower": 0.8,
+      "upper": 0.9,
+      "n": 41,
+      "confidence": 0.8563391634797884,
+      "accuracy": 0.8048780487804879
+    },
+    {
+      "lower": 0.9,
+      "upper": 1.0,
+      "n": 117,
+      "confidence": 0.9551628352386373,
+      "accuracy": 0.9743589743589743
+    }
+  ],
+  "per_class": [
+    {
+      "class": "Healthy",
+      "support": 38,
+      "precision": 0.925,
+      "recall": 0.9736842105263158,
+      "f1": 0.9487179487179487,
+      "auc": 0.9965804341361879
+    },
+    {
+      "class": "Cowpox",
+      "support": 16,
+      "precision": 1.0,
+      "recall": 0.6875,
+      "f1": 0.8148148148148148,
+      "auc": 0.9943467336683417
+    },
+    {
+      "class": "Mpox",
+      "support": 53,
+      "precision": 0.7966101694915254,
+      "recall": 0.8867924528301887,
+      "f1": 0.8392857142857143,
+      "auc": 0.9422315397158164
+    },
+    {
+      "class": "Measles",
+      "support": 21,
+      "precision": 1.0,
+      "recall": 0.8095238095238095,
+      "f1": 0.8947368421052632,
+      "auc": 0.9958271968581247
+    },
+    {
+      "class": "Chickenpox",
+      "support": 26,
+      "precision": 0.8947368421052632,
+      "recall": 0.6538461538461539,
+      "f1": 0.7555555555555555,
+      "auc": 0.9576719576719577
+    },
+    {
+      "class": "HFMD",
+      "support": 61,
+      "precision": 0.8695652173913043,
+      "recall": 0.9836065573770492,
+      "f1": 0.9230769230769231,
+      "auc": 0.9896742601660635
+    }
+  ],
+  "confusion_matrix": [
+    [
+      37,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      11,
+      4,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      47,
+      0,
+      2,
+      3
+    ],
+    [
+      1,
+      0,
+      1,
+      17,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      7,
+      0,
+      17,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      60
+    ]
+  ],
+  "historical_design_and_unknown_identity_limitations_remain": true
+}
